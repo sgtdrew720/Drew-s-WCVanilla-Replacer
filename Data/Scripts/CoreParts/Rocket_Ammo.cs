@@ -181,7 +181,7 @@ namespace Scripts
                 MaxLifeTime = 110, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 350f, // voxel phasing if you go above 5100
-                MaxTrajectory = 8000f, // Max Distance the projectile or beam can Travel.
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
@@ -215,7 +215,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "BelterTorpedoTrail", //ShipWelderArc
+                        Name = "Missile_trail", //ShipWelderArc
                         Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 1f),
                         Extras = new ParticleOptionDef
@@ -223,7 +223,7 @@ namespace Scripts
                             Loop = true,
                             Restart = false,
                             MaxDistance = 16000,
-                            Scale = 0.25f,
+                            Scale = 1.00f,
                         },
                     },
                     Hit = new ParticleDef
@@ -252,19 +252,20 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.5f, end: 0.9f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = (float)(0), //
-                        Width = (float)(0) * 1f, //
-                        Color = Color(red: 20f, green: 10f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -276,11 +277,31 @@ namespace Scripts
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0.2f,
+                        MaxLength = 3,
                     },
                 },
             },
@@ -332,11 +353,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "EWARFragment220mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 3, // Number of projectiles to spawn.
-                Degrees = 90, // Cone in which to randomize direction of spawned projectiles.
+                Fragments = 10, // Number of projectiles to spawn.
+                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -30f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = -5f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -450,10 +471,10 @@ namespace Scripts
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 45f, // Degrees, Is pointed forward
                 TargetLossTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = (int)((10000d / 1250d) * 60d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
+                MaxLifeTime = (int)((10000d / 1000d) * 60d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 500f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 1250f, // voxel phasing if you go above 5100
-                MaxTrajectory = 8000f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 1000f, // voxel phasing if you go above 5100
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
@@ -490,7 +511,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "BelterTorpedoTrail", //ShipWelderArc
+                        Name = "Missile_trail", //ShipWelderArc
                         Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 1f),
                         Extras = new ParticleOptionDef
@@ -516,19 +537,20 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.5f, end: 0.9f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = (float)(0), //
-                        Width = (float)(0) * 1f, //
-                        Color = Color(red: 20f, green: 10f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -540,11 +562,31 @@ namespace Scripts
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0.2f,
+                        MaxLength = 3,
                     },
                 },
             },
@@ -725,8 +767,8 @@ namespace Scripts
                 TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 110, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 500f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 1250f, // voxel phasing if you go above 5100
-                MaxTrajectory = 8000f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 1000f, // voxel phasing if you go above 5100
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
@@ -758,7 +800,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "BelterTorpedoTrail", //ShipWelderArc
+                        Name = "Missile_trail", //ShipWelderArc
                         Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 1f),
                         Extras = new ParticleOptionDef
@@ -766,7 +808,7 @@ namespace Scripts
                             Loop = true,
                             Restart = false,
                             MaxDistance = 16000,
-                            Scale = 0.25f,
+                            Scale = 1.00f,
                         },
                     },
                     Hit = new ParticleDef
@@ -795,19 +837,20 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.5f, end: 0.9f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = (float)(0), //
-                        Width = (float)(0) * 1f, //
-                        Color = Color(red: 20f, green: 10f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -819,11 +862,31 @@ namespace Scripts
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0.2f,
+                        MaxLength = 3,
                     },
                 },
             },
@@ -875,11 +938,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "EWARFragment220mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 3, // Number of projectiles to spawn.
-                Degrees = 90, // Cone in which to randomize direction of spawned projectiles.
+                Fragments = 10, // Number of projectiles to spawn.
+                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -30f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = -5f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -994,10 +1057,10 @@ namespace Scripts
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 30f, // Degrees, Is pointed forward
                 TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = (int)((10000d / 1250d) * 60d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
+                MaxLifeTime = (int)((10000d / 1000d) * 60d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 500f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 1250f, // voxel phasing if you go above 5100
-                MaxTrajectory = 8000f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 1000f, // voxel phasing if you go above 5100
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
@@ -1026,7 +1089,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "BelterTorpedoTrail", //ShipWelderArc
+                        Name = "Missile_trail", //ShipWelderArc
                         Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 1f),
                         Extras = new ParticleOptionDef
@@ -1052,19 +1115,20 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.5f, end: 0.9f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = (float)(0), //
-                        Width = (float)(0) * 1f, //
-                        Color = Color(red: 20f, green: 10f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -1076,11 +1140,31 @@ namespace Scripts
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0.2f,
+                        MaxLength = 3,
                     },
                 },
             },
@@ -1261,8 +1345,8 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 110, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 600f, // voxel phasing if you go above 5100
-                MaxTrajectory = 8000f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 500f, // voxel phasing if you go above 5100
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
@@ -1281,7 +1365,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "BelterTorpedoTrail", //ShipWelderArc
+                        Name = "Missile_trail", //ShipWelderArc
                         Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 1f),
                         Extras = new ParticleOptionDef
@@ -1289,7 +1373,7 @@ namespace Scripts
                             Loop = true,
                             Restart = false,
                             MaxDistance = 16000,
-                            Scale = 0.25f,
+                            Scale = 1.00f,
                         },
                     },
                     Hit = new ParticleDef
@@ -1318,19 +1402,20 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.5f, end: 0.9f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = (float)(0), //
-                        Width = (float)(0) * 1f, //
-                        Color = Color(red: 20f, green: 10f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -1342,11 +1427,31 @@ namespace Scripts
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0.2f,
+                        MaxLength = 3,
                     },
                 },
             },
@@ -1398,11 +1503,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "EWARFragment220mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 3, // Number of projectiles to spawn.
-                Degrees = 90, // Cone in which to randomize direction of spawned projectiles.
+                Fragments = 10, // Number of projectiles to spawn.
+                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -30f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = -5f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1520,7 +1625,7 @@ namespace Scripts
                 MaxLifeTime = (int)((10000d / 600d) * 60d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 0f, // voxel phasing if you go above 5100
-                MaxTrajectory = 8000f, // Max Distance the projectile or beam can Travel.
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
@@ -1539,7 +1644,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "BelterTorpedoTrail", //ShipWelderArc
+                        Name = "Missile_trail", //ShipWelderArc
                         Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 1f),
                         Extras = new ParticleOptionDef
@@ -1565,19 +1670,20 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.5f, end: 0.9f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = (float)(0), //
-                        Width = (float)(0) * 1f, //
-                        Color = Color(red: 20f, green: 10f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 3.7f, //
+                        Width = 0.2f, //
+                        Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -1589,11 +1695,31 @@ namespace Scripts
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0.2f,
+                        MaxLength = 3,
                     },
                 },
             },
@@ -1621,7 +1747,6 @@ namespace Scripts
                 }
             }, // Don't edit below this line
         };
-
 
         private AmmoDef EWARFragment220mm => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
@@ -1682,11 +1807,27 @@ namespace Scripts
                 MaxLifeTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 100f, // voxel phasing if you go above 5100
-                MaxTrajectory = 250f, // Max Distance the projectile or beam can Travel.
+                MaxTrajectory = 100f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -50, end: 50), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                SpeedVariance = Random(start: -75, end: 75), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
+                Smarts = new SmartsDef
+                {
+                    Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 1f, // controls how responsive tracking is.
+                    MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn
+                    TrackingDelay = 0, // Measured in Shape diameter units traveled.
+                    MaxChaseTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
+                    MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
+                    NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+                    Roam = false, // Roam current area after target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
+                    OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
+                    OffsetTime = 60, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
+                },
+
             },
             AmmoGraphics = new GraphicDef
             {
@@ -1793,6 +1934,7 @@ namespace Scripts
                 },
             };
         }
+
 
     }
 }

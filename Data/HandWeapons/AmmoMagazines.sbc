@@ -91,7 +91,7 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.30</Mass>
+            <Mass>0.15</Mass>
             <Volume>0.15</Volume>
             <Model>Models\Weapons\Pistol_FlareGun_Magazine.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
@@ -110,14 +110,14 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>FlareClip_CsBlank</SubtypeId>
             </Id>
-            <DisplayName>Flare Clip Blank</DisplayName>
+            <DisplayName>DisplayName_Item_FlareClip</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\FlareGun_Ammo.dds</Icon>
             <Size>
                 <X>0.2</X>
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.30</Mass>
+            <Mass>0.15</Mass>
             <Volume>0.15</Volume>
             <Model>Models\Weapons\Pistol_FlareGun_Magazine.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
@@ -129,8 +129,8 @@
             <MinimumOrderAmount>10</MinimumOrderAmount>
             <MaximumOrderAmount>1000</MaximumOrderAmount>
             <CanPlayerOrder>false</CanPlayerOrder>
-			<CanSpawnFromScreen>false</CanSpawnFromScreen>
-        </AmmoMagazine>
+            <CanSpawnFromScreen>false</CanSpawnFromScreen>
+        </AmmoMagazine>      
 
         <AmmoMagazine>
             <Id>
@@ -274,8 +274,8 @@
                 <Y>0.2</Y>
                 <Z>0.2</Z>
             </Size>
-            <Mass>180</Mass>
-            <Volume>90</Volume>
+            <Mass>120</Mass>
+            <Volume>60</Volume>
             <Model>Models\Weapons\Projectile_Missile.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>1</Capacity>
@@ -293,15 +293,15 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>Missile200mm_CsBlank</SubtypeId>
             </Id>
-            <DisplayName>Missile Blank</DisplayName>
+            <DisplayName>DisplayName_Item_Missile200mm</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Small_Rocket.dds</Icon>
             <Size>
                 <X>1.2</X>
                 <Y>0.2</Y>
                 <Z>0.2</Z>
             </Size>
-            <Mass>180</Mass>
-            <Volume>90</Volume>
+            <Mass>120</Mass>
+            <Volume>60</Volume>
             <Model>Models\Weapons\Projectile_Missile.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>1</Capacity>
