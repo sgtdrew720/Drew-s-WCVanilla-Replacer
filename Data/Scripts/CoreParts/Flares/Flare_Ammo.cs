@@ -148,7 +148,7 @@ namespace Scripts
                     NoSound = false,
                     ParticleScale = 2.0f,
                     CustomParticle = "Explosion_Flare", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "ArcImpMetalMetalCat0", // SubtypeID from your Audio SBC, not a filename
+                    CustomSound = "None", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
                 },
             },
@@ -225,19 +225,24 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.75f, end: 2f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
+                    DropParentVelocity = false, // If set to true will not take on the parents (grid/player) initial velocity when rendering.
+
                     Tracer = new TracerBaseDef
                     {
-                        Enable = true,
-                        Length = (float)(1), //
-                        Width = (float)(0.1), //
-                        Color = Color(red: 25f, green: 15f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Enable = false,
+                        Length = 5f, //
+                        Width = 0.1f, //
+                        Color = Color(red: 3, green: 2, blue: 1f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        FactionColor = DontUse, // DontUse, Foreground, Background.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        AlwaysDraw = false, // Prevents this tracer from being culled.  Only use if you have a reason too (very long tracers/trails).
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -248,12 +253,29 @@ namespace Scripts
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
+                            FactionColor = DontUse, // DontUse, Foreground, Background.
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        AlwaysDraw = false, // Prevents this tracer from being culled.  Only use if you have a reason too (very long tracers/trails).
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        FactionColor = DontUse, // DontUse, Foreground, Background.
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
                     },
                     OffsetEffect = new OffsetEffectDef
                     {
@@ -267,6 +289,7 @@ namespace Scripts
             {
                 TravelSound = "", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "ArcImpMetalMetalCat0",
+                ShotSound = "ArcWeFireworkShot",
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
@@ -463,19 +486,24 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.75f, end: 2f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
+                    DropParentVelocity = false, // If set to true will not take on the parents (grid/player) initial velocity when rendering.
+
                     Tracer = new TracerBaseDef
                     {
-                        Enable = true,
-                        Length = (float)(1), //
-                        Width = (float)(0.1), //
-                        Color = Color(red: 25f, green: 15f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Enable = false,
+                        Length = 5f, //
+                        Width = 0.1f, //
+                        Color = Color(red: 3, green: 2, blue: 1f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        FactionColor = DontUse, // DontUse, Foreground, Background.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        AlwaysDraw = false, // Prevents this tracer from being culled.  Only use if you have a reason too (very long tracers/trails).
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -486,12 +514,29 @@ namespace Scripts
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
+                            FactionColor = DontUse, // DontUse, Foreground, Background.
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        AlwaysDraw = false, // Prevents this tracer from being culled.  Only use if you have a reason too (very long tracers/trails).
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        FactionColor = DontUse, // DontUse, Foreground, Background.
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
                     },
                     OffsetEffect = new OffsetEffectDef
                     {
@@ -701,19 +746,24 @@ namespace Scripts
                 },
                 Lines = new LineDef
                 {
-                    TracerMaterial = "Drac01", // WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
-                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    ColorVariance = Random(start: 0.75f, end: 2f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
+                    DropParentVelocity = false, // If set to true will not take on the parents (grid/player) initial velocity when rendering.
+
                     Tracer = new TracerBaseDef
                     {
                         Enable = false,
-                        Length = (float)(1), //
-                        Width = (float)(0.1), //
-                        Color = Color(red: 25f, green: 15f, blue: 10f, alpha: 1f), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 5f, //
+                        Width = 0.1f, //
+                        Color = Color(red: 3, green: 2, blue: 1f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        FactionColor = DontUse, // DontUse, Foreground, Background.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] { "Drac01", "Drac02", "Drac03", "Drac04", "Drac05", "Drac06", "Drac07", "Drac08", "Drac09", "Drac10", "Drac11", "Drac12", "Drac13", "Drac14", "Drac15" },
-                        TextureMode = Texture.Cycle, // Normal, Cycle, Chaos, Wave
+                        AlwaysDraw = false, // Prevents this tracer from being culled.  Only use if you have a reason too (very long tracers/trails).
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
@@ -724,12 +774,29 @@ namespace Scripts
                             SegmentGap = 0f, // Uses Tracer textures and values
                             Speed = 1f, // meters per second
                             Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
+                            FactionColor = DontUse, // DontUse, Foreground, Background.
                             WidthMultiplier = 1f,
-                            Reverse = false,
+                            Reverse = false, 
                             UseLineVariance = true,
                             WidthVariance = Random(start: 0f, end: 0f),
                             ColorVariance = Random(start: 0f, end: 0f)
                         }
+                    },
+                    Trail = new TrailDef
+                    {
+                        Enable = false,
+                        AlwaysDraw = false, // Prevents this tracer from being culled.  Only use if you have a reason too (very long tracers/trails).
+                        Textures = new[] {
+                            "", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal,
+                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        Color = Color(red: 0, green: 0, blue: 1, alpha: 1),
+                        FactionColor = DontUse, // DontUse, Foreground, Background.
+                        Back = false,
+                        CustomWidth = 0,
+                        UseWidthVariance = false,
+                        UseColorFade = true,
                     },
                     OffsetEffect = new OffsetEffectDef
                     {
@@ -743,6 +810,7 @@ namespace Scripts
             {
                 TravelSound = "", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
                 HitSound = "ArcImpMetalMetalCat0",
+                ShotSound = "ArcWeFireworkShot",
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
