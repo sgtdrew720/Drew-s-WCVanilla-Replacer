@@ -31,7 +31,10 @@ namespace Scripts
                             LargeSearchlight,
                             SmallSearchlight,
                             LargeFlare,
-                            SmallFlare
+                            SmallFlare,
+                            AdvancedHandHeldLauncherGun,
+                            BasicHandHeldLauncherGun,
+                            FlarePistol, 
                             );
         }
     }
