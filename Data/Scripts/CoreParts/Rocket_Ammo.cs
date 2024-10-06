@@ -53,7 +53,7 @@ namespace Scripts
                 Degrees = 0, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -356,8 +356,8 @@ namespace Scripts
                 Fragments = 10, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
-                DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -5f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                DropVelocity = true, // fragments will not inherit velocity from parent.
+                Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -641,7 +641,7 @@ namespace Scripts
                 Degrees = 0, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -941,8 +941,8 @@ namespace Scripts
                 Fragments = 10, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
-                DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -5f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                DropVelocity = true, // fragments will not inherit velocity from parent.
+                Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1219,7 +1219,7 @@ namespace Scripts
                 Degrees = 0, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1506,8 +1506,8 @@ namespace Scripts
                 Fragments = 10, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
-                DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -5f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
+                DropVelocity = true, // fragments will not inherit velocity from parent.
+                Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1754,7 +1754,7 @@ namespace Scripts
             AmmoRound = "EWARFragment220mm", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.0002f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 500f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0f, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 10f, // Recoil. This is applied to the Parent Grid.
@@ -1775,7 +1775,7 @@ namespace Scripts
                 MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
-                HealthHitModifier = 5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
@@ -1806,7 +1806,7 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 100f, // voxel phasing if you go above 5100
+                DesiredSpeed = 250f, // voxel phasing if you go above 5100
                 MaxTrajectory = 100f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: -75, end: 75), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
