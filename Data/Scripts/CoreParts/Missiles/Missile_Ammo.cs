@@ -1622,6 +1622,178 @@ namespace Scripts
             }, // Don't edit below this line
         };
 
+
+        private AmmoDef EWARFragment220mm => new AmmoDef // Your ID, for slotting into the Weapon CS
+        {
+            AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
+            AmmoRound = "EWARFragment220mm", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
+            HybridRound = false, // Use both a physical ammo magazine and energy per shot.
+            EnergyCost = 0.0002f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
+            BaseDamage = 500f, // Direct damage; one steel plate is worth 100.
+            Mass = 1f, // In kilograms; how much force the impact will apply to the target.
+            Health = 0f, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
+            BackKickForce = 10f, // Recoil. This is applied to the Parent Grid.
+            HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
+            EnergyMagazineSize = 1, // For energy weapons, how many shots to fire before reloading.
+            Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
+            {
+                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
+                Diameter = 10f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+            },
+            ObjectsHit = new ObjectsHitDef
+            {
+                MaxObjectsHit = 1, // Limits the number of entities (grids, players, projectiles) the projectile can penetrate; 0 = unlimited.
+                CountBlocks = false, // Counts individual blocks, not just entities hit.
+            },
+            DamageScales = new DamageScaleDef
+            {
+                MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
+                DamageVoxels = false, // Whether to damage voxels.
+                SelfDamage = false, // Whether to damage the weapon's own grid.
+                HealthHitModifier = 5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
+                // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
+                Grids = new GridSizeDef
+                {
+                    Large = 1.0f, // Multiplier for damage against large grids.
+                    Small = 1.0f, // Multiplier for damage against small grids.
+                },
+                Armor = new ArmorDef
+                {
+                    Armor = 0.5f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
+                    Light = -1f, // Multiplier for damage against light armor.
+                    Heavy = -1f, // Multiplier for damage against heavy armor.
+                    NonArmor = 2.0f, // Multiplier for damage against every else.
+                },
+                DamageType = new DamageTypes // Damage type of each element of the projectile's damage; Kinetic, Energy
+                {
+                    Base = Kinetic, // Base Damage uses this
+                    AreaEffect = Kinetic,
+                    Detonation = Kinetic,
+                    Shield = Kinetic, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
+                },
+            },
+            Trajectory = new TrajectoryDef
+            {
+                Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
+                TargetLossDegree = 0f, // Degrees, Is pointed forward
+                TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                MaxLifeTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
+                AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
+                DesiredSpeed = 100f, // voxel phasing if you go above 5100
+                MaxTrajectory = 250f, // Max Distance the projectile or beam can Travel.
+                GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
+                SpeedVariance = Random(start: -50, end: 50), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
+                MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
+            },
+            AmmoGraphics = new GraphicDef
+            {
+                ModelName = "", // Model Path goes here.  "\\Models\\Ammo\\Starcore_Arrow_Missile_Large"
+                VisualProbability = 1f, // %
+                ShieldHitDraw = false,
+                Particles = new AmmoParticleDef
+                {
+                    Ammo = new ParticleDef
+                    {
+                        Name = "", //ShipWelderArc
+                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Scale = 1,
+                        },
+                    },
+                    Hit = new ParticleDef
+                    {
+                        Name = "PDCStrikeNoSmoke",
+                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Scale = 0.75f,
+                            HitPlayChance = 0.25f,
+                            MaxDistance = 13000,
+                            Loop = false,
+                        },
+                    },
+                    Eject = new ParticleDef
+                    {
+                        Name = "",
+                        ApplyToShield = true,
+                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Scale = 1,
+                            HitPlayChance = 1f,
+                        },
+                    },
+                },
+                Lines = new LineDef
+                {
+                    ColorVariance = Random(start: 0.50f, end: 2f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.0f), // adds random value to default width (negatives shrinks width)
+                    Tracer = new TracerBaseDef
+                    {
+                        Enable = true,
+                        Length = 10f, //
+                        Width = 0.1f, //
+                        Color = new VRageMath.Vector4(10, 10, 10, 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
+                        VisualFadeEnd = 5, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] { "BallisticProjectile" },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
+                        Segmentation = new SegmentDef
+                        {
+                            Enable = false, // If true Tracer TextureMode is ignored
+                            Textures = new[] {
+                                "", // Please always have this Line set, if this Section is enabled.
+                            },
+                            SegmentLength = 0f, // Uses the values below.
+                            SegmentGap = 0f, // Uses Tracer textures and values
+                            Speed = 500f, // meters per second
+                            Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
+                            WidthMultiplier = 1f,
+                            Reverse = false,
+                            UseLineVariance = true,
+                            WidthVariance = Random(start: 0f, end: 0f),
+                            ColorVariance = Random(start: 0f, end: 0f)
+                        }
+                    },
+                },
+            },
+            AmmoAudio = new AmmoAudioDef
+            {
+                TravelSound = "", // SubtypeID for your Sound File. Travel, is sound generated around your Projectile in flight
+                HitSound = "ArcImpMetalMetalCat0",
+                ShieldHitSound = "",
+                PlayerHitSound = "",
+                VoxelHitSound = "",
+                FloatingHitSound = "",
+                HitPlayChance = 1f,
+                HitPlayShield = true,
+            },
+        };
+
+        private ParticleDef MakeExplosionEffect(float radius)
+        {
+            return new ParticleDef
+            {
+                Name = "Explosion_Missile",
+                ApplyToShield = true,
+                Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
+                Offset = Vector(x: 0, y: 0, z: 0),
+                Extras = new ParticleOptionDef
+                {
+                    Loop = false,
+                    Restart = false,
+                    MaxDistance = 20000,
+                    MaxDuration = 1,
+                    Scale = radius / 3.0f,
+                    HitPlayChance = 1f,
+                },
+            };
+        }
+
     }
 }
 

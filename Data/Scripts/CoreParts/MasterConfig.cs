@@ -34,7 +34,7 @@ namespace Scripts
                             SmallFlare,
                             AdvancedHandHeldLauncherGun,
                             BasicHandHeldLauncherGun,
-                            FlarePistol, 
+                            FlarePistol 
                             );
         }
     }
