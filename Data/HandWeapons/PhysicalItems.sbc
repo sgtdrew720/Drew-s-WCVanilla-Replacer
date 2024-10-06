@@ -60,7 +60,7 @@
             </Id>
             <DisplayName>DisplayName_Item_AutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle.dds</Icon>
-            <Description>A basic assault rifle, the MR-20 is a staple of both military and police forces. An exceptionaly reliable rifle, it is easy to use, and easy to clean. [33 Damage per Shot, 600 RPM, 800m/s, 1000m Range]</Description>
+            <Description>A basic assault rifle, the MR-20 is a staple of both military and police forces. An exceptionaly reliable rifle, it is easy to use, and easy to clean. [33 Damage per Shot, 600 RPM, 880m/s, 1000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -87,7 +87,7 @@
             </Id>
             <DisplayName>DisplayName_Item_PreciseAutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle_Precise.dds</Icon>
-            <Description>The MR-8P is designed for long range engagments. The model 8P fires at a lower rate of fire, and longer barrel, to achieve unmatched accuracy and stopping power. [45 Damage per Shot, 240 RPM, 800m/s, 1000m Range]</Description>
+            <Description>The MR-8P is designed for long range engagments. The model 8P fires at a lower rate of fire, and longer barrel, to achieve unmatched accuracy and stopping power. [45 Damage per Shot, 240 RPM, 880m/s, 1000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -113,7 +113,7 @@
             </Id>
             <DisplayName>DisplayName_Item_RapidFireAutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle_RapidFire.dds</Icon>
-            <Description>The MR-50A enjoys the notoriety as the smallest squad support machine gun in modern use. The model 50A can unleash a withering stream of suppressive fire at a rate of 900 RPM. [24 Damage per Shot, 900 RPM, 800m/s, 1000m Range]</Description>
+            <Description>The MR-50A enjoys the notoriety as the smallest squad support machine gun in modern use. The model 50A can unleash a withering stream of suppressive fire at a rate of 900 RPM. [24 Damage per Shot, 900 RPM, 880m/s, 1000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -139,7 +139,7 @@
             </Id>
             <DisplayName>DisplayName_Item_EliteAutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle_Elite.dds</Icon>
-            <Description>The MR-30E is a modernized and battle-ready version of the model 20. The model 30E features a 3-round burst-fire, higher overall rate of fire, and red dot sight. [24 Damage per Shot, 900 RPM, 800m/s, 1000m Range]</Description>
+            <Description>The MR-30E is a modernized and battle-ready version of the model 20. The model 30E features a 3-round burst-fire, higher overall rate of fire, and red dot sight. [24 Damage per Shot, 900 RPM, 880m/s, 1000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
