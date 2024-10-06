@@ -13,37 +13,11 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.15</Mass>
-            <Volume>0.1</Volume>
+            <Mass>0.24</Mass>
+            <Volume>0.12</Volume>
             <Model>Models\Weapons\Pistol_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>12</Capacity>
-            <AmmoDefinitionId Subtype="PistolCaliber" />
-
-            <MinimumOfferAmount>10</MinimumOfferAmount>
-            <MaximumOfferAmount>100</MaximumOfferAmount>
-            <MinimumOrderAmount>100</MinimumOrderAmount>
-            <MaximumOrderAmount>2000</MaximumOrderAmount>
-            <CanPlayerOrder>true</CanPlayerOrder>
-        </AmmoMagazine>
-
-        <AmmoMagazine>
-            <Id>
-                <TypeId>AmmoMagazine</TypeId>
-                <SubtypeId>FullAutoPistolMagazine</SubtypeId>
-            </Id>
-            <DisplayName>30 Round Pistol Magazine</DisplayName>
-            <Icon>Textures\GUI\Icons\ammo\Pistol_FullAuto_Warfare_Ammo.dds</Icon>
-            <Size>
-                <X>0.2</X>
-                <Y>0.05</Y>
-                <Z>0.02</Z>
-            </Size>
-            <Mass>0.3</Mass>
-            <Volume>0.15</Volume>
-            <Model>Models\Weapons\Pistol_FullAuto_Magazine_Warfare.mwm</Model>
-            <PhysicalMaterial>Ammo</PhysicalMaterial>
-            <Capacity>30</Capacity>
             <AmmoDefinitionId Subtype="PistolCaliber" />
 
             <MinimumOfferAmount>10</MinimumOfferAmount>
@@ -65,11 +39,37 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.15</Mass>
-            <Volume>0.1</Volume>
+            <Mass>0.36</Mass>
+            <Volume>0.18</Volume>
             <Model>Models\Weapons\Pistol_Elite_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>18</Capacity>
+            <AmmoDefinitionId Subtype="PistolCaliber" />
+
+            <MinimumOfferAmount>10</MinimumOfferAmount>
+            <MaximumOfferAmount>100</MaximumOfferAmount>
+            <MinimumOrderAmount>100</MinimumOrderAmount>
+            <MaximumOrderAmount>2000</MaximumOrderAmount>
+            <CanPlayerOrder>true</CanPlayerOrder>
+        </AmmoMagazine>
+
+        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>FullAutoPistolMagazine</SubtypeId>
+            </Id>
+            <DisplayName>30 Round Pistol Magazine</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\Pistol_FullAuto_Warfare_Ammo.dds</Icon>
+            <Size>
+                <X>0.2</X>
+                <Y>0.05</Y>
+                <Z>0.02</Z>
+            </Size>
+            <Mass>0.60</Mass>
+            <Volume>0.30</Volume>
+            <Model>Models\Weapons\Pistol_FullAuto_Magazine_Warfare.mwm</Model>
+            <PhysicalMaterial>Ammo</PhysicalMaterial>
+            <Capacity>30</Capacity>
             <AmmoDefinitionId Subtype="PistolCaliber" />
 
             <MinimumOfferAmount>10</MinimumOfferAmount>
@@ -91,8 +91,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.05</Mass>
-            <Volume>0.05</Volume>
+            <Mass>0.30</Mass>
+            <Volume>0.15</Volume>
             <Model>Models\Weapons\Pistol_FlareGun_Magazine.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>3</Capacity>
@@ -117,8 +117,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.05</Mass>
-            <Volume>0.05</Volume>
+            <Mass>0.30</Mass>
+            <Volume>0.15</Volume>
             <Model>Models\Weapons\Pistol_FlareGun_Magazine.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>3</Capacity>
@@ -134,46 +134,17 @@
         <AmmoMagazine>
             <Id>
                 <TypeId>AmmoMagazine</TypeId>
-                <SubtypeId>Missile200mm_CsBlank</SubtypeId>
-            </Id>
-            <DisplayName>DisplayName_Item_Missile200mm</DisplayName>
-            <Icon>Textures\GUI\Icons\ammo\Small_Rocket.dds</Icon>
-            <Size>
-                <X>1.2</X>
-                <Y>0.2</Y>
-                <Z>0.2</Z>
-            </Size>
-            <Mass>45</Mass>
-            <Volume>60</Volume>
-            <Model>Models\Weapons\Projectile_Missile.mwm</Model>
-            <PhysicalMaterial>Ammo</PhysicalMaterial>
-            <Capacity>2</Capacity>
-            <AmmoDefinitionId Subtype="Missile_Blank" />
-
-            <MinimumOfferAmount>50</MinimumOfferAmount>
-            <MaximumOfferAmount>500</MaximumOfferAmount>
-            <MinimumOrderAmount>100</MinimumOrderAmount>
-            <MaximumOrderAmount>2000</MaximumOrderAmount>
-            <CanPlayerOrder>false</CanPlayerOrder>
-			<CanSpawnFromScreen>false</CanSpawnFromScreen>
-        </AmmoMagazine>
-
-        
-
-        <AmmoMagazine>
-            <Id>
-                <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>PreciseAutomaticRifleGun_Mag_5rd</SubtypeId>
             </Id>
-            <DisplayName>40 Round 5.7x28 Magazine</DisplayName>
+            <DisplayName>40 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_Precise.dds</Icon>
             <Size>
                 <X>0.2</X>
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.4</Mass>
-            <Volume>0.10</Volume>
+            <Mass>0.80</Mass>
+            <Volume>0.40</Volume>
             <Model>Models\Weapons\Rifle_Precise_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>40</Capacity>
@@ -191,15 +162,15 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>AutomaticRifleGun_Mag_20rd</SubtypeId>
             </Id>
-            <DisplayName>60 Round 5.7x28 Rifle Magazine</DisplayName>
+            <DisplayName>60 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_SemiAuto.dds</Icon>
             <Size>
                 <X>0.2</X>
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.6</Mass>
-            <Volume>0.15</Volume>
+            <Mass>1.20</Mass>
+            <Volume>0.60</Volume>
             <Model>Models\Weapons\Rifle_SemiAuto_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>60</Capacity>
@@ -217,15 +188,15 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>UltimateAutomaticRifleGun_Mag_30rd</SubtypeId>
             </Id>
-            <DisplayName>80 Round 5.7x28 Rifle Magazine</DisplayName>
+            <DisplayName>80 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo.dds</Icon>
             <Size>
                 <X>0.2</X>
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.8</Mass>
-            <Volume>0.20</Volume>
+            <Mass>1.60</Mass>
+            <Volume>0.80</Volume>
             <Model>Models\Weapons\Rifle_Ammo.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>80</Capacity>
@@ -243,15 +214,15 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>RapidFireAutomaticRifleGun_Mag_50rd</SubtypeId>
             </Id>
-            <DisplayName>100 Round 5.7x28 Rifle Magazine</DisplayName>
+            <DisplayName>100 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_RapidFire.dds</Icon>
             <Size>
                 <X>0.2</X>
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>1.0</Mass>
-            <Volume>0.25</Volume>
+            <Mass>2.00</Mass>
+            <Volume>1.00</Volume>
             <Model>Models\Weapons\Rifle_RapidFire_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>100</Capacity>
@@ -269,15 +240,15 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>NATO_5p56x45mm</SubtypeId>
             </Id>
-            <DisplayName>5.7x28 Magazine</DisplayName>
+            <DisplayName>Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo.dds</Icon>
             <Size>
                 <X>0.2</X>
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.45</Mass>
-            <Volume>0.2</Volume>
+            <Mass>2.00</Mass>
+            <Volume>1.00</Volume>
             <Model>Models\Weapons\Rifle_Ammo.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>100</Capacity>
@@ -295,18 +266,18 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>Missile200mm</SubtypeId>
             </Id>
-            <DisplayName>200mm Missile 2 Pack</DisplayName>
+            <DisplayName>200mm Missile</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Small_Rocket.dds</Icon>
             <Size>
                 <X>1.2</X>
                 <Y>0.2</Y>
                 <Z>0.2</Z>
             </Size>
-            <Mass>25</Mass>
-            <Volume>60</Volume>
+            <Mass>180</Mass>
+            <Volume>90</Volume>
             <Model>Models\Weapons\Projectile_Missile.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
-            <Capacity>2</Capacity>
+            <Capacity>1</Capacity>
             <AmmoDefinitionId Subtype="Missile" />
 
             <MinimumOfferAmount>50</MinimumOfferAmount>
@@ -328,11 +299,11 @@
                 <Y>0.2</Y>
                 <Z>0.2</Z>
             </Size>
-            <Mass>45</Mass>
-            <Volume>60</Volume>
+            <Mass>180</Mass>
+            <Volume>90</Volume>
             <Model>Models\Weapons\Projectile_Missile.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
-            <Capacity>2</Capacity>
+            <Capacity>1</Capacity>
             <AmmoDefinitionId Subtype="Missile_Blank" />
 
             <MinimumOfferAmount>50</MinimumOfferAmount>
