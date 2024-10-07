@@ -430,7 +430,7 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 5.0f, // Meters
-                    Damage = 1500f,
+                    Damage = 2000f,
                     Depth = 1.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
@@ -446,7 +446,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 5.0f, // Meters
-                    Damage = 1500f,
+                    Damage = 2000f,
                     Depth = 1.5f,
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
@@ -1016,7 +1016,7 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 5.0f, // Meters
-                    Damage = 1500f,
+                    Damage = 2000f,
                     Depth = 1.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
@@ -1032,7 +1032,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 5.0f, // Meters
-                    Damage = 1500f,
+                    Damage = 2000f,
                     Depth = 1.5f,
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
@@ -1581,7 +1581,7 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 5.0f, // Meters
-                    Damage = 1500f,
+                    Damage = 2000f,
                     Depth = 1.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
@@ -1597,7 +1597,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 5.0f, // Meters
-                    Damage = 1500f,
+                    Damage = 2000f,
                     Depth = 1.5f,
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
@@ -1807,27 +1807,11 @@ namespace Scripts
                 MaxLifeTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 250f, // voxel phasing if you go above 5100
-                MaxTrajectory = 100f, // Max Distance the projectile or beam can Travel.
+                MaxTrajectory = 10f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: -75, end: 75), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
-                Smarts = new SmartsDef
-                {
-                    Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                    Aggressiveness = 1f, // controls how responsive tracking is.
-                    MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn
-                    TrackingDelay = 0, // Measured in Shape diameter units traveled.
-                    MaxChaseTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-                    MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
-                    NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-                    Roam = false, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
-                    OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
-                    OffsetTime = 60, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
-                },
-
             },
             AmmoGraphics = new GraphicDef
             {
@@ -1876,7 +1860,7 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 10f, //
+                        Length = 1f, //
                         Width = 0.1f, //
                         Color = new VRageMath.Vector4(10, 10, 10, 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
