@@ -175,7 +175,6 @@ namespace Scripts
                 ModelName = "", // Model Path goes here.  "\\Models\\Ammo\\Starcore_Arrow_Missile_Large"
                 VisualProbability = 1f, // %
                 ShieldHitDraw = false,
-                Decals = new DecalDef
                 Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
@@ -345,7 +344,7 @@ namespace Scripts
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = -1f, // Multiplier for damage against light armor.
-                    Heavy = -1f, // Multiplier for damage against heavy armor.
+                    Heavy = 0.5f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
@@ -389,7 +388,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 9.0f, // Radius of AOE effect, in meters.
-                    Damage = 2500f,
+                    Damage = 2800f,
                     Depth = 3.0f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 64000f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
@@ -429,7 +428,6 @@ namespace Scripts
                 ModelName = "", // Model Path goes here.  "\\Models\\Ammo\\Starcore_Arrow_Missile_Large"
                 VisualProbability = 1f, // %
                 ShieldHitDraw = false,
-                Decals = new DecalDef
                 Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
