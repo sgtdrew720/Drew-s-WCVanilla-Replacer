@@ -212,6 +212,7 @@ namespace Scripts
                         {
                             Scale = 0.2f,
                             HitPlayChance = 0.5f,
+                            MaxDistance = 10000,
                         },
                     },
                     Eject = new ParticleDef

@@ -222,7 +222,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 16000,
+                            MaxDistance = 10000,
                             Scale = 1.00f,
                         },
                     },
@@ -518,7 +518,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 16000,
+                            MaxDistance = 10000,
                             Scale = 1.0f,
                         },
                     },
@@ -807,7 +807,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 16000,
+                            MaxDistance = 10000,
                             Scale = 1.00f,
                         },
                     },
@@ -1096,7 +1096,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 16000,
+                            MaxDistance = 10000,
                             Scale = 1.0f,
                         },
                     },
@@ -1372,7 +1372,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 16000,
+                            MaxDistance = 10000,
                             Scale = 1.00f,
                         },
                     },
@@ -1651,7 +1651,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 16000,
+                            MaxDistance = 10000,
                             Scale = 1.0f,
                         },
                     },
