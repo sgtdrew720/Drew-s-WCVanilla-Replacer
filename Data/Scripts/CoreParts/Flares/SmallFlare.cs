@@ -231,8 +231,16 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                FireworkBlue, FireworkGreen, FireworkRed, FireworkPink, FireworkYellow, FireworkRainbow, Flare,
-					// Must list all primary, shrapnel, and pattern ammos.
+                FireworkBlue,
+                FireworkGreen,
+                FireworkRed,
+                FireworkPink,
+                FireworkYellow,
+                FireworkRainbow,
+                FlareAmmoStage1,
+                FlareAmmoStage2,
+                FlareAmmoStage1Smart,
+                 // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
