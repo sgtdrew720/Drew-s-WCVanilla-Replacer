@@ -198,7 +198,7 @@ namespace Scripts
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones/smarts
                     Roam = false, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     FocusOnly = true, // only target the constructs Ai's focus target
                     FocusEviction = true, // If FocusOnly and this to true will force smarts to lose target when there is no focus target
                     OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
@@ -492,7 +492,7 @@ namespace Scripts
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     CheckFutureIntersection = true, // Utilize obstacle avoidance for drones/smarts
                     MaxTargets = 5, // Number of targets allowed before ending, 0 = unlimited
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 0.66f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 3000, // The range from target at which offsets are no longer active
@@ -763,7 +763,7 @@ namespace Scripts
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 15f, // Degrees, Is pointed forward
+                TargetLossDegree = 30f, // Degrees, Is pointed forward
                 TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 110, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 200f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
@@ -778,14 +778,14 @@ namespace Scripts
                     Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3f, // controls how responsive tracking is.
                     MaxLateralThrust = 1.0, // controls how sharp the trajectile may turn
-                    TrackingDelay = 100, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 300, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 120, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones/smarts
                     Roam = true, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 60, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     MinTurnSpeed = 50, // set this to a reasonable value to avoid projectiles from spinning in place or being too aggressive turing at slow speeds 
