@@ -89,8 +89,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = 1f, // Multiplier for damage against large grids.
-                    Small = 2f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -188,13 +188,13 @@ namespace Scripts
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
-                    Inaccuracy = 5f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Inaccuracy = 3f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3f, // controls how responsive tracking is.
                     MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn
                     TrackingDelay = 500, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-                    MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
+                    MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones/smarts
                     Roam = false, // Roam current area after target loss
@@ -383,8 +383,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = 1f, // Multiplier for damage against large grids.
-                    Small = 2f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -445,10 +445,10 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 5.0f, // Meters
+                    Radius = 9.0f, // Meters
                     Damage = 2000f,
-                    Depth = 1.5f,
-                    MaxAbsorb = 0f,
+                    Depth = 2.0f,
+                    MaxAbsorb = 50000f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -469,10 +469,10 @@ namespace Scripts
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 45f, // Degrees, Is pointed forward
-                TargetLossTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossDegree = 60f, // Degrees, Is pointed forward
+                TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = (int)((5000d / 800d) * 120d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
-                AccelPerSec = 200f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
+                AccelPerSec = 250f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 800f, // voxel phasing if you go above 5100
                 MaxTrajectory = 4000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
@@ -482,7 +482,7 @@ namespace Scripts
                 Smarts = new SmartsDef
                 {
                     SteeringLimit = 0, // 0 means no limit, value is in degrees, good starting is 150.  This enable advanced smart "control", cost of 3 on a scale of 1-5, 0 being basic smart.
-                    Inaccuracy = 5f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Inaccuracy = 3f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3f, // controls how responsive tracking is, recommended value 3-5.
                     MaxLateralThrust = 0.75, // controls how sharp the projectile may turn, this is the cheaper but less realistic version of SteeringLimit, cost of 2 on a scale of 1-5, 0 being basic smart.
                     NavAcceleration = 0, // helps influence how the projectile steers, 0 defaults to 1/2 Aggressiveness value or 0 if its 0, a value less than 0 disables this feature. 
@@ -491,7 +491,7 @@ namespace Scripts
                     MaxChaseTime = (int)(5000 / 800) * 60, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     CheckFutureIntersection = true, // Utilize obstacle avoidance for drones/smarts
-                    MaxTargets = 5, // Number of targets allowed before ending, 0 = unlimited
+                    MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
                     KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                     OffsetRatio = 0.66f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
@@ -677,8 +677,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = 1f, // Multiplier for damage against large grids.
-                    Small = 2f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -763,10 +763,10 @@ namespace Scripts
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 30f, // Degrees, Is pointed forward
+                TargetLossDegree = 60f, // Degrees, Is pointed forward
                 TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 110, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
-                AccelPerSec = 200f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
+                AccelPerSec = 250f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 800f, // voxel phasing if you go above 5100
                 MaxTrajectory = 5000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
@@ -781,7 +781,7 @@ namespace Scripts
                     TrackingDelay = 300, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 120, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
-                    MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
+                    MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones/smarts
                     Roam = true, // Roam current area after target loss
@@ -969,8 +969,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = 1f, // Multiplier for damage against large grids.
-                    Small = 2f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -1031,10 +1031,10 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 5.0f, // Meters
+                    Radius = 9.0f, // Meters
                     Damage = 2000f,
-                    Depth = 1.5f,
-                    MaxAbsorb = 0f,
+                    Depth = 2.0f,
+                    MaxAbsorb = 50000f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1055,10 +1055,10 @@ namespace Scripts
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 30f, // Degrees, Is pointed forward
+                TargetLossDegree = 60f, // Degrees, Is pointed forward
                 TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = (int)((5000d / 800d) * 120d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
-                AccelPerSec = 200f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
+                AccelPerSec = 250f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 800f, // voxel phasing if you go above 5100
                 MaxTrajectory = 4000f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
@@ -1068,8 +1068,8 @@ namespace Scripts
                 Smarts = new SmartsDef
                 {
                     SteeringLimit = 0, // 0 means no limit, value is in degrees, good starting is 150.  This enable advanced smart "control", cost of 3 on a scale of 1-5, 0 being basic smart.
-                    Inaccuracy = 5f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
-                    Aggressiveness = 3f, // controls how responsive tracking is, recommended value 3-5.
+                    Inaccuracy = 3f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
+                    Aggressiveness = 5f, // controls how responsive tracking is, recommended value 3-5.
                     MaxLateralThrust = 1.0, // controls how sharp the projectile may turn, this is the cheaper but less realistic version of SteeringLimit, cost of 2 on a scale of 1-5, 0 being basic smart.
                     NavAcceleration = 0, // helps influence how the projectile steers, 0 defaults to 1/2 Aggressiveness value or 0 if its 0, a value less than 0 disables this feature. 
                     AccelClearance = false, // Setting this to true will prevent smart acceleration until it is clear of the grid and tracking delay has been met (free fall).
@@ -1255,8 +1255,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = 1f, // Multiplier for damage against large grids.
-                    Small = 2f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -1341,7 +1341,7 @@ namespace Scripts
             Trajectory = new TrajectoryDef
             {
                 Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
-                TargetLossDegree = 5f, // Degrees, Is pointed forward
+                TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 110, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
@@ -1534,8 +1534,8 @@ namespace Scripts
                 },
                 Grids = new GridSizeDef
                 {
-                    Large = 1f, // Multiplier for damage against large grids.
-                    Small = 2f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {
@@ -1596,10 +1596,10 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 5.0f, // Meters
+                    Radius = 9.0f, // Meters
                     Damage = 2000f,
-                    Depth = 1.5f,
-                    MaxAbsorb = 0f,
+                    Depth = 2.0f,
+                    MaxAbsorb = 50000f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1781,8 +1781,8 @@ namespace Scripts
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
-                    Large = 1.0f, // Multiplier for damage against large grids.
-                    Small = 1.0f, // Multiplier for damage against small grids.
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                 },
                 Armor = new ArmorDef
                 {

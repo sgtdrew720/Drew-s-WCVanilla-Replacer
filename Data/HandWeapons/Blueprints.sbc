@@ -58,7 +58,7 @@
                 <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0060_PreciseAutomaticRifleGun_Mag_5rd</SubtypeId>
             </Id>
-            <DisplayName>40 Round 5.7x28 Magazine</DisplayName>
+            <DisplayName>40 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_Precise.dds</Icon>
             <Prerequisites>
                 <Item Amount="0.90" TypeId="Ingot" SubtypeId="Iron" />
@@ -74,7 +74,7 @@
                 <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0040_AutomaticRifleGun_Mag_20rd</SubtypeId>
             </Id>
-            <DisplayName>60 Round 5.7x28 Rifle Magazine</DisplayName>
+            <DisplayName>60 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_SemiAuto.dds</Icon>
             <Prerequisites>
                 <Item Amount="1.35" TypeId="Ingot" SubtypeId="Iron" />
@@ -90,7 +90,7 @@
                 <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0070_UltimateAutomaticRifleGun_Mag_30rd</SubtypeId>
             </Id>
-            <DisplayName>80 Round 5.7x28 Rifle Magazine</DisplayName>
+            <DisplayName>80 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_Elite.dds</Icon>
             <Prerequisites>
                 <Item Amount="1.80" TypeId="Ingot" SubtypeId="Iron" />
@@ -106,7 +106,7 @@
                 <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0050_RapidFireAutomaticRifleGun_Mag_50rd</SubtypeId>
             </Id>
-            <DisplayName>100 Round 5.7x28 Rifle Magazine</DisplayName>
+            <DisplayName>100 Round Rifle Magazine</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo_RapidFire.dds</Icon>
             <Prerequisites>
                 <Item Amount="2.25" TypeId="Ingot" SubtypeId="Iron" />
