@@ -13,7 +13,28 @@ namespace Scripts
             PartDefinitions(
                 AdvancedHandHeldLauncherGun,
                 BasicHandHeldLauncherGun,
-                FlarePistol
+                FlarePistol,
+                LargeGatlingTurret,
+                SmallGatlingGun,
+                SmallGatlingTurret,
+                LargeMissileLauncher,
+                SmallMissileLauncher,
+                SmallRocketLauncherReload,
+                SmallMissileTurret,
+                LargeInteriorTurret,
+                SmallBlockAutocannon,
+                AutoCannonTurret,
+                LargeBlockAssaultCannonTurret,
+                SmallBlockAssaultCannon,
+                SmallBlockAssaultCannonTurret,
+                LargeBlockArtillery,
+                LargeBlockArtilleryTurret,
+                LargeBlockRailgun,
+                SmallBlockRailgun,
+                LargeSearchlight,
+                SmallSearchlight,
+                LargeFlare,
+                SmallFlare
             );          
         }
     }
