@@ -13,8 +13,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.24</Mass>
-            <Volume>0.12</Volume>
+            <Mass>0.30</Mass>
+            <Volume>0.30</Volume>
             <Model>Models\Weapons\Pistol_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>12</Capacity>
@@ -39,8 +39,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.36</Mass>
-            <Volume>0.18</Volume>
+            <Mass>0.45</Mass>
+            <Volume>0.45</Volume>
             <Model>Models\Weapons\Pistol_Elite_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>18</Capacity>
@@ -65,8 +65,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.60</Mass>
-            <Volume>0.30</Volume>
+            <Mass>0.75</Mass>
+            <Volume>0.75</Volume>
             <Model>Models\Weapons\Pistol_FullAuto_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>30</Capacity>
@@ -91,8 +91,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.15</Mass>
-            <Volume>0.15</Volume>
+            <Mass>1.00</Mass>
+            <Volume>1.00</Volume>
             <Model>Models\Weapons\Pistol_FlareGun_Magazine.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>3</Capacity>
@@ -117,8 +117,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.15</Mass>
-            <Volume>0.15</Volume>
+            <Mass>1.00</Mass>
+            <Volume>1.00</Volume>
             <Model>Models\Weapons\Pistol_FlareGun_Magazine.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>3</Capacity>
@@ -144,8 +144,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>0.80</Mass>
-            <Volume>0.40</Volume>
+            <Mass>1.00</Mass>
+            <Volume>1.00</Volume>
             <Model>Models\Weapons\Rifle_Precise_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>40</Capacity>
@@ -170,8 +170,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>1.20</Mass>
-            <Volume>0.60</Volume>
+            <Mass>1.50</Mass>
+            <Volume>1.50</Volume>
             <Model>Models\Weapons\Rifle_SemiAuto_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>60</Capacity>
@@ -196,8 +196,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>1.60</Mass>
-            <Volume>0.80</Volume>
+            <Mass>2.00</Mass>
+            <Volume>2.00</Volume>
             <Model>Models\Weapons\Rifle_Ammo.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>80</Capacity>
@@ -222,8 +222,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>2.00</Mass>
-            <Volume>1.00</Volume>
+            <Mass>2.50</Mass>
+            <Volume>2.50</Volume>
             <Model>Models\Weapons\Rifle_RapidFire_Magazine_Warfare.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>100</Capacity>
@@ -248,8 +248,8 @@
                 <Y>0.05</Y>
                 <Z>0.02</Z>
             </Size>
-            <Mass>2.00</Mass>
-            <Volume>1.00</Volume>
+            <Mass>2.50</Mass>
+            <Volume>5.00</Volume>
             <Model>Models\Weapons\Rifle_Ammo.mwm</Model>
             <PhysicalMaterial>Ammo</PhysicalMaterial>
             <Capacity>100</Capacity>
