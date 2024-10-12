@@ -25,18 +25,18 @@
 				<TypeId>AmmoMagazine</TypeId>
 				<SubtypeId>NATO_25x184mm</SubtypeId>
 			</Id>
-			<DisplayName>DisplayName_Item_NATO_25x184mm</DisplayName>
+			<DisplayName>NATO 20x175mm Box</DisplayName>
 			<Icon>Textures\GUI\Icons\ammo\Ammo_Box.dds</Icon>
 			<Size>
 				<X>0.25</X>
 				<Y>0.2</Y>
 				<Z>0.2</Z>
 			</Size>
-			<Mass>35</Mass>
-			<Volume>16</Volume>
+			<Mass>60</Mass>
+			<Volume>30</Volume>
 			<Model>Models\Weapons\Ammo_Box.mwm</Model>
 			<PhysicalMaterial>Ammo</PhysicalMaterial>
-			<Capacity>800</Capacity>
+			<Capacity>600</Capacity>
 			<AmmoDefinitionId Subtype="LargeCaliber" />
 			<MinimumOfferAmount>50</MinimumOfferAmount>
 			<MaximumOfferAmount>500</MaximumOfferAmount>
@@ -44,7 +44,37 @@
 			<MaximumOrderAmount>2000</MaximumOrderAmount>
 			<CanPlayerOrder>true</CanPlayerOrder>
 		</AmmoMagazine>
-	</AmmoMagazines>
+
+		
+
+	        <AmmoMagazine>
+            <Id>
+                <TypeId>AmmoMagazine</TypeId>
+                <SubtypeId>AutocannonClip</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_AutoCannonClip</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\AutoCanonShellBox.dds</Icon>
+            <Size>
+                <X>0.25</X>
+                <Y>0.2</Y>
+                <Z>0.2</Z>
+            </Size>
+            <Mass>40</Mass>
+            <Volume>20</Volume>
+            <Model>Models\Weapons\AutoCanonShellBox.mwm</Model>
+            <PhysicalMaterial>Ammo</PhysicalMaterial>
+            <Capacity>100</Capacity>
+            <AmmoDefinitionId Subtype="AutocannonShell" />
+
+            <MinimumOfferAmount>30</MinimumOfferAmount>
+            <MaximumOfferAmount>300</MaximumOfferAmount>
+            <MinimumOrderAmount>10</MinimumOrderAmount>
+            <MaximumOrderAmount>1000</MaximumOrderAmount>
+            <CanPlayerOrder>true</CanPlayerOrder>
+        </AmmoMagazine>
+
+		</AmmoMagazines>
+
 
 	<Ammos>
 		<Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
@@ -67,6 +97,53 @@
 				<ProjectileTrailProbability>0</ProjectileTrailProbability>
 			</ProjectileProperties>
 		</Ammo>
+	
+
+	    <Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>LargeCaliber</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>0</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>0</MaxTrajectory>
+                <BackkickForce>0</BackkickForce>
+                <PhysicalMaterial>GunBullet</PhysicalMaterial>
+                <ExplosiveDamageMultiplier>0.5</ExplosiveDamageMultiplier>
+                <DeathMessage>CauseOfDeath_HeavyWeapons</DeathMessage>
+            </BasicProperties>
+            <ProjectileProperties>
+                <ProjectileTrailScale>0.1</ProjectileTrailScale>
+                <ProjectileHitImpulse>2</ProjectileHitImpulse>
+                <ProjectileMassDamage>90</ProjectileMassDamage>
+                <ProjectileHealthDamage>33</ProjectileHealthDamage>
+                <HeadShot>true</HeadShot>
+            </ProjectileProperties>
+        </Ammo>
+
+		<Ammo xsi:type="MyObjectBuilder_ProjectileAmmoDefinition">
+            <Id>
+                <TypeId>AmmoDefinition</TypeId>
+                <SubtypeId>AutocannonShell</SubtypeId>
+            </Id>
+            <BasicProperties>
+                <DesiredSpeed>0</DesiredSpeed>
+                <SpeedVariance>0</SpeedVariance>
+                <MaxTrajectory>0</MaxTrajectory>
+                <BackkickForce>0</BackkickForce>
+                <PhysicalMaterial>GunAutocannonBullet</PhysicalMaterial>
+                <ExplosiveDamageMultiplier>0.5</ExplosiveDamageMultiplier>
+                <DeathMessage>CauseOfDeath_HeavyWeapons</DeathMessage>
+            </BasicProperties>
+            <ProjectileProperties>
+                <ProjectileTrailScale>0.5</ProjectileTrailScale>
+                <ProjectileHitImpulse>3</ProjectileHitImpulse>
+                <ProjectileMassDamage>500</ProjectileMassDamage>
+                <ProjectileHealthDamage>85</ProjectileHealthDamage>
+                <HeadShot>true</HeadShot>
+            </ProjectileProperties>
+        </Ammo>
 	</Ammos>
 	
 </Definitions>
