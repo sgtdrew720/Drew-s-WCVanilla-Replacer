@@ -257,8 +257,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 3.7f, //
-                        Width = 0.2f, //
+                        Length = 1f, //
+                        Width = 0f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
@@ -542,8 +542,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 3.7f, //
-                        Width = 0.2f, //
+                        Length = 1f, //
+                        Width = 0f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
@@ -842,8 +842,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 3.7f, //
-                        Width = 0.2f, //
+                        Length = 1f, //
+                        Width = 0f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
@@ -1120,8 +1120,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 3.7f, //
-                        Width = 0.2f, //
+                        Length = 1f, //
+                        Width = 0f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
@@ -1407,8 +1407,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 3.7f, //
-                        Width = 0.2f, //
+                        Length = 1f, //
+                        Width = 0f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
@@ -1675,8 +1675,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 3.7f, //
-                        Width = 0.2f, //
+                        Length = 1f, //
+                        Width = 0f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 440, // How many ticks after fade began before it will be invisible.
@@ -1861,7 +1861,7 @@ namespace Scripts
                     {
                         Enable = true,
                         Length = 1f, //
-                        Width = 0.1f, //
+                        Width = 0f, //
                         Color = new VRageMath.Vector4(10, 10, 10, 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 5, // How many ticks after fade began before it will be invisible.
