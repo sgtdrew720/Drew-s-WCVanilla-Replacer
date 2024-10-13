@@ -31,6 +31,7 @@
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="" />
                 <Block Type="MyObjectBuilder_LargeGatlingTurret" Subtype="SmallGatlingTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="" />
+                <!--<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="LargeMissileTurret" />-->
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallMissileTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurret" />

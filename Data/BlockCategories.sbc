@@ -12,6 +12,7 @@
             <StrictSearch>true</StrictSearch>
             <ItemIds>
                 <string>ConveyorSorter/LargeRailgun</string>
+                <string>ConveyorSorter/LargeMissileTurretWC</string>
             </ItemIds>
         </Category>
 
@@ -43,6 +44,7 @@
                 <string>InteriorTurret/LargeInteriorTurret</string>
                 <string>LargeGatlingTurret/(null)</string>
                 <string>LargeMissileTurret/(null)</string>
+                <!--<string>ConveyorSorter/LargeMissileTurret</string>-->
                 <string>LargeGatlingTurret/SmallGatlingTurret</string>
                 <string>LargeMissileTurret/SmallMissileTurret</string>
                 <string>SmallMissileLauncher/LargeMissileLauncher</string>
