@@ -402,7 +402,7 @@
                 <SubtypeId>AutoCannonTurret</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_AutoCannonTurret</DisplayName>
-            <Icon>..\801185519\Textures\GUI\Icons\Cubes\AutocannonTurret_icon.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\AutocannonTurret_icon.dds</Icon>
             <Description>Description_AutoCannonTurret</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
@@ -460,7 +460,7 @@
             <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
             <RotationSpeed>0.001</RotationSpeed>
             <ElevationSpeed>0.001 </ElevationSpeed>
-            <IdleRotation>true</IdleRotation>
+            <IdleRotation>false</IdleRotation>
             <MaxRangeMeters>600</MaxRangeMeters>
             <MinFov>0.1</MinFov>
             <MaxFov>1.04719755</MaxFov>
@@ -559,7 +559,7 @@
                 <SubtypeId>LargeRailgun</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_Railgun</DisplayName>
-            <Icon>..\801185519\Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
             <Description>Description_Railgun</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -618,7 +618,7 @@
                 <SubtypeId>SmallRailgun</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_Railgun</DisplayName>
-            <Icon>..\801185519\Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
             <Description>Description_SmallRailgun</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -675,7 +675,7 @@
                 <SubtypeId>SmallRailgun</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_Railgun</DisplayName>
-            <Icon>..\801185519\Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
             <Description>Description_SmallRailgun</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1041,7 +1041,7 @@
                 <SubtypeId />
             </Id>
             <DisplayName>Missile Turret</DisplayName>
-            <Icon>..\801185519\Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
             <Description>Description_MissileTurret</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
@@ -1131,7 +1131,7 @@
                 <SubtypeId>LargeMissileTurret</SubtypeId>
             </Id>
             <DisplayName>Missile Turret</DisplayName>
-            <Icon>..\801185519\Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
+            <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
             <Description>Description_MissileTurret</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
