@@ -32,7 +32,7 @@ namespace Scripts
                                    Restart = false,
                                    MaxDistance = 3000, //meters
                                    MaxDuration = 0, //ticks 60 = 1 second
-                                   Scale = 0.5f, //How chunky the particle is.
+                                   Scale = 0.75f, //How chunky the particle is.
                                }
                            }
                        },
