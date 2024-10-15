@@ -237,9 +237,9 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
+                FlareAmmoStage1Smart,
                 FlareAmmoStage1,
                 FlareAmmoStage2,
-                FlareAmmoStage1Smart,
                 FireworkBlue,
                 FireworkGreen,
                 FireworkRed,
