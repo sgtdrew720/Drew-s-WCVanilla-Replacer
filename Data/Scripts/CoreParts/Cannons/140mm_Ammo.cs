@@ -48,7 +48,7 @@ namespace Scripts
             BaseDamage = 12000f, // Direct damage; one steel plate is worth 100.
             Mass = 400f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
-            BackKickForce = 20000f, // Recoil. This is applied to the Parent Grid.
+            BackKickForce = 10000f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
@@ -91,7 +91,7 @@ namespace Scripts
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = -1f, // Multiplier for damage against light armor.
-                    Heavy = -1f, // Multiplier for damage against heavy armor.
+                    Heavy = 0.75f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
@@ -135,10 +135,10 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 6f, // Radius of AOE effect, in meters.
-                    Damage = 1400f,
+                    Damage = 2000f,
                     Depth = 2.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 22500f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    MaxAbsorb = 10000f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -160,10 +160,10 @@ namespace Scripts
                 Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 224, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
+                MaxLifeTime = 333, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 800, // voxel phasing if you go above 5100
-                MaxTrajectory = 3500f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 720, // voxel phasing if you go above 5100
+                MaxTrajectory = 4500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 2f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: -25, end: 25), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -301,7 +301,7 @@ namespace Scripts
             BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
             Mass = 400f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
-            BackKickForce = 20000f, // Recoil. This is applied to the Parent Grid.
+            BackKickForce = 10000f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
@@ -342,7 +342,7 @@ namespace Scripts
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
+                    Armor = 0.5f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = -1f, // Multiplier for damage against light armor.
                     Heavy = 0.5f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
@@ -388,10 +388,10 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 9.0f, // Radius of AOE effect, in meters.
-                    Damage = 2800f,
+                    Damage = 3000f,
                     Depth = 3.0f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 64000f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    MaxAbsorb = 36000f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -413,10 +413,10 @@ namespace Scripts
                 Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 224, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
+                MaxLifeTime = 444, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 800, // voxel phasing if you go above 5100
-                MaxTrajectory = 3500f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 540, // voxel phasing if you go above 5100
+                MaxTrajectory = 4500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 2f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: -25, end: 25), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.

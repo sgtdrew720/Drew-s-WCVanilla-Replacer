@@ -181,8 +181,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE30mmShell,
-                APDS30mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE30mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -355,8 +354,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE30mmShell,
-                APDS30mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE30mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,

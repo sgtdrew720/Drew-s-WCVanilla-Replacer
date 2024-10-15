@@ -182,8 +182,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE90mmShell,
-                APDS90mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE90mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -356,8 +355,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE90mmShell,
-                APDS90mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE90mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -530,8 +528,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE90mmShell,
-                APDS90mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE90mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
