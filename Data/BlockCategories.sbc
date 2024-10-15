@@ -2,6 +2,8 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <CategoryClasses>
     
+
+        <!--
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
             <Id>
                 <TypeId>GuiBlockCategoryDefinition</TypeId>
@@ -13,8 +15,10 @@
             <ItemIds>
                 <string>ConveyorSorter/LargeRailgun</string>
                 <string>ConveyorSorter/LargeMissileTurret</string>
+                <string>SmallMissileLauncher/LargeFlareLauncher</string>
             </ItemIds>
         </Category>
+        
 
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
             <Id>
@@ -27,8 +31,10 @@
             <ItemIds>
                 <string>LargeMissileTurret/AutoCannonTurret</string>
                 <string>ConveyorSorter/SmallRailgun</string>
+                <string>SmallMissileLauncher/SmallFlareLauncher</string>
             </ItemIds>
         </Category>
+        -->
 
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
             <Id>
@@ -60,6 +66,8 @@
                 <string>SmallMissileLauncher/SmallMissileLauncherWarfare2</string>
                 <string>SmallMissileLauncherReload/SmallBlockMediumCalibreGun</string>
                 <string>SmallMissileLauncher/LargeBlockLargeCalibreGun</string>
+                <string>SmallMissileLauncher/SmallFlareLauncher</string>
+                <string>SmallMissileLauncher/LargeFlareLauncher</string>
                 <string>LargeMissileTurret/LargeCalibreTurret</string>
                 <string>LargeMissileTurret/LargeBlockMediumCalibreTurret</string>
                 <string>LargeMissileTurret/SmallBlockMediumCalibreTurret</string>
@@ -89,6 +97,8 @@
                 <string>SmallMissileLauncherReload/SmallRailgun</string>
                 <string>SmallMissileLauncherReload/SmallBlockMediumCalibreGun</string>
                 <string>SmallMissileLauncher/LargeBlockLargeCalibreGun</string>
+                <string>SmallMissileLauncher/SmallFlareLauncher</string>
+                <string>SmallMissileLauncher/LargeFlareLauncher</string>
             </ItemIds>
         </Category>
     </CategoryClasses>

@@ -14,6 +14,8 @@ namespace Scripts
                             AdvancedHandHeldLauncherGun,
                             BasicHandHeldLauncherGun,
                             FlarePistol,
+                            LargeFlare,
+                            SmallFlare,
                             LargeGatlingTurret,
                             SmallGatlingGun,
                             SmallGatlingTurret,
