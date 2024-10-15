@@ -24,15 +24,15 @@ namespace Scripts
                            ForceStop = false,
                            Particle = new ParticleDef
                            {
-                               Name = "Muzzle_Flash_RailgunLargeVaRe", //Particle subtypeID
+                               Name = "LargeRailgunChargeup", //Particle subtypeID LargeRailgunChargeup Muzzle_Flash_RailgunLargeVaRe
                                Color = Color(red: 25, green: 25, blue: 25, alpha: 1), //This is redundant as recolouring is no longer supported.
                                Extras = new ParticleOptionDef //do your particle colours in your particle file instead.
                                {
                                    Loop = true, //Should match your particle definition.
                                    Restart = false,
-                                   MaxDistance = 1000, //meters
+                                   MaxDistance = 3000, //meters
                                    MaxDuration = 0, //ticks 60 = 1 second
-                                   Scale = 1, //How chunky the particle is.
+                                   Scale = 0.5, //How chunky the particle is.
                                }
                            }
                        },
@@ -63,7 +63,7 @@ namespace Scripts
                                {
                                    Loop = true, //Should match your particle definition.
                                    Restart = false,
-                                   MaxDistance = 1000, //meters
+                                   MaxDistance = 3000, //meters
                                    MaxDuration = 0, //ticks 60 = 1 second
                                    Scale = 1, //How chunky the particle is.
                                }
