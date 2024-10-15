@@ -5068,7 +5068,7 @@
               </Keys>
             </Property>
             <Property AnimationType="Const" Name="Life" Type="Float">
-              <ValueFloat>0.75</ValueFloat>
+              <ValueFloat>1</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Soft particle distance scale" Type="Float">
               <ValueFloat>0.5</ValueFloat>
@@ -5083,13 +5083,7 @@
               <ValueBool>true</ValueBool>
             </Property>
             <Property AnimationType="Animated" Name="Particles per second" Type="Float">
-              <Keys>
-                <Key>
-                  <Time>0.0051203277</Time>
-                  <ValueFloat>0</ValueFloat>
-                  <Value2D />
-                </Key>
-              </Keys>
+              <Keys />
             </Property>
             <Property AnimationType="Const" Name="Material" Type="MyTransparentMaterial">
               <ValueString>Atlas_D_01</ValueString>
@@ -5191,8 +5185,13 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.01</Time>
+                  <Time>0</Time>
                   <ValueFloat>12</ValueFloat>
+                  <Value2D />
+                </Key>
+                <Key>
+                  <Time>1</Time>
+                  <ValueFloat>6</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -5502,7 +5501,7 @@
               </Keys>
             </Property>
             <Property AnimationType="Const" Name="Life" Type="Float">
-              <ValueFloat>0.75</ValueFloat>
+              <ValueFloat>1</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Soft particle distance scale" Type="Float">
               <ValueFloat>0.5</ValueFloat>
@@ -5517,13 +5516,7 @@
               <ValueBool>true</ValueBool>
             </Property>
             <Property AnimationType="Animated" Name="Particles per second" Type="Float">
-              <Keys>
-                <Key>
-                  <Time>0.0051203277</Time>
-                  <ValueFloat>0</ValueFloat>
-                  <Value2D />
-                </Key>
-              </Keys>
+              <Keys />
             </Property>
             <Property AnimationType="Const" Name="Material" Type="MyTransparentMaterial">
               <ValueString>Atlas_D_01</ValueString>
@@ -5625,8 +5618,13 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.01</Time>
+                  <Time>0</Time>
                   <ValueFloat>12</ValueFloat>
+                  <Value2D />
+                </Key>
+                <Key>
+                  <Time>1</Time>
+                  <ValueFloat>6</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -5936,7 +5934,7 @@
               </Keys>
             </Property>
             <Property AnimationType="Const" Name="Life" Type="Float">
-              <ValueFloat>0.75</ValueFloat>
+              <ValueFloat>1</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Soft particle distance scale" Type="Float">
               <ValueFloat>0.5</ValueFloat>
@@ -5951,13 +5949,7 @@
               <ValueBool>true</ValueBool>
             </Property>
             <Property AnimationType="Animated" Name="Particles per second" Type="Float">
-              <Keys>
-                <Key>
-                  <Time>0.0051203277</Time>
-                  <ValueFloat>0</ValueFloat>
-                  <Value2D />
-                </Key>
-              </Keys>
+              <Keys />
             </Property>
             <Property AnimationType="Const" Name="Material" Type="MyTransparentMaterial">
               <ValueString>Atlas_D_01</ValueString>
@@ -6059,8 +6051,13 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.01</Time>
+                  <Time>0</Time>
                   <ValueFloat>12</ValueFloat>
+                  <Value2D />
+                </Key>
+                <Key>
+                  <Time>1</Time>
+                  <ValueFloat>6</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -6370,7 +6367,7 @@
               </Keys>
             </Property>
             <Property AnimationType="Const" Name="Life" Type="Float">
-              <ValueFloat>0.75</ValueFloat>
+              <ValueFloat>4</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Soft particle distance scale" Type="Float">
               <ValueFloat>0.5</ValueFloat>
@@ -6419,9 +6416,9 @@
             </Property>
             <Property AnimationType="Const" Name="Offset" Type="Vector3">
               <ValueVector3>
-                <X>0.2</X>
+                <X>0.5</X>
                 <Y>0</Y>
-                <Z>5</Z>
+                <Z>4</Z>
               </ValueVector3>
             </Property>
             <Property AnimationType="Const" Name="Rotation velocity var" Type="Float">
@@ -6493,7 +6490,12 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.02</Time>
+                  <Time>0</Time>
+                  <ValueFloat>5</ValueFloat>
+                  <Value2D />
+                </Key>
+                <Key>
+                  <Time>0.5</Time>
                   <ValueFloat>5</ValueFloat>
                   <Value2D />
                 </Key>
@@ -6804,7 +6806,7 @@
               </Keys>
             </Property>
             <Property AnimationType="Const" Name="Life" Type="Float">
-              <ValueFloat>0.75</ValueFloat>
+              <ValueFloat>4</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Soft particle distance scale" Type="Float">
               <ValueFloat>0.5</ValueFloat>
@@ -6853,9 +6855,9 @@
             </Property>
             <Property AnimationType="Const" Name="Offset" Type="Vector3">
               <ValueVector3>
-                <X>-0.2</X>
+                <X>-0.5</X>
                 <Y>0</Y>
-                <Z>5</Z>
+                <Z>4</Z>
               </ValueVector3>
             </Property>
             <Property AnimationType="Const" Name="Rotation velocity var" Type="Float">
@@ -6927,7 +6929,12 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.02</Time>
+                  <Time>0</Time>
+                  <ValueFloat>5</ValueFloat>
+                  <Value2D />
+                </Key>
+                <Key>
+                  <Time>0.5</Time>
                   <ValueFloat>5</ValueFloat>
                   <Value2D />
                 </Key>
