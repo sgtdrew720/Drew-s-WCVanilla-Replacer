@@ -1910,7 +1910,7 @@ namespace Scripts
                 {
                     Loop = false,
                     Restart = false,
-                    MaxDistance = 20000,
+                    MaxDistance = 6000,
                     MaxDuration = 1,
                     Scale = radius / 3.0f,
                     HitPlayChance = 1f,
