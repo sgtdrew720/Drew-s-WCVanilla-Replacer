@@ -92,8 +92,8 @@ namespace Scripts {
                     MaxElevation = 90,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
-                    InventorySize = 0f, // Inventory capacity in kL.
-                    IdlePower = 0.5, // Constant base power draw in MW.
+                    InventorySize = 0.001f, // Inventory capacity in kL.
+                    IdlePower = 0.5f, // Constant base power draw in MW.
                     FixedOffset = false, // Deprecated.
                     Offset = Vector(x: 0, y: 0, z: 0), // Offsets the aiming/firing line of the weapon, in metres.
                     Type = HandWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
@@ -119,7 +119,7 @@ namespace Scripts {
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 3600, // Set this to 3600 for beam weapons. This is how fast your Gun fires.
+                    RateOfFire = 0, // Set this to 3600 for beam weapons. This is how fast your Gun fires.
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
@@ -265,8 +265,8 @@ namespace Scripts {
                     MaxElevation = 90,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
-                    InventorySize = 0f, // Inventory capacity in kL.
-                    IdlePower = 0.5, // Constant base power draw in MW.
+                    InventorySize = 0.001f, // Inventory capacity in kL.
+                    IdlePower = 0.5f, // Constant base power draw in MW.
                     FixedOffset = false, // Deprecated.
                     Offset = Vector(x: 0, y: 0, z: 0), // Offsets the aiming/firing line of the weapon, in metres.
                     Type = HandWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
@@ -292,7 +292,7 @@ namespace Scripts {
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 3600, // Set this to 3600 for beam weapons. This is how fast your Gun fires.
+                    RateOfFire = 0, // Set this to 3600 for beam weapons. This is how fast your Gun fires.
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
