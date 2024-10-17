@@ -168,7 +168,6 @@ namespace Scripts
                     NoSound = false,
                     ParticleScale = 3,
                     CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
-                    //CustomParticle = "Explosion_Torpedo", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
                 },
@@ -222,19 +221,19 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 10000,
+                            MaxDistance = 6000,
                             Scale = 1.00f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "PDCStrikeNoSmoke",
+                        Name = "20mmStrike",
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
                             Scale = 0.5f,
                             HitPlayChance = 1.0f,
-                            MaxDistance = 5000,
+                            MaxDistance = 6000,
                             Loop = false,
                         },
                     },
@@ -518,7 +517,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 10000,
+                            MaxDistance = 6000,
                             Scale = 1.0f,
                         },
                     },
@@ -807,19 +806,19 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 10000,
+                            MaxDistance = 6000,
                             Scale = 1.00f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "PDCStrikeNoSmoke",
+                        Name = "20mmStrike",
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
                             Scale = 0.5f,
                             HitPlayChance = 1.0f,
-                            MaxDistance = 5000,
+                            MaxDistance = 6000,
                             Loop = false,
                         },
                     },
@@ -1096,7 +1095,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 10000,
+                            MaxDistance = 6000,
                             Scale = 1.0f,
                         },
                     },
@@ -1372,19 +1371,19 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 10000,
+                            MaxDistance = 6000,
                             Scale = 1.00f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "PDCStrikeNoSmoke",
+                        Name = "20mmStrike",
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
                             Scale = 0.5f,
                             HitPlayChance = 1.0f,
-                            MaxDistance = 5000,
+                            MaxDistance = 6000,
                             Loop = false,
                         },
                     },
@@ -1651,7 +1650,7 @@ namespace Scripts
                         {
                             Loop = true,
                             Restart = false,
-                            MaxDistance = 10000,
+                            MaxDistance = 6000,
                             Scale = 1.0f,
                         },
                     },
@@ -1831,7 +1830,7 @@ namespace Scripts
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "PDCStrikeNoSmoke",
+                        Name = "20mmStrike",
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {

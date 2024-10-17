@@ -150,7 +150,7 @@ namespace Scripts
                     NoVisuals = false,
                     NoSound = false,
                     ParticleScale = 0.33f,
-                    CustomParticle = "PDCStrikeNoSmoke", // Particle SubtypeID, from your Particle SBC
+                    CustomParticle = "20mmStrike", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
                 }, 

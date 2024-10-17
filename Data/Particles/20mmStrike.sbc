@@ -2,7 +2,7 @@
 <Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ParticleEffects>
     <ParticleEffect xsi:type="ParticleEffect">
-      <Id Type="MyObjectBuilder_ParticleEffect" Subtype="PDCStrikeNoSmoke" />
+      <Id Type="MyObjectBuilder_ParticleEffect" Subtype="20mmStrike" />
       <ParticleId>-1492322534</ParticleId>
       <Length>5</Length>
       <Preload>0</Preload>
