@@ -1836,7 +1836,7 @@ namespace Scripts
                         {
                             Scale = 0.75f,
                             HitPlayChance = 0.25f,
-                            MaxDistance = 13000,
+                            MaxDistance = 6000,
                             Loop = false,
                         },
                     },
