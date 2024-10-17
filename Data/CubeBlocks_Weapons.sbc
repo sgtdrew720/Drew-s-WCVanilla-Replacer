@@ -7,9 +7,9 @@
                 <TypeId>SmallMissileLauncher</TypeId>
                 <SubtypeId>LargeFlareLauncher</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_FlareLauncher</DisplayName>
+            <DisplayName>Large Flare Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\FlareLauncher.dds</Icon>
-            <Description>Description_LargeFlareLauncher</Description>
+            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles, it can be used to detect grids at range. [Uses flares and firework ammo, 8km detection range]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -59,9 +59,9 @@
                 <TypeId>SmallMissileLauncher</TypeId>
                 <SubtypeId>SmallFlareLauncher</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_FlareLauncher</DisplayName>
+            <DisplayName>Small Flare Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\FlareLauncherSmall.dds</Icon>
-            <Description>Description_LargeFlareLauncher</Description>
+            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles, it can be used to detect grids at range. [Uses flares and firework ammo, 8km detection range]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -112,7 +112,7 @@
 			</Id>
 			<DisplayName>DisplayName_Block_Searchlight</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\Small_Searchlight_Racing.dds</Icon>
-			<Description>Description_Searchlight</Description>
+			<Description>Searchlights are spotlights which can target nearby grids, characters, and projectiles for early detetion. Can also be used as a camera. [8km detection range]</Description>
 			<CubeSize>Small</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<PlaceDecals>false</PlaceDecals>
@@ -206,7 +206,7 @@
 			</Id>
 			<DisplayName>DisplayName_Block_Searchlight</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\Large_Searchlight_Racing.dds</Icon>
-			<Description>Description_Searchlight</Description>
+			<Description>Searchlights are spotlights which can target nearby grids, characters, and projectiles for early detetion. Can also be used as a camera. [8km detection range]</Description>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<PlaceDecals>false</PlaceDecals>
@@ -302,7 +302,7 @@
             </Id>
             <DisplayName>DisplayName_Block_Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
-            <Description>Description_Railgun</Description>
+            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [3km/s Projectile velocity, 4km range, uses Large Railgun Sabots]</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -361,7 +361,7 @@
             </Id>
             <DisplayName>DisplayName_Block_Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
-            <Description>Description_SmallRailgun</Description>
+            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [2km/s Projectile velocity, 4km range, uses Small Railgun Sabots]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -418,7 +418,7 @@
             </Id>
             <DisplayName>DisplayName_Block_RocketLauncher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_launcher_small.dds</Icon>
-            <Description>Description_RocketLauncher</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -472,7 +472,7 @@
             </Id>
             <DisplayName>DisplayName_Block_RocketLauncherWarfare2</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RocketlauncherReskin.dds</Icon>
-            <Description>Description_RocketLauncher</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -526,7 +526,7 @@
             </Id>
             <DisplayName>DisplayName_Block_RocketLauncher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_launcher.dds</Icon>
-            <Description>Description_LargeRocketLauncher</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -582,7 +582,7 @@
             <DisplayName>DisplayName_Block_SmallRocketLauncherReload</DisplayName>
             <BlockPairName>SmallRocketLauncherReload</BlockPairName>
             <Icon>Textures\GUI\Icons\Cubes\RocketLauncherReload.dds</Icon>
-            <Description>Description_RocketLauncherReload</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -637,7 +637,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MissileTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
-            <Description>Description_MissileTurret</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -727,7 +727,7 @@
             </Id>
             <DisplayName>Missile Turret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
-            <Description>Description_MissileTurret</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -811,12 +811,194 @@
 
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>LargeMissileTurretReskin</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_MissileTurretReskin</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinLarge.dds</Icon>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <CubeSize>Large</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="3" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Large\RocketTurretReskin.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="10" />
+                <Component Subtype="Construction" Count="35" />
+                <Component Subtype="MetalGrid" Count="15" />
+                <Component Subtype="LargeTube" Count="6" />
+                <Component Subtype="Motor" Count="16" />
+                <Component Subtype="Computer" Count="10" />
+                <Component Subtype="Construction" Count="15" />
+                <Component Subtype="SteelPlate" Count="30" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\RocketTurretReskinConstruction1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\RocketTurretReskinConstruction2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\RocketTurretReskinConstruction3.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0.01</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>MissileTurretReskin</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>40</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="LargeMissileTurret" />
+            <EnabledTargetingOptions>SmallShips LargeShips Stations Enemies</EnabledTargetingOptions>
+            <HiddenTargetingOptions>Friends Asteroids Missiles</HiddenTargetingOptions>
+            <InventoryMaxVolume>0.384</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-58</MinElevationDegrees>
+            <MaxElevationDegrees>90</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>800</MaxRangeMeters>
+            <RotationSpeed>0.001</RotationSpeed>
+            <ElevationSpeed>0.001 </ElevationSpeed>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>900</PCU>
+            <IsAirTight>false</IsAirTight>
+            <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
+            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
+            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <UpCameraOffset>1.0</UpCameraOffset>
+            <ForwardCameraOffset>0.5</ForwardCameraOffset>
+            <DLC>Contact</DLC>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
+                <TypeId>LargeMissileTurret</TypeId>
+                <SubtypeId>SmallMissileTurretReskin</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_MissileTurretReskin</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinSmall.dds</Icon>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <CubeSize>Small</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <PlaceDecals>false</PlaceDecals>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="5" y="5" z="5" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Small\RocketTurretReskin.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <Component Subtype="SteelPlate" Count="5" />
+                <Component Subtype="Construction" Count="30" />
+                <Component Subtype="MetalGrid" Count="5" />
+                <Component Subtype="LargeTube" Count="2" />
+                <Component Subtype="Motor" Count="8" />
+                <Component Subtype="Computer" Count="10" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="SteelPlate" Count="10" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+                <MountPoint Side="Right" StartX="1" StartY="0" EndX="4" EndY="1" />
+                <MountPoint Side="Back" StartX="1" StartY="0" EndX="4" EndY="1" />
+                <MountPoint Side="Left" StartX="1" StartY="0" EndX="4" EndY="1" />
+                <MountPoint Side="Front" StartX="1" StartY="0" EndX="4" EndY="1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\Small\RocketTurretReskinConstruction1.mwm" />
+                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\RocketTurretReskinConstruction2.mwm" />
+            </BuildProgressModels>
+            <VoxelPlacement>
+                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
+                <StaticMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0</MinAllowed>
+                </StaticMode>
+                <DynamicMode>
+                    <PlacementMode>OutsideVoxel</PlacementMode>
+                    <MaxAllowed>0.2</MaxAllowed>
+                    <MinAllowed>0.01</MinAllowed>
+                </DynamicMode>
+            </VoxelPlacement>
+            <BlockPairName>MissileTurretReskin</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>25</BuildTimeSeconds>
+            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
+            <WeaponDefinitionId Subtype="SmallMissileTurret" />
+            <EnabledTargetingOptions>SmallShips LargeShips Stations Enemies</EnabledTargetingOptions>
+            <HiddenTargetingOptions>Friends Asteroids Missiles</HiddenTargetingOptions>
+            <InventoryMaxVolume>0.12</InventoryMaxVolume>
+            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
+            <DamagedSound>ParticleWeapExpl</DamagedSound>
+            <ResourceSinkGroup>Defense</ResourceSinkGroup>
+            <MinElevationDegrees>-8</MinElevationDegrees>
+            <MaxElevationDegrees>180</MaxElevationDegrees>
+            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
+            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
+            <IdleRotation>true</IdleRotation>
+            <MaxRangeMeters>600</MaxRangeMeters>
+            <RotationSpeed>0.0015</RotationSpeed>
+            <ElevationSpeed>0.0015 </ElevationSpeed>
+            <EmissiveColorPreset>Default</EmissiveColorPreset>
+            <MinFov>0.1</MinFov>
+            <MaxFov>1.04719755</MaxFov>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>900</PCU>
+            <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
+            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
+            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
+            <TieredUpdateTimes>
+                <unsignedInt>10</unsignedInt>
+                <unsignedInt>0</unsignedInt>
+            </TieredUpdateTimes>
+            <TargetingGroups>
+                <string>Weapons</string>
+            </TargetingGroups>
+            <DLC>Contact</DLC>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+            <Id>
                 <TypeId>InteriorTurret</TypeId>
                 <SubtypeId>LargeInteriorTurret</SubtypeId>
             </Id>
             <DisplayName>DisplayName_Block_InteriorTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\interior_turret.dds</Icon>
-            <Description>Description_InteriorTurret</Description>
+            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded with 20mm boxes.  [1000m/s Projectile velocity, 2km range, uses 20mm Magazines]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -904,7 +1086,7 @@
             </Id>
             <DisplayName>DisplayName_Block_HeavyCalibreGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreGun.dds</Icon>
-            <Description>Description_HeavyCalibreGun</Description>
+            <Description>A high damage low rate of fire cannon, designed for engaging slower moving armored targets, able to select between APHE and HE shells.    [540-720m/s Projectile velocity, 4km range, uses Artillery Shells]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -968,7 +1150,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCaliberGun.dds</Icon>
-            <Description>Description_MediumCalibreGun</Description>
+            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [800m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1031,7 +1213,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret_Small.dds</Icon>
-            <Description>Description_MediumCalibreGun</Description>
+            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [800m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1120,7 +1302,7 @@
             </Id>
             <DisplayName>DisplayName_Block_Autocannon</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\AutoCannon.dds</Icon>
-            <Description>Description_Autocannon</Description>
+            <Description>A Low damage High rate of fire cannon, designed for engaging armored targets.    [1250m/s Projectile velocity, 2km range, uses 30mm Cannon Magazines]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1184,7 +1366,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatling_gun.dds</Icon>
-            <Description>Description_GatlingGun</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="1" z="4" />
@@ -1238,7 +1420,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingGunWarfare2</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatlingGunReskin.dds</Icon>
-            <Description>Description_GatlingGun</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="1" z="4" />
@@ -1293,7 +1475,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatling_turret.dds</Icon>
-            <Description>Description_GatlingTurret</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1381,7 +1563,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatling_turret.dds</Icon>
-            <Description>Description_GatlingTurret</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1469,7 +1651,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurretLarge.dds</Icon>
-            <Description>Description_MediumCalibreTurret</Description>
+            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [800m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1561,7 +1743,7 @@
             </Id>
             <DisplayName>DisplayName_Block_LargeCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreTurret.dds</Icon>
-            <Description>Description_LargeCalibreTurret</Description>
+            <Description>A high damage low rate of fire cannon, designed for engaging slower moving armored targets, able to select between APHE and HE shells.    [540-720m/s Projectile velocity, 4km range, uses Artillery Shells]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1650,188 +1832,7 @@
                 <Z>0</Z>
             </AimingOffset>
         </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
-            <Id>
-                <TypeId>LargeMissileTurret</TypeId>
-                <SubtypeId>LargeMissileTurretReskin</SubtypeId>
-            </Id>
-            <DisplayName>DisplayName_Block_MissileTurretReskin</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinLarge.dds</Icon>
-            <Description>Description_MissileTurret</Description>
-            <CubeSize>Large</CubeSize>
-            <GuiVisible>false</GuiVisible>
-            <PlaceDecals>false</PlaceDecals>
-            <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="3" y="3" z="3" />
-            <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\Large\RocketTurretReskin.mwm</Model>
-            <UseModelIntersection>true</UseModelIntersection>
-            <Components>
-                <Component Subtype="SteelPlate" Count="10" />
-                <Component Subtype="Construction" Count="35" />
-                <Component Subtype="MetalGrid" Count="15" />
-                <Component Subtype="LargeTube" Count="6" />
-                <Component Subtype="Motor" Count="16" />
-                <Component Subtype="Computer" Count="10" />
-                <Component Subtype="Construction" Count="15" />
-                <Component Subtype="SteelPlate" Count="30" />
-            </Components>
-            <CriticalComponent Subtype="Computer" Index="0" />
-            <MountPoints>
-                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="2" EndY="2" />
-            </MountPoints>
-            <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\RocketTurretReskinConstruction1.mwm" />
-                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\RocketTurretReskinConstruction2.mwm" />
-                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\RocketTurretReskinConstruction3.mwm" />
-            </BuildProgressModels>
-            <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
-                <StaticMode>
-                    <PlacementMode>OutsideVoxel</PlacementMode>
-                    <MaxAllowed>0.2</MaxAllowed>
-                    <MinAllowed>0</MinAllowed>
-                </StaticMode>
-                <DynamicMode>
-                    <PlacementMode>OutsideVoxel</PlacementMode>
-                    <MaxAllowed>0.2</MaxAllowed>
-                    <MinAllowed>0.01</MinAllowed>
-                </DynamicMode>
-            </VoxelPlacement>
-            <BlockPairName>MissileTurretReskin</BlockPairName>
-            <MirroringY>Z</MirroringY>
-            <MirroringZ>Y</MirroringZ>
-            <EdgeType>Light</EdgeType>
-            <BuildTimeSeconds>40</BuildTimeSeconds>
-            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
-            <WeaponDefinitionId Subtype="LargeMissileTurret" />
-            <EnabledTargetingOptions>SmallShips LargeShips Stations Enemies</EnabledTargetingOptions>
-            <HiddenTargetingOptions>Friends Asteroids Missiles</HiddenTargetingOptions>
-            <InventoryMaxVolume>0.384</InventoryMaxVolume>
-            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
-            <DamagedSound>ParticleWeapExpl</DamagedSound>
-            <ResourceSinkGroup>Defense</ResourceSinkGroup>
-            <MinElevationDegrees>-58</MinElevationDegrees>
-            <MaxElevationDegrees>90</MaxElevationDegrees>
-            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
-            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <IdleRotation>true</IdleRotation>
-            <MaxRangeMeters>800</MaxRangeMeters>
-            <RotationSpeed>0.001</RotationSpeed>
-            <ElevationSpeed>0.001 </ElevationSpeed>
-            <EmissiveColorPreset>Default</EmissiveColorPreset>
-            <MinFov>0.1</MinFov>
-            <MaxFov>1.04719755</MaxFov>
-            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
-            <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <PCU>900</PCU>
-            <IsAirTight>false</IsAirTight>
-            <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
-            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
-            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
-            <TieredUpdateTimes>
-                <unsignedInt>10</unsignedInt>
-                <unsignedInt>0</unsignedInt>
-            </TieredUpdateTimes>
-            <TargetingGroups>
-                <string>Weapons</string>
-            </TargetingGroups>
-            <UpCameraOffset>1.0</UpCameraOffset>
-            <ForwardCameraOffset>0.5</ForwardCameraOffset>
-            <DLC>Contact</DLC>
-        </Definition>
-
-        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
-            <Id>
-                <TypeId>LargeMissileTurret</TypeId>
-                <SubtypeId>SmallMissileTurretReskin</SubtypeId>
-            </Id>
-            <DisplayName>DisplayName_Block_MissileTurretReskin</DisplayName>
-            <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinSmall.dds</Icon>
-            <Description>Description_MissileTurret</Description>
-            <CubeSize>Small</CubeSize>
-            <GuiVisible>false</GuiVisible>
-            <PlaceDecals>false</PlaceDecals>
-            <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="5" y="5" z="5" />
-            <ModelOffset x="0" y="0" z="0" />
-            <Model>Models\Cubes\Small\RocketTurretReskin.mwm</Model>
-            <UseModelIntersection>true</UseModelIntersection>
-            <Components>
-                <Component Subtype="SteelPlate" Count="5" />
-                <Component Subtype="Construction" Count="30" />
-                <Component Subtype="MetalGrid" Count="5" />
-                <Component Subtype="LargeTube" Count="2" />
-                <Component Subtype="Motor" Count="8" />
-                <Component Subtype="Computer" Count="10" />
-                <Component Subtype="Construction" Count="10" />
-                <Component Subtype="SteelPlate" Count="10" />
-            </Components>
-            <CriticalComponent Subtype="Computer" Index="0" />
-            <MountPoints>
-                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
-                <MountPoint Side="Right" StartX="1" StartY="0" EndX="4" EndY="1" />
-                <MountPoint Side="Back" StartX="1" StartY="0" EndX="4" EndY="1" />
-                <MountPoint Side="Left" StartX="1" StartY="0" EndX="4" EndY="1" />
-                <MountPoint Side="Front" StartX="1" StartY="0" EndX="4" EndY="1" />
-            </MountPoints>
-            <BuildProgressModels>
-                <Model BuildPercentUpperBound="0.43" File="Models\Cubes\Small\RocketTurretReskinConstruction1.mwm" />
-                <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\RocketTurretReskinConstruction2.mwm" />
-            </BuildProgressModels>
-            <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
-                <StaticMode>
-                    <PlacementMode>OutsideVoxel</PlacementMode>
-                    <MaxAllowed>0.2</MaxAllowed>
-                    <MinAllowed>0</MinAllowed>
-                </StaticMode>
-                <DynamicMode>
-                    <PlacementMode>OutsideVoxel</PlacementMode>
-                    <MaxAllowed>0.2</MaxAllowed>
-                    <MinAllowed>0.01</MinAllowed>
-                </DynamicMode>
-            </VoxelPlacement>
-            <BlockPairName>MissileTurretReskin</BlockPairName>
-            <MirroringY>Z</MirroringY>
-            <MirroringZ>Y</MirroringZ>
-            <EdgeType>Light</EdgeType>
-            <BuildTimeSeconds>25</BuildTimeSeconds>
-            <OverlayTexture>Textures\GUI\Screens\turret_overlay.dds</OverlayTexture>
-            <WeaponDefinitionId Subtype="SmallMissileTurret" />
-            <EnabledTargetingOptions>SmallShips LargeShips Stations Enemies</EnabledTargetingOptions>
-            <HiddenTargetingOptions>Friends Asteroids Missiles</HiddenTargetingOptions>
-            <InventoryMaxVolume>0.12</InventoryMaxVolume>
-            <DamageEffectName>Damage_WeapExpl_Damaged</DamageEffectName>
-            <DamagedSound>ParticleWeapExpl</DamagedSound>
-            <ResourceSinkGroup>Defense</ResourceSinkGroup>
-            <MinElevationDegrees>-8</MinElevationDegrees>
-            <MaxElevationDegrees>180</MaxElevationDegrees>
-            <MinAzimuthDegrees>-180</MinAzimuthDegrees>
-            <MaxAzimuthDegrees>180</MaxAzimuthDegrees>
-            <IdleRotation>true</IdleRotation>
-            <MaxRangeMeters>600</MaxRangeMeters>
-            <RotationSpeed>0.0015</RotationSpeed>
-            <ElevationSpeed>0.0015 </ElevationSpeed>
-            <EmissiveColorPreset>Default</EmissiveColorPreset>
-            <MinFov>0.1</MinFov>
-            <MaxFov>1.04719755</MaxFov>
-            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
-            <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <PCU>900</PCU>
-            <AmmoPullAmountPerTick>3</AmmoPullAmountPerTick>
-            <InventoryFillFactorMin>.25</InventoryFillFactorMin>
-            <InventoryFillFactorMax>.5</InventoryFillFactorMax>
-            <TieredUpdateTimes>
-                <unsignedInt>10</unsignedInt>
-                <unsignedInt>0</unsignedInt>
-            </TieredUpdateTimes>
-            <TargetingGroups>
-                <string>Weapons</string>
-            </TargetingGroups>
-            <DLC>Contact</DLC>
-        </Definition>
+        
         
         <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
@@ -1840,7 +1841,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurretReskin</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinLarge.dds</Icon>
-            <Description>Description_GatlingTurret</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1929,7 +1930,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurretReskin</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinSmall.dds</Icon>
-            <Description>Description_GatlingTurret</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
