@@ -251,7 +251,7 @@
               </Keys>
             </Property>
             <Property AnimationType="Const" Name="Life" Type="Float">
-              <ValueFloat>1</ValueFloat>
+              <ValueFloat>0.4</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Soft particle distance scale" Type="Float">
               <ValueFloat>2</ValueFloat>
@@ -2275,7 +2275,7 @@
           </Properties>
         </ParticleLight>
       </ParticleLights>
-      <DistanceMax>5000</DistanceMax>
+      <DistanceMax>8000</DistanceMax>
       <Priority>1</Priority>
     </ParticleEffect>
   </ParticleEffects>
