@@ -120,7 +120,7 @@ namespace Scripts {
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 300, // Set this to 3600 for beam weapons. This is how fast your Gun fires.
+                    RateOfFire = 180, // Set this to 3600 for beam weapons. This is how fast your Gun fires.
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
@@ -144,10 +144,10 @@ namespace Scripts {
                 Audio = new HardPointAudioDef
                 {
                     PreFiringSound = "", // Audio for warmup effect.
-                    FiringSound = "WepTurretInteriorFire", // Audio for firing.
+                    FiringSound = "WepShipGatlingShot", // Audio for firing.
                     FiringSoundPerShot = true, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
                     ReloadSound = "", // Sound SubtypeID, for when your Weapon is in a reloading state
-                    NoAmmoSound = "",
+                    NoAmmoSound = "WepShipGatlingNoAmmo",
                     HardPointRotationSound = "WepTurretGatlingRotate", // Audio played when turret is moving.
                     BarrelRotationSound = "",
                     FireSoundEndDelay = 10, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
@@ -162,8 +162,8 @@ namespace Scripts {
                         Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true, // Set this to the same as in the particle sbc!
-                            Restart = true, // Whether to end a looping effect instantly when firing stops.
+                            Loop = false, // Set this to the same as in the particle sbc!
+                            Restart = false, // Whether to end a looping effect instantly when firing stops.
                             Scale = 3f, // Scale of effect.
                         },
                     },
@@ -182,7 +182,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmo, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,

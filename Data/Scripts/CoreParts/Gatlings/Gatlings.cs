@@ -181,7 +181,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmo, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -538,7 +538,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmo, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -711,7 +711,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmo, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -884,7 +884,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmo, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
