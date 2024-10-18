@@ -2,40 +2,6 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <CategoryClasses>
     
-
-        <!--
-        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
-            <Id>
-                <TypeId>GuiBlockCategoryDefinition</TypeId>
-                <SubtypeId/>
-            </Id>
-            <DisplayName>DisplayName_Category_LargeBlocks</DisplayName>
-            <Name>LargeBlocks</Name>
-            <StrictSearch>true</StrictSearch>
-            <ItemIds>
-                <string>ConveyorSorter/LargeRailgun</string>
-                <string>ConveyorSorter/LargeMissileTurret</string>
-                <string>SmallMissileLauncher/LargeFlareLauncher</string>
-            </ItemIds>
-        </Category>
-        
-
-        <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
-            <Id>
-                <TypeId>GuiBlockCategoryDefinition</TypeId>
-                <SubtypeId/>
-            </Id>
-            <DisplayName>DisplayName_Category_SmallBlocks</DisplayName>
-            <Name>SmallBlocks</Name>
-            <StrictSearch>true</StrictSearch>
-            <ItemIds>
-                <string>LargeMissileTurret/AutoCannonTurret</string>
-                <string>ConveyorSorter/SmallRailgun</string>
-                <string>SmallMissileLauncher/SmallFlareLauncher</string>
-            </ItemIds>
-        </Category>
-        -->
-
         <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
             <Id>
                 <TypeId>GuiBlockCategoryDefinition</TypeId>
@@ -52,7 +18,6 @@
                 <string>LargeGatlingTurret/LargeGatlingTurretReskin</string>
                 <string>LargeMissileTurret/(null)</string>
                 <string>LargeMissileTurret/LargeMissileTurretReskin</string>
-                <!--<string>ConveyorSorter/LargeMissileTurret</string>-->
                 <string>LargeGatlingTurret/SmallGatlingTurret</string>
                 <string>LargeGatlingTurret/SmallGatlingTurretReskin</string>
                 <string>LargeMissileTurret/SmallMissileTurret</string>
@@ -73,6 +38,10 @@
                 <string>LargeMissileTurret/SmallBlockMediumCalibreTurret</string>
                 <string>ConveyorSorter/SmallLaserTurret</string>
                 <string>ConveyorSorter/LargeLaserTurret</string>
+                <!--
+                <string>Searchlight/SmallSearchlight</string>
+                <string>Searchlight/LargeSearchlight</string>
+                -->
             </ItemIds>
         </Category>
 

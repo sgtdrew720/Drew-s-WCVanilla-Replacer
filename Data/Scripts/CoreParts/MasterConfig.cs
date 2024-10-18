@@ -16,6 +16,8 @@ namespace Scripts
                             FlarePistol,
                             LargeFlare,
                             SmallFlare,
+                            LargeLaserTurret,
+                            SmallLaserTurret,
                             LargeGatlingTurret,
                             SmallGatlingGun,
                             SmallGatlingTurret,
