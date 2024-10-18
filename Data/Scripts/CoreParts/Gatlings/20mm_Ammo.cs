@@ -90,7 +90,7 @@ namespace Scripts
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = 0.50f, // Multiplier for damage against light armor.
                     Heavy = 0.25f, // Multiplier for damage against heavy armor.
-                    NonArmor = -1f, // Multiplier for damage against every else.
+                    NonArmor = 1.1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
@@ -341,7 +341,7 @@ namespace Scripts
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = 0.50f, // Multiplier for damage against light armor.
                     Heavy = 0.25f, // Multiplier for damage against heavy armor.
-                    NonArmor = -1f, // Multiplier for damage against every else.
+                    NonArmor = 1.1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
