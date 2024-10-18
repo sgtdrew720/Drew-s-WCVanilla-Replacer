@@ -199,8 +199,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-		LaunchStageAdvanced_Rocket,
 		LaunchStageBasic_Rocket,
+		LaunchStageAdvanced_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
                 SecondStageBasic_Rocket,
@@ -392,8 +392,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-		LaunchStageAdvanced_Rocket,
 		LaunchStageBasic_Rocket,
+		LaunchStageAdvanced_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
                 SecondStageBasic_Rocket,
@@ -582,8 +582,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-		LaunchStageAdvanced_Rocket,
 		LaunchStageBasic_Rocket,
+		LaunchStageAdvanced_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
                 SecondStageBasic_Rocket,
@@ -764,8 +764,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-		LaunchStageAdvanced_Rocket,
 		LaunchStageBasic_Rocket,
+		LaunchStageAdvanced_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
                 SecondStageBasic_Rocket,
@@ -953,8 +953,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-		LaunchStageAdvanced_Rocket,
 		LaunchStageBasic_Rocket,
+		LaunchStageAdvanced_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
                 SecondStageBasic_Rocket,
