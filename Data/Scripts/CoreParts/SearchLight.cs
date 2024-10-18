@@ -181,7 +181,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                Laser180kWAmmo // Must list all primary, shrapnel, and pattern ammos.
+                SearchLightAmmo // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
