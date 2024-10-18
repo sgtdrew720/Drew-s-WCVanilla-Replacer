@@ -199,11 +199,11 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
+		LaunchStageAdvanced_Rocket,
+		LaunchStageBasic_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
-                LaunchStageBasic_Rocket,
                 SecondStageBasic_Rocket,
-                LaunchStageAdvanced_Rocket,
                 SecondStageAdvanced_Rocket,
                 EWARFragment220mm // Must list all primary, shrapnel, and pattern ammos.
             },
@@ -392,11 +392,11 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
+		LaunchStageAdvanced_Rocket,
+		LaunchStageBasic_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
-                LaunchStageBasic_Rocket,
                 SecondStageBasic_Rocket,
-                LaunchStageAdvanced_Rocket,
                 SecondStageAdvanced_Rocket,
                 EWARFragment220mm // Must list all primary, shrapnel, and pattern ammos.
             },
@@ -582,11 +582,11 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
+		LaunchStageAdvanced_Rocket,
+		LaunchStageBasic_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
-                LaunchStageBasic_Rocket,
                 SecondStageBasic_Rocket,
-                LaunchStageAdvanced_Rocket,
                 SecondStageAdvanced_Rocket,
                 EWARFragment220mm // Must list all primary, shrapnel, and pattern ammos.
             },
@@ -764,11 +764,11 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
+		LaunchStageAdvanced_Rocket,
+		LaunchStageBasic_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
-                LaunchStageBasic_Rocket,
                 SecondStageBasic_Rocket,
-                LaunchStageAdvanced_Rocket,
                 SecondStageAdvanced_Rocket,
                 EWARFragment220mm // Must list all primary, shrapnel, and pattern ammos.
             },
@@ -953,11 +953,11 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
+		LaunchStageAdvanced_Rocket,
+		LaunchStageBasic_Rocket,
                 LaunchStageDumb_Rocket,
                 SecondStageDumb_Rocket,
-                LaunchStageBasic_Rocket,
                 SecondStageBasic_Rocket,
-                LaunchStageAdvanced_Rocket,
                 SecondStageAdvanced_Rocket,
                 EWARFragment220mm // Must list all primary, shrapnel, and pattern ammos.
             },
