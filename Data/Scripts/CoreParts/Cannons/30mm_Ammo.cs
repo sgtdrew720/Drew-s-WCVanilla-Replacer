@@ -137,7 +137,7 @@ namespace Scripts
                     Radius = 1.5f, // Radius of AOE effect, in meters.
                     Damage = 200f,
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 400f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 500f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
