@@ -197,7 +197,8 @@ namespace Scripts
                 },
             },
             Ammos = new[] {
-                FlareAmmoStage1,
+		FlareAmmoShortStage1,
+		FlareAmmoLongStage1,
                 FlareAmmoStage2, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
