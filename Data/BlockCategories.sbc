@@ -71,6 +71,8 @@
                 <string>LargeMissileTurret/LargeCalibreTurret</string>
                 <string>LargeMissileTurret/LargeBlockMediumCalibreTurret</string>
                 <string>LargeMissileTurret/SmallBlockMediumCalibreTurret</string>
+                <string>ConveyorSorter/SmallLaserTurret</string>
+                <string>ConveyorSorter/LargeLaserTurret</string>
             </ItemIds>
         </Category>
 
