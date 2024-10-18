@@ -41,6 +41,8 @@
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="LargeBlockMediumCalibreTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="SmallBlockMediumCalibreTurret" />
+                <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="SmallLaserTurret" />
+                <Block Type="MyObjectBuilder_ConveyorSorter" Subtype="LargeLaserTurret" />
                 <Block Type="MyObjectBuilder_InteriorTurret" Subtype="LargeInteriorTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="AutoCannonTurret" />
             </Blocks>
