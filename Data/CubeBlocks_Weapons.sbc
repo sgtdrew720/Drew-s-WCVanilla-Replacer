@@ -183,7 +183,7 @@
 				<unsignedInt>0</unsignedInt>
 			</TieredUpdateTimes>
 			<LightRadius Min="1" Max="5" Default="5" />
-			<LightReflectorRadius Min="10" Max="600" Default="600" />
+			<LightReflectorRadius Min="10" Max="1200" Default="1200" />
 			<LightFalloff Min="1" Max="3" Default="1.5" />
 			<LightIntensity Min="0.5" Max="5" Default="3" />
 			<Flare>SpotlightSmall</Flare>
@@ -263,7 +263,7 @@
 			<MinAzimuthDegrees>-180</MinAzimuthDegrees>
 			<MaxAzimuthDegrees>180</MaxAzimuthDegrees>
 			<IdleRotation>true</IdleRotation>
-			<MaxRangeMeters>1200</MaxRangeMeters>
+			<MaxRangeMeters>1600</MaxRangeMeters>
 			<RotationSpeed>0.0005</RotationSpeed>
 			<ElevationSpeed>0.0005</ElevationSpeed>
 			<EmissiveColorPreset>Default</EmissiveColorPreset>
@@ -278,7 +278,7 @@
 				<unsignedInt>0</unsignedInt>
 			</TieredUpdateTimes>
 			<LightRadius Min="2" Max="10" Default="5" />
-			<LightReflectorRadius Min="10" Max="800" Default="800" />
+			<LightReflectorRadius Min="10" Max="1600" Default="1600" />
 			<LightFalloff Min="1" Max="3" Default="1.5" />
 			<LightIntensity Min="0.5" Max="5" Default="1" />
 			<Flare>SpotlightLarge</Flare>
@@ -635,7 +635,7 @@
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallMissileTurret</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_MissileTurret</DisplayName>
+            <DisplayName>Missile Turret Type I</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
             <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
@@ -725,7 +725,7 @@
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId />
             </Id>
-            <DisplayName>Missile Turret</DisplayName>
+            <DisplayName>Missile Turret Type I</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
             <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
@@ -814,7 +814,7 @@
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>LargeMissileTurretReskin</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_MissileTurretReskin</DisplayName>
+            <DisplayName>Missile Turret Type II</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinLarge.dds</Icon>
             <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
@@ -905,7 +905,7 @@
                 <TypeId>LargeMissileTurret</TypeId>
                 <SubtypeId>SmallMissileTurretReskin</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_MissileTurretReskin</DisplayName>
+            <DisplayName>Missile Turret Type II</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinSmall.dds</Icon>
             <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
