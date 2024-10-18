@@ -96,7 +96,7 @@ namespace Scripts {
                     IdlePower = 0.5f, // Constant base power draw in MW.
                     FixedOffset = false, // Deprecated.
                     Offset = Vector(x: 0, y: 0, z: 0), // Offsets the aiming/firing line of the weapon, in metres.
-                    Type = HandWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
+                    Type = BlockWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
                     CriticalReaction = new CriticalDef
                     {
                         Enable = false, // Enables Warhead behaviour.
@@ -269,7 +269,7 @@ namespace Scripts {
                     IdlePower = 0.5f, // Constant base power draw in MW.
                     FixedOffset = false, // Deprecated.
                     Offset = Vector(x: 0, y: 0, z: 0), // Offsets the aiming/firing line of the weapon, in metres.
-                    Type = HandWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
+                    Type = BlockWeapon, // What type of weapon this is; BlockWeapon, HandWeapon, Phantom 
                     CriticalReaction = new CriticalDef
                     {
                         Enable = false, // Enables Warhead behaviour.
