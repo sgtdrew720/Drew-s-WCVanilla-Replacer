@@ -9,7 +9,7 @@
             </Id>
             <DisplayName>Large Flare Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\FlareLauncher.dds</Icon>
-            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles, it can be used to detect grids at range. [Uses flares and firework ammo, 8km detection range]</Description>
+            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles, it can be used to detect grids at range. [Uses flares and firework ammo, 10km detection range]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -61,7 +61,7 @@
             </Id>
             <DisplayName>Small Flare Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\FlareLauncherSmall.dds</Icon>
-            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles, it can be used to detect grids at range. [Uses flares and firework ammo, 8km detection range]</Description>
+            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles, it can be used to detect grids at range. [Uses flares and firework ammo, 10km detection range]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -112,7 +112,7 @@
 			</Id>
 			<DisplayName>DisplayName_Block_Searchlight</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\Small_Searchlight_Racing.dds</Icon>
-			<Description>Searchlights are spotlights which can target nearby grids, characters, and projectiles for early detetion. Can also be used as a camera. [8km detection range]</Description>
+			<Description>Searchlights are spotlights which can target nearby grids, characters, and projectiles for early detetion. Can also be used as a camera. [10km detection range]</Description>
 			<CubeSize>Small</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<PlaceDecals>false</PlaceDecals>
@@ -206,7 +206,7 @@
 			</Id>
 			<DisplayName>DisplayName_Block_Searchlight</DisplayName>
 			<Icon>Textures\GUI\Icons\Cubes\Large_Searchlight_Racing.dds</Icon>
-			<Description>Searchlights are spotlights which can target nearby grids, characters, and projectiles for early detetion. Can also be used as a camera. [8km detection range]</Description>
+			<Description>Searchlights are spotlights which can target nearby grids, characters, and projectiles for early detetion. Can also be used as a camera. [10km detection range]</Description>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
 			<PlaceDecals>false</PlaceDecals>
