@@ -53,7 +53,7 @@ namespace Scripts
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
-            EnergyMagazineSize = 24, // For energy weapons, how many shots to fire before reloading.
+            EnergyMagazineSize = 12, // For energy weapons, how many shots to fire before reloading.
             IgnoreWater = false, // Whether the projectile should be able to penetrate water when using WaterMod.
             IgnoreVoxels = false, // Whether the projectile should be able to penetrate voxels.
             Synchronize = false, // For future use
@@ -183,7 +183,7 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 1f, //
+                        Length = 5f, //
                         Width = 0.01f, //
                         Color = Color(red: 10f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
@@ -211,7 +211,7 @@ namespace Scripts
                     },
                     Trail = new TrailDef
                     {
-                        Enable = true,
+                        Enable = false,
                         Textures = new[] {
                             "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
                         },
@@ -219,7 +219,7 @@ namespace Scripts
                         DecayTime = 60, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
                         Color = Color(red: 10, green: 20, blue: 10, alpha: 1),
                         Back = false,
-                        CustomWidth = 1f,
+                        CustomWidth = 0.2f,
                         UseWidthVariance = false,
                         UseColorFade = true,
                     },
@@ -272,7 +272,7 @@ namespace Scripts
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
-            EnergyMagazineSize = 24, // For energy weapons, how many shots to fire before reloading.
+            EnergyMagazineSize = 12, // For energy weapons, how many shots to fire before reloading.
             IgnoreWater = false, // Whether the projectile should be able to penetrate water when using WaterMod.
             IgnoreVoxels = false, // Whether the projectile should be able to penetrate voxels.
             Synchronize = false, // For future use
@@ -388,10 +388,10 @@ namespace Scripts
                 Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 19, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
+                MaxLifeTime = 12, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 12000, // voxel phasing if you go above 5100
-                MaxTrajectory = 4000f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 0, // voxel phasing if you go above 5100
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -444,13 +444,13 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 100f, //
-                        Width = 0.25f, //
-                        Color = Color(red: 10f, green: 30f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 5f, //
+                        Width = 0.025f, //
+                        Color = Color(red: 10f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
+                        VisualFadeEnd = 300, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                            "Laser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
@@ -477,10 +477,10 @@ namespace Scripts
                             "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal,
-                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        DecayTime = 6, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
                         Color = Color(red: 10, green: 30, blue: 10, alpha: 1),
                         Back = false,
-                        CustomWidth = 0.25f,
+                        CustomWidth = 0.025f,
                         UseWidthVariance = false,
                         UseColorFade = true,
                     },
@@ -533,7 +533,7 @@ namespace Scripts
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
             HardPointUsable = true, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
-            EnergyMagazineSize = 24, // For energy weapons, how many shots to fire before reloading.
+            EnergyMagazineSize = 12, // For energy weapons, how many shots to fire before reloading.
             IgnoreWater = false, // Whether the projectile should be able to penetrate water when using WaterMod.
             IgnoreVoxels = false, // Whether the projectile should be able to penetrate voxels.
             Synchronize = false, // For future use
@@ -649,10 +649,10 @@ namespace Scripts
                 Guidance = None, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                MaxLifeTime = 19, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
+                MaxLifeTime = 12, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). time begins at 0 and time must EXCEED this value to trigger "time > maxValue". Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
-                DesiredSpeed = 12000, // voxel phasing if you go above 5100
-                MaxTrajectory = 4000f, // Max Distance the projectile or beam can Travel.
+                DesiredSpeed = 0, // voxel phasing if you go above 5100
+                MaxTrajectory = 2000f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
@@ -705,13 +705,13 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 100f, //
-                        Width = 0.25f, //
-                        Color = Color(red: 10f, green: 30f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 5f, //
+                        Width = 0.15f, //
+                        Color = Color(red: 10f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
-                        VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
+                        VisualFadeEnd = 300, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                            "Laser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
@@ -738,10 +738,10 @@ namespace Scripts
                             "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal,
-                        DecayTime = 3, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        DecayTime = 6, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
                         Color = Color(red: 10, green: 30, blue: 10, alpha: 1),
                         Back = false,
-                        CustomWidth = 0.25f,
+                        CustomWidth = 0.15f,
                         UseWidthVariance = false,
                         UseColorFade = true,
                     },

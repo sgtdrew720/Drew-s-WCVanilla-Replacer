@@ -51,6 +51,7 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 60, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
@@ -233,6 +234,7 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 60, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
@@ -408,6 +410,7 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 60, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
@@ -581,6 +584,7 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 60, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
@@ -754,6 +758,7 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 60, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.

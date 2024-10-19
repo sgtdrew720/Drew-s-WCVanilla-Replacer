@@ -31,7 +31,7 @@ namespace Scripts {
                     
                  },
                 Muzzles = new[] {
-                    "spotlight", // Where your Projectiles spawn. Use numbers not Letters. IE Muzzle_01 not Muzzle_A
+                    "camera", // Where your Projectiles spawn. Use numbers not Letters. IE Muzzle_01 not Muzzle_A
                 },
                 Ejector = "", // Optional; empty from which to eject "shells" if specified.
                 Scope = "camera", // Where line of sight checks are performed from. Must be clear of block collision.
@@ -49,8 +49,9 @@ namespace Scripts {
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
-                MaxTargetDistance = 4000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
+                MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 30, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
@@ -58,10 +59,10 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "180kW Laser Turret", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.1f, // Projectile inaccuracy in degrees.
-                AimingTolerance = 40f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
+                DeviateShotAngle = 1.0f, // Projectile inaccuracy in degrees.
+                AimingTolerance = 10f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Accurate, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
-                DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
+                DelayCeaseFire = 3, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
                 AddToleranceToTracking = false, // Allows turret to track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = false, // Whether the weapon can be fired underwater when using WaterMod.
 
@@ -84,8 +85,8 @@ namespace Scripts {
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.0058f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
-                    ElevateRate = 0.0058f, // Max traversal speed of elevation subpart in radians per tick.
+                    RotateRate = 0.0175f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
+                    ElevateRate = 0.0175f, // Max traversal speed of elevation subpart in radians per tick.
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
                     MinElevation = -76,
@@ -123,13 +124,13 @@ namespace Scripts {
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 36, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 18, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 0, // Heat generated per shot.
-                    MaxHeat = 10, // Max heat before weapon enters cooldown (70% of max heat).
-                    Cooldown = .95f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
-                    HeatSinkRate = 0, // Amount of heat lost per second.
+                    HeatPerShot = 2, // Heat generated per shot.
+                    MaxHeat = 120, // Max heat before weapon enters cooldown (70% of max heat).
+                    Cooldown = .8f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
+                    HeatSinkRate = 18, // Amount of heat lost per second.
                     DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
                     ShotsInBurst = 0, // Use this if you don't want the weapon to fire an entire physical magazine in one go. Should not be more than your magazine capacity.
                     DelayAfterBurst = 0, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -143,14 +144,14 @@ namespace Scripts {
                 Audio = new HardPointAudioDef
                 {
                     PreFiringSound = "", // Audio for warmup effect.
-                    FiringSound = "WepTurretInteriorFire", // Audio for firing.
-                    FiringSoundPerShot = true, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
+                    FiringSound = "", // Audio for firing.
+                    FiringSoundPerShot = false, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
                     ReloadSound = "", // Sound SubtypeID, for when your Weapon is in a reloading state
                     NoAmmoSound = "",
                     HardPointRotationSound = "WepTurretGatlingRotate", // Audio played when turret is moving.
                     BarrelRotationSound = "",
-                    FireSoundEndDelay = 10, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
-                    FireSoundNoBurst = true, // Don't stop firing sound from looping when delaying after burst.
+                    FireSoundEndDelay = 0, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
+                    FireSoundNoBurst = false, // Don't stop firing sound from looping when delaying after burst.
                 },
                 Graphics = new HardPointParticleDef
                 {
@@ -204,7 +205,7 @@ namespace Scripts {
                     
                  },
                 Muzzles = new[] {
-                    "spotlight", // Where your Projectiles spawn. Use numbers not Letters. IE Muzzle_01 not Muzzle_A
+                    "camera", // Where your Projectiles spawn. Use numbers not Letters. IE Muzzle_01 not Muzzle_A
                 },
                 Ejector = "", // Optional; empty from which to eject "shells" if specified.
                 Scope = "camera", // Where line of sight checks are performed from. Must be clear of block collision.
@@ -222,8 +223,9 @@ namespace Scripts {
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
-                MaxTargetDistance = 4000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
+                MaxTargetDistance = 2000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                MaxTrackingTime = 30, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
@@ -231,10 +233,10 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "60kW Laser Turret", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.1f, // Projectile inaccuracy in degrees.
-                AimingTolerance = 40f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
+                DeviateShotAngle = 1.0f, // Projectile inaccuracy in degrees.
+                AimingTolerance = 10f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Accurate, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
-                DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
+                DelayCeaseFire = 3, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
                 AddToleranceToTracking = false, // Allows turret to track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = false, // Whether the weapon can be fired underwater when using WaterMod.
 
@@ -257,8 +259,8 @@ namespace Scripts {
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.0058f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
-                    ElevateRate = 0.0058f, // Max traversal speed of elevation subpart in radians per tick.
+                    RotateRate = 0.0175f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
+                    ElevateRate = 0.0175f, // Max traversal speed of elevation subpart in radians per tick.
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
                     MinElevation = -76,
@@ -296,13 +298,13 @@ namespace Scripts {
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 36, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 18, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 0, // Heat generated per shot.
-                    MaxHeat = 10, // Max heat before weapon enters cooldown (70% of max heat).
-                    Cooldown = .95f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
-                    HeatSinkRate = 0, // Amount of heat lost per second.
+                    HeatPerShot = 2, // Heat generated per shot.
+                    MaxHeat = 120, // Max heat before weapon enters cooldown (70% of max heat).
+                    Cooldown = .8f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
+                    HeatSinkRate = 18, // Amount of heat lost per second.
                     DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
                     ShotsInBurst = 0, // Use this if you don't want the weapon to fire an entire physical magazine in one go. Should not be more than your magazine capacity.
                     DelayAfterBurst = 0, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -316,14 +318,14 @@ namespace Scripts {
                 Audio = new HardPointAudioDef
                 {
                     PreFiringSound = "", // Audio for warmup effect.
-                    FiringSound = "WepTurretInteriorFire", // Audio for firing.
-                    FiringSoundPerShot = true, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
+                    FiringSound = "", // Audio for firing.
+                    FiringSoundPerShot = false, // Whether to replay the sound for each shot, or just loop over the entire track while firing.
                     ReloadSound = "", // Sound SubtypeID, for when your Weapon is in a reloading state
                     NoAmmoSound = "",
                     HardPointRotationSound = "WepTurretGatlingRotate", // Audio played when turret is moving.
                     BarrelRotationSound = "",
-                    FireSoundEndDelay = 10, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
-                    FireSoundNoBurst = true, // Don't stop firing sound from looping when delaying after burst.
+                    FireSoundEndDelay = 0, // How long the firing audio should keep playing after firing stops. Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
+                    FireSoundNoBurst = false, // Don't stop firing sound from looping when delaying after burst.
                 },
                 Graphics = new HardPointParticleDef
                 {
