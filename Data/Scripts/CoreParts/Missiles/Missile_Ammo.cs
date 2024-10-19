@@ -1071,7 +1071,7 @@ namespace Scripts
                     AccelClearance = false, // Setting this to true will prevent smart acceleration until it is clear of the grid and tracking delay has been met (free fall).
                     MaxChaseTime = (int)(5000 / 800) * 60, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
-                    OffsetRatio = 0.5f, // The ratio to offset the random direction (0 to 1) 
+                    OffsetRatio = 0.66f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 3000, // The range from target at which offsets are no longer active
                     Roam = true, // Roam current area after target loss
