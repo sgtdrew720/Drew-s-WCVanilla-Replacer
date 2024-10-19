@@ -65,7 +65,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f,  // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -94,8 +94,8 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = 0.50f, // Multiplier for damage against light armor.
-                    Heavy = 0.25f, // Multiplier for damage against heavy armor.
+                    Light = 1.00f, // Multiplier for damage against light armor.
+                    Heavy = 4.00f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
@@ -110,11 +110,6 @@ namespace Scripts
                     AreaEffect = Kinetic,
                     Detonation = Kinetic,
                     Shield = Kinetic, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
-                },
-                Deform = new DeformDef
-                {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
                 },
             },
             Trajectory = new TrajectoryDef
@@ -145,18 +140,24 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 1,
+                            Loop = true,
+                            Restart = true,
+                            MaxDistance = 10000,
+                            MaxDuration = 1,
+                            Scale = 1f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "MaterialHit_Metal_GatlingGun",
+                        Name = "RailgunStrike",
                         ApplyToShield = true,
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 1,
-                            HitPlayChance = 1f,
+                            MaxDistance = 10000,
+                            MaxDuration = 1,
+                            Scale = 1f,
+                            Loop = false,
                         },
                     },
                     Eject = new ParticleDef
@@ -177,14 +178,14 @@ namespace Scripts
                     WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = false,
-                        Length = 15f, //
+                        Enable = true,
+                        Length = 10f, //
                         Width = 0.2f, //
-                        Color = Color(red: 20f, green: 20f, blue: 30f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Color = Color(red: 20f, green: 20f, blue: 40f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        Textures = new[] {// WeaponLaser, WeaponLaser, WarpBubble, etc..
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
@@ -211,7 +212,7 @@ namespace Scripts
                             "WeaponLaser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal,
-                        DecayTime = 12, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        DecayTime = 15, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
                         Color = Color(red: 2, green: 2, blue: 4, alpha: 1),
                         Back = false,
                         CustomWidth = 0.1f,
@@ -222,7 +223,7 @@ namespace Scripts
                     {
                         MaxOffset = 0,// 0 offset value disables this effect
                         MinLength = 0.2f,
-                        MaxLength = 3,
+                        MaxLength = 1,
                     },
                 },
             },
@@ -278,7 +279,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f,  // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -307,8 +308,8 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = 0.50f, // Multiplier for damage against light armor.
-                    Heavy = 0.25f, // Multiplier for damage against heavy armor.
+                    Light = 1.00f, // Multiplier for damage against light armor.
+                    Heavy = 4.00f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
@@ -323,28 +324,6 @@ namespace Scripts
                     AreaEffect = Kinetic,
                     Detonation = Kinetic,
                     Shield = Kinetic, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
-                },
-                Deform = new DeformDef
-                {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
-                },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
                 },
             },
             Trajectory = new TrajectoryDef
@@ -375,18 +354,24 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 1,
+                            Loop = true,
+                            Restart = true,
+                            MaxDistance = 10000,
+                            MaxDuration = 1,
+                            Scale = 1f,
                         },
                     },
                     Hit = new ParticleDef
                     {
-                        Name = "MaterialHit_Metal_GatlingGun",
+                        Name = "RailgunStrike",
                         ApplyToShield = true,
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 1,
-                            HitPlayChance = 1f,
+                            MaxDistance = 10000,
+                            MaxDuration = 1,
+                            Scale = 1f,
+                            Loop = false,
                         },
                     },
                     Eject = new ParticleDef
@@ -407,14 +392,14 @@ namespace Scripts
                     WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = false,
+                        Enable = true,
                         Length = 10f, //
-                        Width = 0.2f, //
-                        Color = Color(red: 20f, green: 20f, blue: 30f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Width = 0.1f, //
+                        Color = Color(red: 20f, green: 20f, blue: 40f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
-                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
-                            "ProjectileTrailLine", // Please always have this Line set, if this Section is enabled.
+                        Textures = new[] {// WeaponLaser, WeaponLaser, WarpBubble, etc..
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
@@ -441,7 +426,7 @@ namespace Scripts
                             "WeaponLaser", // Please always have this Line set, if this Section is enabled.
                         },
                         TextureMode = Normal,
-                        DecayTime = 12, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
+                        DecayTime = 15, // In Ticks. 1 = 1 Additional Tracer generated per motion, 33 is 33 lines drawn per projectile. Keep this number low.
                         Color = Color(red: 2, green: 2, blue: 4, alpha: 1),
                         Back = false,
                         CustomWidth = 0.1f,
@@ -452,7 +437,7 @@ namespace Scripts
                     {
                         MaxOffset = 0,// 0 offset value disables this effect
                         MinLength = 0.2f,
-                        MaxLength = 3,
+                        MaxLength = 1,
                     },
                 },
             },
