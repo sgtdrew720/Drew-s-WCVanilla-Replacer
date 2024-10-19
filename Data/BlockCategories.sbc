@@ -36,8 +36,9 @@
                 <string>LargeMissileTurret/LargeCalibreTurret</string>
                 <string>LargeMissileTurret/LargeBlockMediumCalibreTurret</string>
                 <string>LargeMissileTurret/SmallBlockMediumCalibreTurret</string>
-                <string>ConveyorSorter/SmallLaserTurret</string>
-                <string>ConveyorSorter/LargeLaserTurret</string>
+                
+                <string>InteriorTurret/SmallLaserTurret</string>
+                <string>InteriorTurret/LargeLaserTurret</string>
                 <!--
                 <string>Searchlight/SmallSearchlight</string>
                 <string>Searchlight/LargeSearchlight</string>

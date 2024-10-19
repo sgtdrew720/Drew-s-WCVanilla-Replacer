@@ -294,9 +294,9 @@
 			<DLC>Warfare2</DLC>
 		</Definition>
 
-        	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
-                <TypeId>ConveyorSorter</TypeId>
+                <TypeId>InteriorTurret</TypeId>
 				<SubtypeId>SmallLaserTurret</SubtypeId>
 			</Id>
 			<DisplayName>Small 60kW Laser Turret</DisplayName>
@@ -304,6 +304,7 @@
 			<Description>Re-using the frame of a searchlight, this laser turret has a 60kW output energy for 1MW input energy. Able to do light damage to grids, it can also be used against projectiles and space suits.   [4km Range]</Description>
 			<CubeSize>Small</CubeSize>
 			<GuiVisible>false</GuiVisible>
+            <Public>false</Public>
 			<PlaceDecals>false</PlaceDecals>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1" />
@@ -370,9 +371,9 @@
 			<DLC>Warfare2</DLC>
 		</Definition>
 		
-        	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+        <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
             <Id>
-                <TypeId>ConveyorSorter</TypeId>
+                <TypeId>InteriorTurret</TypeId>
 				<SubtypeId>LargeLaserTurret</SubtypeId>
 			</Id>
 			<DisplayName>Large 180kW Laser Turret</DisplayName>
@@ -380,6 +381,7 @@
 			<Description>Re-using the frame of a searchlight, this laser turret has a 180kW output energy for 3MW input energy. Able to do light damage to grids, it can also be used against projectiles and space suits.   [4km Range]</Description>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
+            <Public>false</Public>
 			<PlaceDecals>false</PlaceDecals>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1" />
