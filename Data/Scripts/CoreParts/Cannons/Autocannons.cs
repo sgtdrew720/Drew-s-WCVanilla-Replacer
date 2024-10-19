@@ -216,7 +216,7 @@ namespace Scripts {
                     Grids, Characters, Projectiles, Meteors, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
                 },
                 SubSystems = new[] {
-                    Utility, Offense, Thrust, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
+                    Thrust, Power, Offense, Utility, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
                 ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = false, // Don't fire at non-smart projectiles.
@@ -228,7 +228,7 @@ namespace Scripts {
                 MaxTrackingTime = 90, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 1000, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
             },
             HardPoint = new HardPointDef
             {

@@ -42,7 +42,7 @@ namespace Scripts {
                     Grids, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
                 },
                 SubSystems = new[] {
-                    Power, Utility, Offense, Thrust, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
+                    Thrust, Power, Offense, Utility, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
                 ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = false, // Don't fire at non-smart projectiles.
@@ -53,7 +53,7 @@ namespace Scripts {
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
                 TopTargets = 2, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 500, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
             },
             HardPoint = new HardPointDef
             {
@@ -217,7 +217,7 @@ namespace Scripts {
                     Grids, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
                 },
                 SubSystems = new[] {
-                    Power, Utility, Offense, Thrust, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
+                    Thrust, Power, Offense, Utility, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
                 ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = false, // Don't fire at non-smart projectiles.
@@ -228,7 +228,7 @@ namespace Scripts {
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
                 TopTargets = 2, // Maximum number of targets to randomize between; 0 = unlimited.
                 TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 500, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
             },
             HardPoint = new HardPointDef
             {
