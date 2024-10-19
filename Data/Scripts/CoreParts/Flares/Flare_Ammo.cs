@@ -40,7 +40,7 @@ namespace Scripts
     partial class Parts
     {
         
-        private AmmoDef FlareAmmoLongStage1 => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef FlareAmmoLong1stStage => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "FlareClip", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Flare Long Range", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
@@ -294,7 +294,7 @@ namespace Scripts
             }, // Don't edit below this line
         };
     
-        private AmmoDef FlareAmmoShortStage1 => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef FlareAmmoShort1stStage => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "FlareClip", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Flare Short Range", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
@@ -553,7 +553,7 @@ namespace Scripts
         };
     
         
-        private AmmoDef FlareAmmoStage2 => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef FlareAmmo2ndStage => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Flare EWAR", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.

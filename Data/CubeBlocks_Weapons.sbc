@@ -304,7 +304,7 @@
 			<Description>Re-using the frame of a searchlight, this laser turret has a 60kW output energy for 1MW input energy. Able to do light damage to grids, it can also be used against projectiles and space suits.   [4km Range]</Description>
 			<CubeSize>Small</CubeSize>
 			<GuiVisible>false</GuiVisible>
-            <Public>false</Public>
+            <!--<Public>false</Public>-->
 			<PlaceDecals>false</PlaceDecals>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1" />
@@ -381,7 +381,7 @@
 			<Description>Re-using the frame of a searchlight, this laser turret has a 180kW output energy for 3MW input energy. Able to do light damage to grids, it can also be used against projectiles and space suits.   [4km Range]</Description>
 			<CubeSize>Large</CubeSize>
 			<GuiVisible>false</GuiVisible>
-            <Public>false</Public>
+            <!--<Public>false</Public>-->
 			<PlaceDecals>false</PlaceDecals>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1" />
