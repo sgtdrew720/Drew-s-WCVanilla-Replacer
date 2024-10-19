@@ -57,7 +57,7 @@ namespace Scripts
                            ForceStop = false,
                            Particle = new ParticleDef
                            {
-                               Name = "Muzzle_Flash_RailgunSmallVaRe", //Particle subtypeID
+                               Name = "SmallRailgunChargeup", //Particle subtypeID
                                Color = Color(red: 25, green: 25, blue: 25, alpha: 1), //This is redundant as recolouring is no longer supported.
                                Extras = new ParticleOptionDef //do your particle colours in your particle file instead.
                                {
