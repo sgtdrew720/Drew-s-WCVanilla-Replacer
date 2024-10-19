@@ -44,13 +44,13 @@ namespace Scripts
             AmmoMagazine = "LargeRailgunAmmo", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Large Railgun Sabot", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = true, // Use both a physical ammo magazine and energy per shot.
-            EnergyCost = 0.30f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 60000f, // Direct damage; one steel plate is worth 100.
-            BaseDamageCutoff = 2000,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
+            EnergyCost = 0.36f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
+            BaseDamage = 20000f, // Direct damage; one steel plate is worth 100.
+            BaseDamageCutoff = 1200,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
                                     // Optional penetration mechanic to apply damage to blocks beyond the first hit, without requiring the block to be destroyed.  
                                     // Overwrites normal damage behavior of requiring a block to be destroyed before damage can continue.  0 disables. 
                                     // To limit max # of blocks hit, set MaxObjectsHit to desired # and ensure CountBlocks = true in ObjectsHit, otherwise it will continue until BaseDamage depletes
-            Mass = 300f, // In kilograms; how much force the impact will apply to the target.
+            Mass = 100f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 24000f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
@@ -94,8 +94,8 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = 0.66f, // Multiplier for damage against light armor.
-                    Heavy = 0.33f, // Multiplier for damage against heavy armor.
+                    Light = 0.50f, // Multiplier for damage against light armor.
+                    Heavy = 0.25f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
@@ -115,23 +115,6 @@ namespace Scripts
                 {
                     DeformType = HitBlock,
                     DeformDelay = 30,
-                },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
                 },
             },
             Trajectory = new TrajectoryDef
@@ -274,13 +257,13 @@ namespace Scripts
             AmmoMagazine = "SmallRailgunAmmo", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "Small Railgun Sabot", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = true, // Use both a physical ammo magazine and energy per shot.
-            EnergyCost = 0.90f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
+            EnergyCost = 0.36f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 10000f, // Direct damage; one steel plate is worth 100.
             BaseDamageCutoff = 400,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
                                     // Optional penetration mechanic to apply damage to blocks beyond the first hit, without requiring the block to be destroyed.  
                                     // Overwrites normal damage behavior of requiring a block to be destroyed before damage can continue.  0 disables. 
                                     // To limit max # of blocks hit, set MaxObjectsHit to desired # and ensure CountBlocks = true in ObjectsHit, otherwise it will continue until BaseDamage depletes
-            Mass = 50f, // In kilograms; how much force the impact will apply to the target.
+            Mass = 25f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 2400f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
@@ -324,8 +307,8 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = 0.66f, // Multiplier for damage against light armor.
-                    Heavy = 0.33f, // Multiplier for damage against heavy armor.
+                    Light = 0.50f, // Multiplier for damage against light armor.
+                    Heavy = 0.25f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef

@@ -456,7 +456,7 @@
                 <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>LargeRailgun</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_Railgun</DisplayName>
+            <DisplayName>Large Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
             <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [3km/s Projectile velocity, 4km range, uses Large Railgun Sabots]</Description>
             <CubeSize>Large</CubeSize>
@@ -515,7 +515,7 @@
                 <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>SmallRailgun</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Block_Railgun</DisplayName>
+            <DisplayName>Small Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
             <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [2km/s Projectile velocity, 4km range, uses Small Railgun Sabots]</Description>
             <CubeSize>Small</CubeSize>
