@@ -801,7 +801,7 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.5043301</Time>
+                  <Time>0.5</Time>
                   <ValueFloat>1</ValueFloat>
                   <Value2D />
                 </Key>
@@ -4300,17 +4300,17 @@
             <Property AnimationType="Animated" Name="Particles per frame" Type="Float">
               <Keys>
                 <Key>
-                  <Time>0.5043301</Time>
+                  <Time>0.5</Time>
                   <ValueFloat>150</ValueFloat>
                   <Value2D />
                 </Key>
                 <Key>
-                  <Time>0.524439931</Time>
+                  <Time>0.52</Time>
                   <ValueFloat>100</ValueFloat>
                   <Value2D />
                 </Key>
                 <Key>
-                  <Time>0.5435336</Time>
+                  <Time>0.54</Time>
                   <ValueFloat>50</ValueFloat>
                   <Value2D />
                 </Key>
