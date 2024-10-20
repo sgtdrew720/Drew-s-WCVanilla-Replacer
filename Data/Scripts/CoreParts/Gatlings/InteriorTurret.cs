@@ -39,7 +39,7 @@ namespace Scripts {
             Targeting = new TargetingDef
             {
                 Threats = new[] {
-                    Projectiles, Characters, Grids, Meteors, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
+                    Characters, Projectiles, Grids, Meteors, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
                 },
                 SubSystems = new[] {
                     Thrust, Power, Offense, Utility, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
