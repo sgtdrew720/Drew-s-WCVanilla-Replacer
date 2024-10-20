@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CubeBlocks>
+
+        <Definition xsi:type="MyObjectBuilder_JumpDriveDefinition">
+            <Id>
+                <TypeId>JumpDrive</TypeId>
+                <SubtypeId>SmallPrototechJumpDrive</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_PrototechJumpDrive</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\Prototech_JumpDrive_small.dds</Icon>
+            <Description>Description_Prototech_JumpDrive</Description>
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="3" z="4" />
+            <Center x="1" y="0" z="1" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Small\Prototech_JumpDrive.mwm</Model>
+            <Components>
+                <Component Subtype="PrototechFrame" Count="1">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="GravityGenerator" Count="4" />
+                <Component Subtype="PrototechCapacitor" Count="8">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="PrototechCircuitry" Count="4">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="Superconductor" Count="100" />
+                <Component Subtype="Computer" Count="20" />
+                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="PrototechPanel" Count="15" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Top" StartX="1.1" StartY="1.4" EndX="1.9" EndY="2.6" />
+                <MountPoint Side="Back" StartX="0" StartY="0" EndX="3" EndY="2" />
+                <MountPoint Side="Left" StartX="0" StartY="0" EndX="4" EndY="2" />
+                <MountPoint Side="Front" StartX="0" StartY="0" EndX="3" EndY="2" />
+                <MountPoint Side="Right" StartX="0" StartY="0" EndX="4" EndY="2" />
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="3" EndY="4" Default="true" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.5" File="Models\Cubes\Small\Prototech_JumpDrive_Construction_1.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\Prototech_JumpDrive_Construction_2.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>PrototechJumpDrive</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>40</BuildTimeSeconds>
+            <DisassembleRatio>5</DisassembleRatio>
+            <DamageEffectName>Damage_Electrical_Prototech_JumpDrive_S</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+
+            <ResourceSinkGroup>Charging</ResourceSinkGroup>
+            <RequiredPowerInput>24</RequiredPowerInput>
+            <PowerNeededForJump>1.5</PowerNeededForJump>
+            <PowerEfficiency>0.9</PowerEfficiency>
+
+            <MaxJumpDistance>2000000</MaxJumpDistance>
+            <MaxJumpMass>125000</MaxJumpMass>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+            <DestroySound>WepLrgWarheadExpl</DestroySound>
+
+            <ShipJumpDriveChargingSound>ShipPrototechJumpDriveCharging</ShipJumpDriveChargingSound>
+            <ShipJumpDriveJumpInSound>ShipPrototechJumpDriveJumpIn</ShipJumpDriveJumpInSound>
+            <ShipJumpDriveJumpOutSound>ShipJumpDriveJumpOut</ShipJumpDriveJumpOutSound>
+            <JumpParticleEffect>Warp_Prototech</JumpParticleEffect>
+            
+            <TargetingGroups>
+                <string>Propulsion</string>
+            </TargetingGroups>
+            <PCU>100</PCU>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_BatteryBlockDefinition">
+            <Id>
+                <TypeId>BatteryBlock</TypeId>
+                <SubtypeId>LargeBlockPrototechBattery</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_PrototechBattery</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\PrototechBattery.dds</Icon>
+            <Description>Description_Prototech_Battery</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="2" y="1" z="1" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Large\PrototechBattery.mwm</Model>
+            <Components>
+                <Component Subtype="PrototechFrame" Count="1">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="PrototechCircuitry" Count="3">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="PrototechCapacitor" Count="20">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="MetalGrid" Count="16" />
+                <Component Subtype="Construction" Count="20" />
+                <Component Subtype="Computer" Count="25" />
+                <Component Subtype="PrototechPanel" Count="60" />
+            </Components>
+            <CriticalComponent Subtype="PrototechCapacitor" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Front" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+                <MountPoint Side="Top" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+                <MountPoint Side="Bottom" StartX="0" StartY="0" EndX="2" EndY="1" />
+                <MountPoint Side="Back" StartX="0" StartY="0.1" EndX="2" EndY="0.9" />
+                <MountPoint Side="Right" StartX="0.1" StartY="0" EndX="0.9" EndY="1" />
+                <MountPoint Side="Left" StartX="0.1" StartY="0" EndX="0.9" EndY="1" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\PrototechBattery_Construction_1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\PrototechBattery_Construction_2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\PrototechBattery_Construction_3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>PrototechBattery</BlockPairName>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>60</BuildTimeSeconds>
+            <DisassembleRatio>5</DisassembleRatio>
+            <ResourceSourceGroup>Battery</ResourceSourceGroup>
+            <ResourceSinkGroup>BatteryBlock</ResourceSinkGroup>
+            <MaxPowerOutput>48</MaxPowerOutput>
+            <RequiredPowerInput>48</RequiredPowerInput>
+            <AdaptibleInput>true</AdaptibleInput>
+            <MaxStoredPower>18</MaxStoredPower>
+            <InitialStoreddPowerRatio>0.3</InitialStoreddPowerRatio>
+            <RechargeMultiplier>0.9</RechargeMultiplier>
+            <DamageEffectName>Damage_Electrical_Prototech_Battery_L</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>15</PCU>
+            <IsAirTight>true</IsAirTight>
+            <MirroringX>Y</MirroringX>
+            <MirroringY>X</MirroringY>
+            <TargetingGroups>
+                <string>PowerSystems</string>
+            </TargetingGroups>
+        </Definition>
+
+        <Definition xsi:type="MyObjectBuilder_BatteryBlockDefinition">
+            <Id>
+                <TypeId>BatteryBlock</TypeId>
+                <SubtypeId>SmallBlockPrototechBattery</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Block_PrototechBattery</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\PrototechBatterySmall.dds</Icon>
+            <Description>Description_Prototech_Battery</Description>
+            <CubeSize>Small</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="3" y="1" z="2" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Small\PrototechBatterySmall.mwm</Model>
+            <Components>
+                <Component Subtype="PrototechFrame" Count="1">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="Construction" Count="2" />
+               <Component Subtype="PrototechCircuitry" Count="1">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="PrototechCapacitor" Count="6">
+                    <DeconstructId>
+                        <TypeId>Ingot</TypeId>
+                        <SubtypeId>PrototechScrap</SubtypeId>
+                    </DeconstructId>
+                </Component>
+                <Component Subtype="MetalGrid" Count="4" />
+                <Component Subtype="Construction" Count="3" />
+                <Component Subtype="Computer" Count="2" />
+                <Component Subtype="PrototechPanel" Count="6" />
+            </Components>		
+            <CriticalComponent Subtype="PrototechCapacitor" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Front" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
+                <MountPoint Side="Top" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
+                <MountPoint Side="Bottom" StartX="0.1" StartY="0.1" EndX="2.9" EndY="1.9" />
+                <MountPoint Side="Back" StartX="0.1" StartY="0.1" EndX="2.9" EndY="0.9" />
+                <MountPoint Side="Right" StartX="0.1" StartY="0.1" EndX="1.9" EndY="0.9" />
+                <MountPoint Side="Left" StartX="0.1" StartY="0.1" EndX="1.9" EndY="0.9" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.50" File="Models\Cubes\Small\PrototechBatterySmall_Construction_1.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\PrototechBatterySmall_Construction_2.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>PrototechBattery</BlockPairName>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>20</BuildTimeSeconds>
+            <DisassembleRatio>5</DisassembleRatio>
+            <ResourceSourceGroup>Battery</ResourceSourceGroup>
+            <ResourceSinkGroup>BatteryBlock</ResourceSinkGroup>
+            <MaxStoredPower>2</MaxStoredPower>
+            <MaxPowerOutput>8</MaxPowerOutput>
+            <RequiredPowerInput>8</RequiredPowerInput>
+            <InitialStoreddPowerRatio>0.3</InitialStoreddPowerRatio>
+            <RechargeMultiplier>0.9</RechargeMultiplier>
+            <InventorySize>
+                <X>1</X>
+                <Y>1</Y>
+                <Z>1</Z>
+            </InventorySize>
+            <DamageEffectName>Damage_Electrical_Prototech_Battery_S</DamageEffectName>
+            <DamagedSound>ParticleElectrical</DamagedSound>
+            <EmissiveColorPreset>Extended</EmissiveColorPreset>
+            <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>15</PCU>
+            <IsAirTight>true</IsAirTight>
+            <MirroringZ>Y</MirroringZ>
+            <MirroringY>Z</MirroringY>
+            <TargetingGroups>
+                <string>PowerSystems</string>
+            </TargetingGroups>
+        </Definition>
+
+
+    </CubeBlocks>
+</Definitions>
