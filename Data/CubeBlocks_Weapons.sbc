@@ -227,7 +227,7 @@
             </Id>
             <DisplayName>Large Flare Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\FlareLauncher.dds</Icon>
-            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles and automatically launching decoy flares, it can be used to detect grids at range. Flares can be fired in 2 modes, short and long range, short range is better for reactively firing against incoming smart ammo, long range is better for preemptively against potential incoming threats, only difference is stage 1 lifetime.  [Uses flares and firework ammo, 10km detection range]</Description>
+            <Description>A flare launcher equiped with a sensor suite for detecting projectiles and automatically launching decoy flares, it can be used to detect grids at range. Flares can be fired in 2 modes, short and long range. [Uses flares and firework ammo, 10km detection range]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -279,7 +279,7 @@
             </Id>
             <DisplayName>Small Flare Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\FlareLauncherSmall.dds</Icon>
-            <Description>A flare launcher for distracting missiles or firing fireworks. Also equiped with a sensor suite for detecting projectiles and automatically launching decoy flares, it can be used to detect grids at range. Flares can be fired in 2 modes, short and long range, short range is better for reactively firing against incoming smart ammo, long range is better for preemptively against potential incoming threats, only difference is stage 1 lifetime. [Uses flares and firework ammo, 10km detection range]</Description>
+            <Description>A flare launcher equiped with a sensor suite for detecting projectiles and automatically launching decoy flares, it can be used to detect grids at range. Flares can be fired in 2 modes, short and long range. [Uses flares and firework ammo, 10km detection range]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
