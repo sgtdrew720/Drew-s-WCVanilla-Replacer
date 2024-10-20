@@ -60,7 +60,7 @@
             </Id>
             <DisplayName>DisplayName_Item_AutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle.dds</Icon>
-            <Description>A basic assault rifle, the MR-20 is a staple of both military and police forces. An exceptionaly reliable rifle, it is easy to use, and easy to clean. [33 Damage per Shot, 600 RPM, 880m/s, 1000m Range]</Description>
+            <Description>A basic assault rifle, the MR-20 is a staple of both military and police forces. An exceptionaly reliable rifle, it is easy to use, and easy to clean. [33 Damage per Shot, 600 RPM, 800m/s, 2000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -87,7 +87,7 @@
             </Id>
             <DisplayName>DisplayName_Item_PreciseAutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle_Precise.dds</Icon>
-            <Description>The MR-8P is designed for long range engagments. The model 8P fires at a lower rate of fire, and longer barrel, to achieve unmatched accuracy and stopping power. [45 Damage per Shot, 240 RPM, 880m/s, 1000m Range]</Description>
+            <Description>The MR-8P is designed for long range engagments. The model 8P fires at a lower rate of fire, and longer barrel, to achieve unmatched accuracy and stopping power. [45 Damage per Shot, 240 RPM, 800m/s, 2000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -113,7 +113,7 @@
             </Id>
             <DisplayName>DisplayName_Item_RapidFireAutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle_RapidFire.dds</Icon>
-            <Description>The MR-50A enjoys the notoriety as the smallest squad support machine gun in modern use. The model 50A can unleash a withering stream of suppressive fire at a rate of 900 RPM. [24 Damage per Shot, 900 RPM, 880m/s, 1000m Range]</Description>
+            <Description>The MR-50A enjoys the notoriety as the smallest squad support machine gun in modern use. The model 50A can unleash a withering stream of suppressive fire at a rate of 900 RPM. [24 Damage per Shot, 900 RPM, 800m/s, 2000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -139,7 +139,7 @@
             </Id>
             <DisplayName>DisplayName_Item_EliteAutomaticRifle</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponAutomaticRifle_Elite.dds</Icon>
-            <Description>The MR-30E is a modernized and battle-ready version of the model 20. The model 30E features a 3-round burst-fire, higher overall rate of fire, and red dot sight. [24 Damage per Shot, 900 RPM, 880m/s, 1000m Range]</Description>
+            <Description>The MR-30E is a modernized and battle-ready version of the model 20. The model 30E features a 3-round burst-fire, higher overall rate of fire, and red dot sight. [24 Damage per Shot, 900 RPM, 800m/s, 2000m Range]</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -165,7 +165,7 @@
             </Id>
             <DisplayName>DisplayName_Item_SemiAutoPistol</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponPistol_Warfare.dds</Icon>
-            <Description>The S-10 is a Standard issue sidearm. Built for use in a hostile environment as a self defense weapon: Simple, Reliaable, Dependable [22 Damage per Shot, 450 RPM, 480m/s, 1000m Range]</Description>
+            <Description>The S-10 is a Standard issue sidearm. Built for use in a hostile environment as a self defense weapon: Simple, Reliaable, Dependable [22 Damage per Shot, 450 RPM, 420m/s, 2000m Range]</Description>
             <Size>
                 <X>0.27</X>
                 <Y>0.15</Y>
@@ -191,7 +191,7 @@
             </Id>
             <DisplayName>DisplayName_Item_FullAutoPistol</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponPistol_FullAuto_Warfare.dds</Icon>
-            <Description>A true "next-generation" sidarm, featuring heat resistant components, and full-auto firing mechanism, the S-20A is purpose built to be excessive. [20 Damage per Shot, 1200 RPM, 480m/s, 1000m Range]</Description>
+            <Description>A true "next-generation" sidarm, featuring heat resistant components, and full-auto firing mechanism, the S-20A is purpose built to be excessive. [20 Damage per Shot, 1200 RPM, 420m/s, 2000m Range]</Description>
             <Size>
                 <X>0.27</X>
                 <Y>0.15</Y>
@@ -217,7 +217,7 @@
             </Id>
             <DisplayName>DisplayName_Item_ElitePistol</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponPistol_Elite_Warfare.dds</Icon>
-            <Description>A variant of the S-10, the E model is modified to use a 3-round burst and red dot sight. Effective rate of fire is also superior to the original S-10 model. [22 Damage per Shot, 900 RPM, 480m/s, 1000m Range]</Description>
+            <Description>A variant of the S-10, the E model is modified to use a 3-round burst and red dot sight. Effective rate of fire is also superior to the original S-10 model. [22 Damage per Shot, 900 RPM, 420m/s, 2000m Range]</Description>
             <Size>
                 <X>0.27</X>
                 <Y>0.15</Y>

@@ -7,15 +7,15 @@
                 <SubtypeId>SmallCaliber</SubtypeId>
             </Id>
             <BasicProperties>
-                <DesiredSpeed>880</DesiredSpeed>
+                <DesiredSpeed>800</DesiredSpeed>
                 <SpeedVariance>0</SpeedVariance>
-                <MaxTrajectory>1000</MaxTrajectory>
+                <MaxTrajectory>2000</MaxTrajectory>
                 <BackkickForce>1.0</BackkickForce>
                 <PhysicalMaterial>RifleBullet</PhysicalMaterial>
                 <ExplosiveDamageMultiplier>0.1</ExplosiveDamageMultiplier>
             </BasicProperties>
             <ProjectileProperties>
-                <ProjectileTrailScale>0.1</ProjectileTrailScale>
+                <ProjectileTrailScale>0.20</ProjectileTrailScale>
                 <ProjectileHitImpulse>1</ProjectileHitImpulse>
                 <ProjectileMassDamage>80</ProjectileMassDamage>
                 <ProjectileHealthDamage>100</ProjectileHealthDamage>
@@ -30,15 +30,15 @@
                 <SubtypeId>PistolCaliber</SubtypeId>
             </Id>
             <BasicProperties>
-                <DesiredSpeed>480</DesiredSpeed>
+                <DesiredSpeed>420</DesiredSpeed>
                 <SpeedVariance>0</SpeedVariance>
-                <MaxTrajectory>1000</MaxTrajectory>
+                <MaxTrajectory>2000</MaxTrajectory>
                 <BackkickForce>0.5</BackkickForce>
                 <PhysicalMaterial>RifleBullet</PhysicalMaterial>
                 <ExplosiveDamageMultiplier>0.1</ExplosiveDamageMultiplier>
             </BasicProperties>
             <ProjectileProperties>
-                <ProjectileTrailScale>0.1</ProjectileTrailScale>
+                <ProjectileTrailScale>0.12</ProjectileTrailScale>
                 <ProjectileHitImpulse>1</ProjectileHitImpulse>
                 <ProjectileMassDamage>80</ProjectileMassDamage>
                 <ProjectileHealthDamage>100</ProjectileHealthDamage>

@@ -521,8 +521,10 @@
 			<Icon>Textures\GUI\Icons\Cubes\Small_Searchlight_Racing.dds</Icon>
 			<Description>Re-using the frame of a searchlight, this laser turret has a 60kW output energy for 1MW input energy. Able to do light damage to grids, it can also be used against projectiles and space suits.   [2km Range]</Description>
 			<CubeSize>Small</CubeSize>
+            <!--
 			<GuiVisible>false</GuiVisible>
-            <!--<Public>false</Public>-->
+            <Public>false</Public>
+            -->
 			<PlaceDecals>false</PlaceDecals>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1" />
@@ -598,8 +600,10 @@
 			<Icon>Textures\GUI\Icons\Cubes\Large_Searchlight_Racing.dds</Icon>
 			<Description>Re-using the frame of a searchlight, this laser turret has a 180kW output energy for 3MW input energy. Able to do light damage to grids, it can also be used against projectiles and space suits.   [2km Range]</Description>
 			<CubeSize>Large</CubeSize>
+            <!--
 			<GuiVisible>false</GuiVisible>
-            <!--<Public>false</Public>-->
+            <Public>false</Public>
+            -->
 			<PlaceDecals>false</PlaceDecals>
 			<BlockTopology>TriangleMesh</BlockTopology>
 			<Size x="1" y="1" z="1" />
@@ -676,7 +680,7 @@
             </Id>
             <DisplayName>Large Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
-            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [3km/s Projectile velocity, 4km range, uses Large Railgun Sabots]</Description>
+            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [20k Damage per Shot, 3km/s velocity, 4km Range, uses Large Railgun Sabots]</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -735,7 +739,7 @@
             </Id>
             <DisplayName>Small Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
-            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [2km/s Projectile velocity, 4km range, uses Small Railgun Sabots]</Description>
+            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [10k Damage per Shot, 2km/s velocity, 4km Range, uses Small Railgun Sabots]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -1372,7 +1376,7 @@
             </Id>
             <DisplayName>DisplayName_Block_InteriorTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\interior_turret.dds</Icon>
-            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded with 20mm boxes.  [1000m/s Projectile velocity, 2km range, uses 20mm Magazines]</Description>
+            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded  [24 Damage per Shot, 900 RPM, 800m/s, 2000m Range, Compatible with all rifle magazines]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>

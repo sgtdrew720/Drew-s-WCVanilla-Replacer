@@ -120,6 +120,22 @@
         <Blueprint>
             <Id>
                 <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>Position0060_RifleGun_Mag_120rd</SubtypeId>
+            </Id>
+            <DisplayName>120 Round Rifle Magazine</DisplayName>
+            <Icon>Textures\GUI\Icons\ammo\Rifle_Ammo.dds</Icon>
+            <Prerequisites>
+                <Item Amount="2.70" TypeId="Ingot" SubtypeId="Iron" />
+                <Item Amount="0.90" TypeId="Ingot" SubtypeId="Nickel" />
+                <Item Amount="0.45" TypeId="Ingot" SubtypeId="Magnesium" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="NATO_5p56x45mm" />
+            <BaseProductionTimeInSeconds>10</BaseProductionTimeInSeconds>
+        </Blueprint>
+
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
                 <SubtypeId>Position0100_Missile200mm</SubtypeId>
             </Id>
             <DisplayName>200mm Missile</DisplayName>
