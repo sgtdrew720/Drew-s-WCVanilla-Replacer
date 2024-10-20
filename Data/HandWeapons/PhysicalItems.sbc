@@ -243,7 +243,7 @@
             </Id>
             <DisplayName>DisplayName_Item_FlareGun</DisplayName>
             <Icon>Textures\GUI\Icons\FlareGun.dds</Icon>
-            <Description>A flare pistol which can be used to illuminate your surroundings, or distract low quality guidance systems. Can also be used in emergencies as a self-defense weapon. [100 Damage per Shot, 60 RPM, 40-80m/s, 50-100m Range] </Description>
+            <Description>A flare pistol which can be used to illuminate your surroundings, or distract missile and turret targting systems, and can also be used in emergencies as a self-defense weapon. Flares have 2 ammo modes, short and long range, which affect when the primary pyrotechnic charge starts burning bright enough to distract targeting systems. [60 RPM, 80m/s muzzle velocity] </Description>
             <Size>
                 <X>0.27</X>
                 <Y>0.15</Y>
