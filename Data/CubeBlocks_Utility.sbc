@@ -395,7 +395,8 @@
                 <string>PowerSystems</string>
             </TargetingGroups>
         </Definition>
-
+        
+        <!--        -->
         <Definition xsi:type="MyObjectBuilder_ShipDrillDefinition">
             <Id>
                 <TypeId>Drill</TypeId>
@@ -432,7 +433,6 @@
                 <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Small\DrillerConstruction_2.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -451,9 +451,9 @@
             <BuildTimeSeconds>20</BuildTimeSeconds>
 
             <ResourceSinkGroup>Defense</ResourceSinkGroup>
-            <SensorRadius>2.6</SensorRadius>
-            <SensorOffset>1.6</SensorOffset>
-            <CutOutRadius>2.6</CutOutRadius>
+            <SensorRadius>1.5</SensorRadius>
+            <SensorOffset>1.0</SensorOffset>
+            <CutOutRadius>1.5</CutOutRadius>
             <CutOutOffset>0.8</CutOutOffset>
             <ParticleOffset>
                 <X>0</X>
@@ -510,7 +510,6 @@
                 <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\DrillConstruction_3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -530,10 +529,10 @@
             <Center x="0" y="0" z="2" />
 
             <ResourceSinkGroup>Defense</ResourceSinkGroup>
-            <SensorRadius>3.8</SensorRadius>
-            <SensorOffset>5.6</SensorOffset>
-            <CutOutRadius>3.8</CutOutRadius>
-            <CutOutOffset>5.6</CutOutOffset>
+            <SensorRadius>2.4</SensorRadius>
+            <SensorOffset>3.3</SensorOffset>
+            <CutOutRadius>2.4</CutOutRadius>
+            <CutOutOffset>3.3</CutOutOffset>
             <ParticleOffset>
                 <X>0</X>
                 <Y>0</Y>
@@ -581,7 +580,6 @@
                 <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\GrinderConstruction_3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -610,7 +608,7 @@
             <Flare></Flare>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>2.8</SensorRadius>
+            <SensorRadius>2</SensorRadius>
             <PCU>100</PCU>
         </Definition>
         
@@ -645,7 +643,6 @@
                 <Model BuildPercentUpperBound="1.0" File="Models\Cubes\Small\GrinderConstruction_2.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -677,7 +674,7 @@
             <Flare></Flare>
             <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>2.6</SensorRadius>
+            <SensorRadius>3</SensorRadius>
             <PCU>100</PCU>
             <IsAirTight>false</IsAirTight>
         </Definition>
@@ -715,7 +712,6 @@
                 <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\WelderConstruction_3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -745,7 +741,7 @@
             <EmissiveColorPreset>Welder</EmissiveColorPreset>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>5.00</SensorRadius>
+            <SensorRadius>4.00</SensorRadius>
             <PCU>150</PCU>
         </Definition>
         
@@ -801,10 +797,11 @@
             <EmissiveColorPreset>Welder</EmissiveColorPreset>
             <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>2.6</SensorRadius>
+            <SensorRadius>2</SensorRadius>
             <PCU>150</PCU>
             <IsAirTight>false</IsAirTight>
         </Definition>
+
 
         <Definition xsi:type="MyObjectBuilder_ShipDrillDefinition">
             <Id>
@@ -866,7 +863,6 @@
                 <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\PrototechDrill_Construction3.mwm" />
             </BuildProgressModels>
             <VoxelPlacement>
-                <!--Possible settings Both,InVoxel,OutsideVoxel,Volumetric. If volumetric set than MaxAllowed and MinAllowed will be used.-->
                 <StaticMode>
                     <PlacementMode>OutsideVoxel</PlacementMode>
                     <MaxAllowed>0.2</MaxAllowed>
@@ -887,14 +883,14 @@
             <Center x="1" y="1" z="3" />
             <ResourceSinkGroup>Defense</ResourceSinkGroup>
             <InventorySize>
-                <X>0.5</X>
-                <Y>0.5</Y>
-                <Z>0.5</Z>
+                <X>2.5</X>
+                <Y>2.5</Y>
+                <Z>2.5</Z>
             </InventorySize>
-            <SensorRadius>8</SensorRadius>
-            <SensorOffset>6</SensorOffset>
-            <CutOutRadius>12</CutOutRadius>
-            <CutOutOffset>6</CutOutOffset>  
+            <SensorRadius>4</SensorRadius>
+            <SensorOffset>3</SensorOffset>
+            <CutOutRadius>6</CutOutRadius>
+            <CutOutOffset>3</CutOutOffset>  
             <CounterRotatingSubparts>
                 <string>Models\Cubes\Large\PrototechDrill_Mid.mwm</string>
             </CounterRotatingSubparts>
@@ -918,6 +914,7 @@
             
             <PCU>300</PCU>
         </Definition>
+        
 
 
     </CubeBlocks>
