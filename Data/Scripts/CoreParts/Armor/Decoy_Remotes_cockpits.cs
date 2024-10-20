@@ -37,6 +37,7 @@ namespace Scripts
                 "SurvivalKit",
                 "LargeMedicalRoom",
                 "LargeMedicalRoomReskin",
+                "SmallBlockConveyorConverter",
             },
             EnergeticResistance = 4f, //Resistance to Energy damage. 0.5f = 200% damage, 2f = 50% damage
             KineticResistance = 4f, //Resistance to Kinetic damage. Leave these as 1 for no effect

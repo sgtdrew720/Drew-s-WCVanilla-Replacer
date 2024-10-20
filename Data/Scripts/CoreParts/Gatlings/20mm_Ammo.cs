@@ -466,7 +466,7 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 2f, //
+                        Length = 3f, //
                         Width = 0.1f, //
                         Color = Color(red: 25f, green: 20, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
