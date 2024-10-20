@@ -12,7 +12,7 @@
                 <MaxTrajectory>2000</MaxTrajectory>
                 <BackkickForce>1.0</BackkickForce>
                 <PhysicalMaterial>RifleBullet</PhysicalMaterial>
-                <ExplosiveDamageMultiplier>0.1</ExplosiveDamageMultiplier>
+                <ExplosiveDamageMultiplier>0.25</ExplosiveDamageMultiplier>
             </BasicProperties>
             <ProjectileProperties>
                 <ProjectileTrailScale>0.20</ProjectileTrailScale>
@@ -35,7 +35,7 @@
                 <MaxTrajectory>2000</MaxTrajectory>
                 <BackkickForce>0.5</BackkickForce>
                 <PhysicalMaterial>RifleBullet</PhysicalMaterial>
-                <ExplosiveDamageMultiplier>0.1</ExplosiveDamageMultiplier>
+                <ExplosiveDamageMultiplier>0.25</ExplosiveDamageMultiplier>
             </BasicProperties>
             <ProjectileProperties>
                 <ProjectileTrailScale>0.12</ProjectileTrailScale>
