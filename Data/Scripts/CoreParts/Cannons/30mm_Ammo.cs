@@ -134,7 +134,7 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 1.5f, // Radius of AOE effect, in meters.
+                    Radius = 2.4f, // Radius of AOE effect, in meters.
                     Damage = 200f,
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 500f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.

@@ -608,7 +608,7 @@
             <Flare></Flare>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>2</SensorRadius>
+            <SensorRadius>3</SensorRadius>
             <PCU>100</PCU>
         </Definition>
         
@@ -674,7 +674,7 @@
             <Flare></Flare>
             <DestroyEffect>BlockDestroyedExplosion_Small</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>3</SensorRadius>
+            <SensorRadius>1.6</SensorRadius>
             <PCU>100</PCU>
             <IsAirTight>false</IsAirTight>
         </Definition>
@@ -741,7 +741,7 @@
             <EmissiveColorPreset>Welder</EmissiveColorPreset>
             <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
             <DestroySound>WepSmallWarheadExpl</DestroySound>
-            <SensorRadius>4.00</SensorRadius>
+            <SensorRadius>3</SensorRadius>
             <PCU>150</PCU>
         </Definition>
         
