@@ -75,11 +75,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -282,11 +277,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -489,11 +479,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -696,11 +681,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -903,11 +883,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -1101,6 +1076,18 @@ namespace Scripts
                 MaxObjectsHit = 0, // Limits the number of entities (grids, players, projectiles) the projectile can penetrate; 0 = unlimited.
                 CountBlocks = false, // Counts individual blocks, not just entities hit.
             },
+            Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
+            {
+                AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
+                Fragments = 6, // Number of projectiles to spawn.
+                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
+                Reverse = false, // Spawn projectiles backward instead of forward.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
+                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
+                MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+            },
             DamageScales = new DamageScaleDef
             {
                 MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
@@ -1110,11 +1097,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 100f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -1352,6 +1334,18 @@ namespace Scripts
                 MaxObjectsHit = 0, // Limits the number of entities (grids, players, projectiles) the projectile can penetrate; 0 = unlimited.
                 CountBlocks = false, // Counts individual blocks, not just entities hit.
             },
+            Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
+            {
+                AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
+                Fragments = 6, // Number of projectiles to spawn.
+                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
+                Reverse = false, // Spawn projectiles backward instead of forward.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
+                Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
+                MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+            },
             DamageScales = new DamageScaleDef
             {
                 MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
@@ -1361,11 +1355,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 100f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -1575,6 +1564,48 @@ namespace Scripts
             }, // Don't edit below this line
         };
 
+
+        private AmmoDef Shrapnel20mm => new AmmoDef
+        {
+            AmmoMagazine = "Energy",
+            AmmoRound = "Shrapnel20mm",
+            BaseDamage = 10,
+            Mass = 0.025f, // In kilograms; how much force the impact will apply to the target.
+            Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
+            {
+                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
+                Diameter = 1.6, // For SphereShape this is diameter.
+                              // For LineShape it is total length (double this value when setting up MaximumDiameter for weapon targeting).
+                              // Defaults to 1 if left zero or deleted.
+            },
+            Beams = new BeamDef
+                {
+                Enable = true, // Enable beam behaviour. Please have 3600 RPM, when this Setting is enabled. Please do not fire Beams into Voxels.
+                VirtualBeams = false, // Only one damaging beam, but with the effectiveness of the visual beams combined (better performance).
+                ConvergeBeams = false, // When using virtual beams, converge the visual beams to the location of the real beam.
+                RotateRealBeam = false, // The real beam is rotated between all visual beams, instead of centered between them.
+                OneParticle = false, // Only spawn one particle hit per beam weapon.
+                FakeVoxelHitTicks = 3, // If this beam hits/misses a voxel it assumes it will continue to do so for this many ticks at the same hit length and not extend further within this window.  This can save up to n times worth of cpu.
+                },
+            Trajectory = new TrajectoryDef
+                {
+                MaxLifeTime = 3,
+	            MaxTrajectory = 1.6f,
+	            DesiredSpeed = 0,
+                },
+            DamageScales = new DamageScaleDef
+                {
+                DamageVoxels = false, // Whether to damage voxels.
+                HealthHitModifier = 0.5f, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                Armor = new ArmorDef
+                    {
+                    Armor = 0.25f,
+                    Light = -1f,
+                    Heavy = -1f,
+                    NonArmor = -1f,
+                    },
+                },
+        };
         
     }
 }
