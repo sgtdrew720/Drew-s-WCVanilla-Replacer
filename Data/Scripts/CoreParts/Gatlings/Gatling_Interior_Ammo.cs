@@ -1571,6 +1571,7 @@ namespace Scripts
             AmmoRound = "Shrapnel20mm",
             BaseDamage = 10,
             Mass = 0.025f, // In kilograms; how much force the impact will apply to the target.
+	    HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
