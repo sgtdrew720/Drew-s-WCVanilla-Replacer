@@ -182,7 +182,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto,
+                Shrapnel20mm,// Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -367,7 +368,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmo, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmo,
+                Shrapnel20mm, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -541,7 +543,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto,
+                Shrapnel20mm, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -715,7 +718,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto,
+                Shrapnel20mm, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -889,7 +893,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto, // Must list all primary, shrapnel, and pattern ammos.
+                GatlingAmmoTravelto,
+                Shrapnel20mm, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
