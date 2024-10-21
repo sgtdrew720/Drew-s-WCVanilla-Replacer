@@ -1575,7 +1575,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1.6, // For SphereShape this is diameter.
+                Diameter = 3.0, // For SphereShape this is diameter.
                               // For LineShape it is total length (double this value when setting up MaximumDiameter for weapon targeting).
                               // Defaults to 1 if left zero or deleted.
             },
@@ -1591,7 +1591,7 @@ namespace Scripts
             Trajectory = new TrajectoryDef
                 {
                 MaxLifeTime = 3,
-	            MaxTrajectory = 1.6f,
+	            MaxTrajectory = 3.0f,
 	            DesiredSpeed = 0,
                 },
             DamageScales = new DamageScaleDef
