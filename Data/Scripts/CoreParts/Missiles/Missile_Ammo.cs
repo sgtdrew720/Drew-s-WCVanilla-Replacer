@@ -120,7 +120,7 @@ namespace Scripts
                     CheckFutureIntersection = false, // Utilize obstacle avoidance for drones/smarts
                     Roam = false, // Roam current area after target loss
                     KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
-                    FocusOnly = true, // only target the constructs Ai's focus target
+                    FocusOnly = false, // only target the constructs Ai's focus target
                     FocusEviction = true, // If FocusOnly and this to true will force smarts to lose target when there is no focus target
                     OffsetRatio = 0f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 60, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
@@ -361,7 +361,7 @@ namespace Scripts
                     CheckFutureIntersection = true, // Utilize obstacle avoidance for drones/smarts
                     MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
                     KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
-                    FocusOnly = true, // only target the constructs Ai's focus target
+                    FocusOnly = false, // only target the constructs Ai's focus target
                     FocusEviction = true, // If FocusOnly and this to true will force smarts to lose target when there is no focus target
                     ScanRange = 0, // 0 disables projectile screening, the max range that this projectile will be seen at by defending grids (adds this projectile to defenders lookup database). 
                     MinTurnSpeed = 100, // set this to a reasonable value to avoid projectiles from spinning in place or being too aggressive turing at slow speeds 
