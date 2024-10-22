@@ -44,7 +44,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0.5f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
@@ -56,17 +56,8 @@ namespace Scripts
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
-                TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
-                {
-                    Enable = false, // Enables TimedSpawns mechanism
-                    Interval = 0, // Time between spawning fragments, in ticks
-                    StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 1, // Max number of fragment children to spawn
-                    Proximity = 1000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
-                    ParentDies = true, // Parent dies once after it spawns its last child.
-                    PointAtTarget = true, // Start fragment direction pointing at Target
-                },
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             Sync = new SynchronizeDef
             {
@@ -82,16 +73,6 @@ namespace Scripts
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
-                Grids = new GridSizeDef
-                {
-                    Large = -1f, // Multiplier for damage against large grids.
-                    Small = -1f, // Multiplier for damage against small grids.
-                },
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
@@ -112,65 +93,6 @@ namespace Scripts
                     Detonation = Energy,
                     Shield = Energy, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
                 },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
-                },
-            },
-            AreaOfDamage = new AreaOfDamageDef
-            {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 1f, // Meters
-                    Damage = 1f,
-                    Depth = 1f, // Meters
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond
-                },
-                EndOfLife = new EndOfLifeDef
-                {
-                    Enable = false,
-                    Radius = 5.0f, // Meters
-                    Damage = 500f,
-                    Depth = 1.5f,
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    ArmOnlyOnHit = false, // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
-                    MinArmingTime = 17, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
-                    NoVisuals = true,
-                    NoSound = false,
-                    ParticleScale = 3,
-                    CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Diamond, // Round or Diamond
-                },
             },
             Trajectory = new TrajectoryDef
             {
@@ -190,7 +112,7 @@ namespace Scripts
                     Inaccuracy = 3f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3f, // controls how responsive tracking is.
                     MaxLateralThrust = 0.5, // controls how sharp the trajectile may turn
-                    TrackingDelay = 500, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 125, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
@@ -235,17 +157,6 @@ namespace Scripts
                             HitPlayChance = 1.0f,
                             MaxDistance = 6000,
                             Loop = false,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
                         },
                     },
                 },
@@ -347,7 +258,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0.5f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
@@ -358,8 +269,9 @@ namespace Scripts
                 DropVelocity = false, // fragments will not inherit velocity from parent.
                 Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
-                MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             Sync = new SynchronizeDef
             {
@@ -375,16 +287,6 @@ namespace Scripts
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
-                Grids = new GridSizeDef
-                {
-                    Large = -1f, // Multiplier for damage against large grids.
-                    Small = -1f, // Multiplier for damage against small grids.
-                },
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
@@ -405,42 +307,9 @@ namespace Scripts
                     Detonation = Energy,
                     Shield = Energy, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
                 },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
-                },
             },
             AreaOfDamage = new AreaOfDamageDef
             {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 5.0f, // Meters
-                    Damage = 2000f,
-                    Depth = 1.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
-                },
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
@@ -519,17 +388,6 @@ namespace Scripts
                         },
                     },
                     Hit = MakeExplosionEffect(3f),
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
-                        },
-                    },
                 },
                 Lines = new LineDef
                 {
@@ -628,7 +486,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0.5f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
@@ -640,17 +498,8 @@ namespace Scripts
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
-                TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
-                {
-                    Enable = false, // Enables TimedSpawns mechanism
-                    Interval = 0, // Time between spawning fragments, in ticks
-                    StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 1, // Max number of fragment children to spawn
-                    Proximity = 1000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
-                    ParentDies = true, // Parent dies once after it spawns its last child.
-                    PointAtTarget = true, // Start fragment direction pointing at Target
-                },
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             Sync = new SynchronizeDef
             {
@@ -666,16 +515,6 @@ namespace Scripts
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
-                Grids = new GridSizeDef
-                {
-                    Large = -1f, // Multiplier for damage against large grids.
-                    Small = -1f, // Multiplier for damage against small grids.
-                },
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
@@ -696,65 +535,6 @@ namespace Scripts
                     Detonation = Energy,
                     Shield = Energy, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
                 },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
-                },
-            },
-            AreaOfDamage = new AreaOfDamageDef
-            {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 1f, // Meters
-                    Damage = 1f,
-                    Depth = 1f, // Meters
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond
-                },
-                EndOfLife = new EndOfLifeDef
-                {
-                    Enable = false,
-                    Radius = 5.0f, // Meters
-                    Damage = 500f,
-                    Depth = 1.5f,
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    ArmOnlyOnHit = false, // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
-                    MinArmingTime = 38, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
-                    NoVisuals = true,
-                    NoSound = false,
-                    ParticleScale = 3,
-                    CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Diamond, // Round or Diamond
-                },
             },
             Trajectory = new TrajectoryDef
             {
@@ -774,7 +554,7 @@ namespace Scripts
                     Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 3f, // controls how responsive tracking is.
                     MaxLateralThrust = 1.0, // controls how sharp the trajectile may turn
-                    TrackingDelay = 300, // Measured in Shape diameter units traveled.
+                    TrackingDelay = 75, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 120, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
@@ -817,17 +597,6 @@ namespace Scripts
                             HitPlayChance = 1.0f,
                             MaxDistance = 6000,
                             Loop = false,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
                         },
                     },
                 },
@@ -929,7 +698,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0.5f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
@@ -940,8 +709,9 @@ namespace Scripts
                 DropVelocity = false, // fragments will not inherit velocity from parent.
                 Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
-                MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             Sync = new SynchronizeDef
             {
@@ -958,16 +728,6 @@ namespace Scripts
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
-                Grids = new GridSizeDef
-                {
-                    Large = -1f, // Multiplier for damage against large grids.
-                    Small = -1f, // Multiplier for damage against small grids.
-                },
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
@@ -988,42 +748,9 @@ namespace Scripts
                     Detonation = Energy,
                     Shield = Energy, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
                 },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
-                },
             },
             AreaOfDamage = new AreaOfDamageDef
             {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 5.0f, // Meters
-                    Damage = 2000f,
-                    Depth = 1.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
-                },
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
@@ -1100,17 +827,6 @@ namespace Scripts
                         },
                     },
                     Hit = MakeExplosionEffect(3f),
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
-                        },
-                    },
                 },
                 Lines = new LineDef
                 {
@@ -1209,7 +925,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0.5f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
@@ -1221,17 +937,8 @@ namespace Scripts
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
-                TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
-                {
-                    Enable = false, // Enables TimedSpawns mechanism
-                    Interval = 0, // Time between spawning fragments, in ticks
-                    StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 1, // Max number of fragment children to spawn
-                    Proximity = 1000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
-                    ParentDies = true, // Parent dies once after it spawns its last child.
-                    PointAtTarget = true, // Start fragment direction pointing at Target
-                },
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             Sync = new SynchronizeDef
             {
@@ -1247,16 +954,6 @@ namespace Scripts
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
-                Grids = new GridSizeDef
-                {
-                    Large = -1f, // Multiplier for damage against large grids.
-                    Small = -1f, // Multiplier for damage against small grids.
-                },
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
@@ -1276,65 +973,6 @@ namespace Scripts
                     AreaEffect = Energy,
                     Detonation = Energy,
                     Shield = Energy, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
-                },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
-                },
-            },
-            AreaOfDamage = new AreaOfDamageDef
-            {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 1f, // Meters
-                    Damage = 1f,
-                    Depth = 1f, // Meters
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond
-                },
-                EndOfLife = new EndOfLifeDef
-                {
-                    Enable = false,
-                    Radius = 5.0f, // Meters
-                    Damage = 500f,
-                    Depth = 1.5f,
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    ArmOnlyOnHit = false, // Detonation only is available, After it hits something, when this is true. IE, if shot down, it won't explode.
-                    MinArmingTime = 10, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
-                    NoVisuals = true,
-                    NoSound = false,
-                    ParticleScale = 3,
-                    CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Diamond, // Round or Diamond
                 },
             },
             Trajectory = new TrajectoryDef
@@ -1385,17 +1023,6 @@ namespace Scripts
                             HitPlayChance = 1.0f,
                             MaxDistance = 6000,
                             Loop = false,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
                         },
                     },
                 },
@@ -1497,7 +1124,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 0.5f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
@@ -1508,8 +1135,9 @@ namespace Scripts
                 DropVelocity = false, // fragments will not inherit velocity from parent.
                 Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards).
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
-                MaxChildren = 6, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
-                IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+                ArmWhenHit = true, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             Sync = new SynchronizeDef
             {
@@ -1526,11 +1154,6 @@ namespace Scripts
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 0f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -1556,42 +1179,9 @@ namespace Scripts
                     Detonation = Energy,
                     Shield = Energy, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
                 },
-                Custom = new CustomScalesDef
-                {
-                    SkipOthers = NoSkip, // Controls how projectile interacts with other blocks in relation to those defined here, NoSkip, Exclusive, Inclusive.
-                    Types = new[] // List of blocks to apply custom damage multipliers to.
-                    {
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test1",
-                            Modifier = -1f,
-                        },
-                        new CustomBlocksDef
-                        {
-                            SubTypeId = "Test2",
-                            Modifier = -1f,
-                        },
-                    },
-                },
             },
             AreaOfDamage = new AreaOfDamageDef
             {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 5.0f, // Meters
-                    Damage = 2000f,
-                    Depth = 1.5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
-                },
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
@@ -1655,17 +1245,6 @@ namespace Scripts
                         },
                     },
                     Hit = MakeExplosionEffect(3f),
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
-                        },
-                    },
                 },
                 Lines = new LineDef
                 {
@@ -1838,17 +1417,6 @@ namespace Scripts
                             HitPlayChance = 0.25f,
                             MaxDistance = 6000,
                             Loop = false,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Scale = 1,
-                            HitPlayChance = 1f,
                         },
                     },
                 },
