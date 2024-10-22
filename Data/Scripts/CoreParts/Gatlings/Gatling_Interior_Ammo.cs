@@ -59,7 +59,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -117,7 +117,7 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -80, end: 80), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                SpeedVariance = Random(start: -20, end: 20), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -261,7 +261,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -319,7 +319,7 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -80, end: 80), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                SpeedVariance = Random(start: -20, end: 20), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -463,7 +463,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -521,7 +521,7 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -80, end: 80), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                SpeedVariance = Random(start: -20, end: 20), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -665,7 +665,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -723,7 +723,7 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -80, end: 80), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                SpeedVariance = Random(start: -20, end: 20), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -867,7 +867,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -925,7 +925,7 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -80, end: 80), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                SpeedVariance = Random(start: -20, end: 20), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -1056,7 +1056,7 @@ namespace Scripts
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
-            Mass = 0.5f, // In kilograms; how much force the impact will apply to the target.
+            Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
@@ -1069,7 +1069,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter =  2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -1079,7 +1079,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 3, // Number of projectiles to spawn.
+                Fragments = 10, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = true, // fragments will not inherit velocity from parent.
@@ -1181,7 +1181,8 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 2f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -100, end: 100), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                DragPerSecond = 10f,
+                SpeedVariance = Random(start: -10, end: 10), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -1314,7 +1315,7 @@ namespace Scripts
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
-            Mass = 0.5f, // In kilograms; how much force the impact will apply to the target.
+            Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
@@ -1327,7 +1328,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
             {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter =  2f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
+                Diameter = 3f, // Diameter is minimum length of LineShape or minimum diameter of SphereShape.
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -1337,7 +1338,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 3, // Number of projectiles to spawn.
+                Fragments = 10, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = true, // fragments will not inherit velocity from parent.
@@ -1439,7 +1440,8 @@ namespace Scripts
                 MaxTrajectory = 2500f, // Max Distance the projectile or beam can Travel.
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 2f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -100, end: 100), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                DragPerSecond = 10f,
+                SpeedVariance = Random(start: -10, end: 10), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
@@ -1570,34 +1572,35 @@ namespace Scripts
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
             BaseDamage = 10,
-            Mass = 0.025f, // In kilograms; how much force the impact will apply to the target.
-	    HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
+            Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
+	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
-            {
+                {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 3.0, // For SphereShape this is diameter.
+                Diameter = 6f, // For SphereShape this is diameter.
                               // For LineShape it is total length (double this value when setting up MaximumDiameter for weapon targeting).
                               // Defaults to 1 if left zero or deleted.
-            },
+                },
             Beams = new BeamDef
                 {
                 Enable = true, // Enable beam behaviour. Please have 3600 RPM, when this Setting is enabled. Please do not fire Beams into Voxels.
-                VirtualBeams = false, // Only one damaging beam, but with the effectiveness of the visual beams combined (better performance).
-                ConvergeBeams = false, // When using virtual beams, converge the visual beams to the location of the real beam.
-                RotateRealBeam = false, // The real beam is rotated between all visual beams, instead of centered between them.
-                OneParticle = false, // Only spawn one particle hit per beam weapon.
                 FakeVoxelHitTicks = 3, // If this beam hits/misses a voxel it assumes it will continue to do so for this many ticks at the same hit length and not extend further within this window.  This can save up to n times worth of cpu.
                 },
             Trajectory = new TrajectoryDef
                 {
-                MaxLifeTime = 3,
-	            MaxTrajectory = 3.0f,
+                MaxLifeTime = 6,
+	            MaxTrajectory = 6.0f,
 	            DesiredSpeed = 0,
                 },
             DamageScales = new DamageScaleDef
                 {
                 DamageVoxels = false, // Whether to damage voxels.
-                HealthHitModifier = 0.5f, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                HealthHitModifier = 0.1f, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                Grids = new GridSizeDef
+                    {
+                    Large = -1f, // Multiplier for damage against large grids.
+                    Small = 10f, // Multiplier for damage against small grids.
+                    },
                 Armor = new ArmorDef
                     {
                     Armor = 0.25f,
@@ -1606,6 +1609,54 @@ namespace Scripts
                     NonArmor = -1f,
                     },
                 },
+            /**/
+            AmmoGraphics = new GraphicDef
+            {
+                ModelName = "", // Model Path goes here.  "\\Models\\Ammo\\Starcore_Arrow_Missile_Large"
+                VisualProbability = 1f, // %
+                ShieldHitDraw = false,
+                Lines = new LineDef
+                {
+                    ColorVariance = Random(start: 2.5f, end: 5f), // multiply the color by random values within range.
+                    WidthVariance = Random(start: 0f, end: 0.05f), // adds random value to default width (negatives shrinks width)
+                    Tracer = new TracerBaseDef
+                    {
+                        Enable = true,
+                        Length = 5f, //
+                        Width = 0.15f, //
+                        Color = Color(red: 10f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
+                        VisualFadeEnd = 300, // How many ticks after fade began before it will be invisible.
+                        Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
+                            "WeaponLaser", // Please always have this Line set, if this Section is enabled.
+                        },
+                        TextureMode = Normal, // Normal, Cycle, Chaos, Wave
+                        Segmentation = new SegmentDef
+                        {
+                            Enable = false, // If true Tracer TextureMode is ignored
+                            Textures = new[] {
+                                "", // Please always have this Line set, if this Section is enabled.
+                            },
+                            SegmentLength = 0f, // Uses the values below.
+                            SegmentGap = 0f, // Uses Tracer textures and values
+                            Speed = 1f, // meters per second
+                            Color = Color(red: 1, green: 2, blue: 2.5f, alpha: 1),
+                            WidthMultiplier = 1f,
+                            Reverse = false, 
+                            UseLineVariance = true,
+                            WidthVariance = Random(start: 0f, end: 0f),
+                            ColorVariance = Random(start: 0f, end: 0f)
+                        }
+                    },
+                    OffsetEffect = new OffsetEffectDef
+                    {
+                        MaxOffset = 0,// 0 offset value disables this effect
+                        MinLength = 0f,
+                        MaxLength = 3,
+                    },
+                },
+            },
+            //*/
         };
         
     }
