@@ -77,16 +77,7 @@ namespace Scripts
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
-                TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
-                {
-                    Enable = false, // Enables TimedSpawns mechanism
-                    Interval = 0, // Time between spawning fragments, in ticks
-                    StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 1, // Max number of fragment children to spawn
-                    Proximity = 1000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
-                    ParentDies = true, // Parent dies once after it spawns its last child.
-                    PointAtTarget = true, // Start fragment direction pointing at Target
-                },
+                ArmWhenHit = false, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             DamageScales = new DamageScaleDef
             {
@@ -331,16 +322,7 @@ namespace Scripts
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = false, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
-                TimedSpawns = new TimedSpawnDef // disables FragOnEnd in favor of info specified below
-                {
-                    Enable = false, // Enables TimedSpawns mechanism
-                    Interval = 0, // Time between spawning fragments, in ticks
-                    StartTime = 0, // Time delay to start spawning fragments, in ticks, of total projectile life
-                    MaxSpawns = 1, // Max number of fragment children to spawn
-                    Proximity = 1000, // Starting distance from target bounding sphere to start spawning fragments, 0 disables this feature.  No spawning outside this distance
-                    ParentDies = true, // Parent dies once after it spawns its last child.
-                    PointAtTarget = true, // Start fragment direction pointing at Target
-                },
+                ArmWhenHit = false, // Setting this to true will arm the projectile when its shot by other projectiles.
             },
             DamageScales = new DamageScaleDef
             {

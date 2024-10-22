@@ -1055,7 +1055,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 80f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -1164,7 +1164,7 @@ namespace Scripts
                     MinArmingTime = 0, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
                     NoVisuals = false,
                     NoSound = true,
-                    ParticleScale = 0.2f,
+                    ParticleScale = 0.25f,
                     CustomParticle = "20mmStrike", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
@@ -1209,7 +1209,7 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 0.2f,
+                            Scale = 0.25f,
                             HitPlayChance = 0.5f,
                             MaxDistance = 6000,
                         },
@@ -1314,7 +1314,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 100f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 80f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -1423,7 +1423,7 @@ namespace Scripts
                     MinArmingTime = 0, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
                     NoVisuals = false,
                     NoSound = true,
-                    ParticleScale = 0.2f,
+                    ParticleScale = 0.25f,
                     CustomParticle = "20mmStrike", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
@@ -1468,7 +1468,7 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Scale = 0.2f,
+                            Scale = 0.25f,
                             HitPlayChance = 0.5f,
                             MaxDistance = 6000,
                         },
@@ -1609,7 +1609,7 @@ namespace Scripts
                     NonArmor = -1f,
                     },
                 },
-            /**/
+            /*
             AmmoGraphics = new GraphicDef
             {
                 ModelName = "", // Model Path goes here.  "\\Models\\Ammo\\Starcore_Arrow_Missile_Large"
@@ -1656,7 +1656,7 @@ namespace Scripts
                     },
                 },
             },
-            //*/
+            */
         };
         
     }
