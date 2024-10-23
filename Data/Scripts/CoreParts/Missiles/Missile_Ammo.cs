@@ -71,7 +71,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 10, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Armor = new ArmorDef
                 {
@@ -137,7 +137,7 @@ namespace Scripts
                 {
                     Roam = false, // Roam current area after target loss
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-                    MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
+                    MaxTargets = 5, // Number of targets allowed before ending, 0 = unlimited
                     FocusEviction = false, // If FocusOnly and this to true will force smarts to lose target when there is no focus target
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                 },
@@ -300,7 +300,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 10, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Armor = new ArmorDef
                 {
@@ -343,7 +343,7 @@ namespace Scripts
                     MinArmingTime = 0, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
                     NoVisuals = true,
                     NoSound = false,
-                    ParticleScale = 3,
+                    ParticleScale = 1.5f,
                     CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
@@ -353,7 +353,7 @@ namespace Scripts
             {
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 45f, // Degrees, Is pointed forward
-                TargetLossTime = 120, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = (int)((6000d / 800d) * 120d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 250f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 800f, // voxel phasing if you go above 5100
@@ -374,7 +374,7 @@ namespace Scripts
                     MaxChaseTime = (int)(6000 / 800) * 60, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
-                    MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
+                    MaxTargets = 5, // Number of targets allowed before ending, 0 = unlimited
                     FocusEviction = false, // If FocusOnly and this to true will force smarts to lose target when there is no focus target
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     ScanRange = 0, // 0 disables projectile screening, the max range that this projectile will be seen at by defending grids (adds this projectile to defenders lookup database). 
@@ -527,7 +527,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 10, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Armor = new ArmorDef
                 {
@@ -749,7 +749,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 10, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Armor = new ArmorDef
                 {
@@ -792,7 +792,7 @@ namespace Scripts
                     MinArmingTime = 0, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
                     NoVisuals = true,
                     NoSound = false,
-                    ParticleScale = 3,
+                    ParticleScale = 1.5f,
                     CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
@@ -820,7 +820,7 @@ namespace Scripts
                     NavAcceleration = 0, // helps influence how the projectile steers, 0 defaults to 1/2 Aggressiveness value or 0 if its 0, a value less than 0 disables this feature. 
                     AccelClearance = false, // Setting this to true will prevent smart acceleration until it is clear of the grid and tracking delay has been met (free fall).
                     MaxChaseTime = (int)(5000 / 800) * 60, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    MaxTargets = 10, // Number of targets allowed before ending, 0 = unlimited
+                    MaxTargets = 5, // Number of targets allowed before ending, 0 = unlimited
                     OffsetRatio = 0.66f, // The ratio to offset the random direction (0 to 1) 
                     OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..)
                     OffsetMinRange = 3000, // The range from target at which offsets are no longer active
@@ -978,7 +978,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 10, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Armor = new ArmorDef
                 {
@@ -1031,7 +1031,7 @@ namespace Scripts
             {
                 Guidance = TravelTo, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
-                TargetLossTime = 120, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 800f, // voxel phasing if you go above 5100
@@ -1204,7 +1204,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 10, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.001, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
@@ -1252,7 +1252,7 @@ namespace Scripts
                     MinArmingTime = 0, // In ticks, before the Ammo is allowed to explode, detonate or similar; This affects shrapnel spawning.
                     NoVisuals = true,
                     NoSound = false,
-                    ParticleScale = 3,
+                    ParticleScale = 1.5f,
                     CustomParticle = "Explosion_Missile_2", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
@@ -1262,7 +1262,7 @@ namespace Scripts
             {
                 Guidance = Smart, // None, Remote, TravelTo, Smart, DetectTravelTo, DetectSmart, DetectFixed
                 TargetLossDegree = 0f, // Degrees, Is pointed forward
-                TargetLossTime = 120, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                TargetLossTime = 30, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = (int)((6000d / 800d) * 120d), // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..). Please have a value for this, It stops Bad things.
                 AccelPerSec = 0f, // Meters Per Second. This is the spawning Speed of the Projectile, and used by turning.
                 DesiredSpeed = 0f, // voxel phasing if you go above 5100
@@ -1522,7 +1522,7 @@ namespace Scripts
         {
             return new ParticleDef
             {
-                Name = "Explosion_Missile",
+                Name = "Explosion_Missile_2",
                 ApplyToShield = true,
                 Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
                 Offset = Vector(x: 0, y: 0, z: 0),
@@ -1530,7 +1530,7 @@ namespace Scripts
                 {
                     Loop = false,
                     Restart = false,
-                    MaxDistance = 6000,
+                    MaxDistance = 8000,
                     MaxDuration = 1,
                     Scale = radius / 3.0f,
                     HitPlayChance = 1f,
