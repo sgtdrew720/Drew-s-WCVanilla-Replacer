@@ -1055,7 +1055,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 80f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 40f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -1150,9 +1150,9 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 100f,
+                    Damage = 60f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 150f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 80f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1314,7 +1314,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 80f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 40f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -1409,9 +1409,9 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 100f,
+                    Damage = 60f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 150f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 80f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1577,7 +1577,7 @@ namespace Scripts
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
                 {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 6f, // For SphereShape this is diameter.
+                Diameter = 2f, // For SphereShape this is diameter.
                               // For LineShape it is total length (double this value when setting up MaximumDiameter for weapon targeting).
                               // Defaults to 1 if left zero or deleted.
                 },
@@ -1588,8 +1588,8 @@ namespace Scripts
                 },
             Trajectory = new TrajectoryDef
                 {
-                MaxLifeTime = 6,
-	            MaxTrajectory = 6.0f,
+                MaxLifeTime = 9,
+	            MaxTrajectory = 9.0f,
 	            DesiredSpeed = 0,
                 },
             DamageScales = new DamageScaleDef
