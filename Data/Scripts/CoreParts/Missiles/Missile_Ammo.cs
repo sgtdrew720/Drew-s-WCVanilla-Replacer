@@ -278,7 +278,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "EWARFragment220mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 10, // Number of projectiles to spawn.
+                Fragments = 12, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
@@ -726,7 +726,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "EWARFragment220mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 10, // Number of projectiles to spawn.
+                Fragments = 12, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
@@ -1181,7 +1181,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "EWARFragment220mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 10, // Number of projectiles to spawn.
+                Fragments = 12, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
@@ -1439,8 +1439,8 @@ namespace Scripts
                 DesiredSpeed = 90f, // voxel phasing if you go above 5100
                 MaxTrajectory = 250f, // Max Distance the projectile or beam can Travel.
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable. Natural Gravity Only.
-                SpeedVariance = Random(start: -30, end: 30), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
-                RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
+                SpeedVariance = Random(start: -15, end: 15), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+                RangeVariance = Random(start: 30, end: -30), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
             },
             AmmoGraphics = new GraphicDef
