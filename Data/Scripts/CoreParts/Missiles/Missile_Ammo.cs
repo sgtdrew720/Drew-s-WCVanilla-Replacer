@@ -331,7 +331,7 @@ namespace Scripts
                     Radius = 9.0f, // Meters
                     Damage = 2400f,
                     Depth = 2.0f,
-                    MaxAbsorb = 50000f,
+                    MaxAbsorb = 48000f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -780,7 +780,7 @@ namespace Scripts
                     Radius = 9.0f, // Meters
                     Damage = 2400f,
                     Depth = 2.0f,
-                    MaxAbsorb = 50000f,
+                    MaxAbsorb = 48000f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1238,9 +1238,9 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 9.0f, // Meters
-                    Damage = 2400f,
+                    Damage = 3200f,
                     Depth = 2.0f,
-                    MaxAbsorb = 50000f,
+                    MaxAbsorb = 54000f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
