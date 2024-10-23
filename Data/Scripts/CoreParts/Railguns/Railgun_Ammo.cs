@@ -81,11 +81,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 100f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -295,11 +290,6 @@ namespace Scripts
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
-                FallOff = new FallOffDef
-                {
-                    Distance = 500f, // Distance at which damage begins falling off.
-                    MinMultipler = 1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
-                },
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
