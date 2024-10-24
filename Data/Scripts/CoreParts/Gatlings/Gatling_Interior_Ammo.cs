@@ -1055,7 +1055,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 40f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 80f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -1079,7 +1079,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 10, // Number of projectiles to spawn.
+                Fragments = 12, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = true, // fragments will not inherit velocity from parent.
@@ -1314,7 +1314,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 40f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 80f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -1338,7 +1338,7 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 10, // Number of projectiles to spawn.
+                Fragments = 12, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = true, // fragments will not inherit velocity from parent.
@@ -1571,13 +1571,13 @@ namespace Scripts
         {
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
-            BaseDamage = 10,
+            BaseDamage = 25,
             Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
 	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
                 {
                 Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 2f, // For SphereShape this is diameter.
+                Diameter = 3f, // For SphereShape this is diameter.
                               // For LineShape it is total length (double this value when setting up MaximumDiameter for weapon targeting).
                               // Defaults to 1 if left zero or deleted.
                 },
