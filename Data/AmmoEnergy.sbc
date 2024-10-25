@@ -25,7 +25,7 @@
 				<TypeId>AmmoMagazine</TypeId>
 				<SubtypeId>NATO_25x184mm</SubtypeId>
 			</Id>
-			<DisplayName>NATO 20x175mm Box</DisplayName>
+			<DisplayName>20mm NATO Ammo Box</DisplayName>
 			<Icon>Textures\GUI\Icons\ammo\Ammo_Box.dds</Icon>
 			<Size>
 				<X>0.25</X>
@@ -52,7 +52,7 @@
                 <TypeId>AmmoMagazine</TypeId>
                 <SubtypeId>AutocannonClip</SubtypeId>
             </Id>
-            <DisplayName>DisplayName_Item_AutoCannonClip</DisplayName>
+            <DisplayName>30mm Autocannon Clip</DisplayName>
             <Icon>Textures\GUI\Icons\ammo\AutoCanonShellBox.dds</Icon>
             <Size>
                 <X>0.25</X>

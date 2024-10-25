@@ -56,9 +56,9 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "Basic Rocket Launcher", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.7f, // Projectile inaccuracy in degrees.
+                DeviateShotAngle = 0.1f, // Projectile inaccuracy in degrees.
                 AimingTolerance = 0f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
-                AimLeadingPrediction = Off, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
+                AimLeadingPrediction = Basic, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released - while a target is available.
                 AddToleranceToTracking = false, // Allows turret to track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = false, // Whether the weapon can be fired underwater when using WaterMod.
@@ -122,7 +122,7 @@ namespace Scripts {
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 220, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 210, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, // Heat generated per shot.
@@ -157,7 +157,7 @@ namespace Scripts {
                 {
                     Effect1 = new ParticleDef
                     {
-                        Name = "", // SubtypeId of muzzle particle effect.
+                        Name = "Muzzle_Flash_Autocannon", // SubtypeId of muzzle particle effect.
                         Color = Color(red: 0, green: 0, blue: 0, alpha: 1), // Deprecated, set color in particle sbc.
                         Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
                         Extras = new ParticleOptionDef
@@ -225,7 +225,7 @@ namespace Scripts {
             Targeting = new TargetingDef
             {
                 Threats = new[] {
-                    Grids, Characters, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
+                    Grids, // Types of threat to engage: Grids, Projectiles, Characters, Meteors, Neutrals
                 },
                 SubSystems = new[] {
                     Thrust, Power, Offense, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
@@ -244,9 +244,9 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "Advanced Rocket Launcher", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.1f, // Projectile inaccuracy in degrees.
+                DeviateShotAngle = 0.5f, // Projectile inaccuracy in degrees.
                 AimingTolerance = 0f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
-                AimLeadingPrediction = Off, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
+                AimLeadingPrediction = Advanced, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released - while a target is available.
                 AddToleranceToTracking = false, // Allows turret to track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = false, // Whether the weapon can be fired underwater when using WaterMod.
@@ -264,7 +264,7 @@ namespace Scripts {
                     TurretAttached = false, // Whether this weapon is a turret and should have the UI and API options for such. Turrets Need this set to True.
                     TurretController = false, // Whether this weapon can physically control the turret's movement. Turrets Need this set to True.
                     PrimaryTracking = false, // For multiweapons: whether this weapon should designate targets for other weapons on the platform without their own tracking.
-                    LockOnFocus = false, // If enabled, weapon will only fire at targets that have been HUD selected AND locked onto by pressing Numpad 0.
+                    LockOnFocus = true, // If enabled, weapon will only fire at targets that have been HUD selected AND locked onto by pressing Numpad 0.
                     SuppressFire = false, // If enabled, weapon can only be fired manually.
                     OverrideLeads = false, // Disable target leading on fixed weapons, or allow it for turrets.
                     DefaultLeadGroup = 1, // Default LeadGroup setting, range 0-5, 0 is disables lead group.  Only useful for fixed weapons or weapons set to OverrideLeads.
@@ -310,7 +310,7 @@ namespace Scripts {
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 220, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 230, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, // Heat generated per shot.
@@ -345,16 +345,16 @@ namespace Scripts {
                 {
                     Effect1 = new ParticleDef
                     {
-                        Name = "", // SubtypeId of muzzle particle effect.
+                        Name = "Muzzle_Flash_Autocannon", // SubtypeId of muzzle particle effect.
                         Color = Color(red: 0, green: 0, blue: 0, alpha: 1), // Deprecated, set color in particle sbc.
                         Offset = Vector(x: 0, y: 0, z: 0), // Offsets the effect from the muzzle empty.
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true, // Set this to the same as in the particle sbc!
-                            Restart = true, // Whether to end a looping effect instantly when firing stops.
-                            MaxDistance = 400,
-                            MaxDuration = 10,
-                            Scale = 1f, // Scale of effect.
+                            Loop = false, // Set this to the same as in the particle sbc!
+                            Restart = false, // Whether to end a looping effect instantly when firing stops.
+                            MaxDistance = 800,
+                            MaxDuration = 0,
+                            Scale = 0.5f, // Scale of effect.
                         },
                     },
                     Effect2 = new ParticleDef
