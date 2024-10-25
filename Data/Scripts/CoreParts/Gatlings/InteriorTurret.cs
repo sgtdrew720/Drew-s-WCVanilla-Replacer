@@ -28,6 +28,15 @@ namespace Scripts {
                         DurabilityMod = 0.25f, // GeneralDamageMultiplier, 0.25f = 25% damage taken.
                         IconName = "" // Overlay for block inventory slots, like reactors, refineries, etc.
                     },
+                        new MountPointDef {
+                        SubtypeId = "SmallInteriorTurret", // Block Subtypeid. Your Cubeblocks contain this information
+                        SpinPartId = "None", // For weapons with a spinning barrel such as Gatling Guns. Subpart_Boomsticks must be written as Boomsticks.
+                        MuzzlePartId = "InteriorTurretBase2", // The subpart where your muzzle empties are located. This is often the elevation subpart. Subpart_Boomsticks must be written as Boomsticks.
+                        AzimuthPartId = "InteriorTurretBase1", // Your Rotating Subpart, the bit that moves sideways.
+                        ElevationPartId = "InteriorTurretBase2",// Your Elevating Subpart, that bit that moves up.
+                        DurabilityMod = 0.25f, // GeneralDamageMultiplier, 0.25f = 25% damage taken.
+                        IconName = "" // Overlay for block inventory slots, like reactors, refineries, etc.
+                    },
                     
                  },
                 Muzzles = new[] {
@@ -60,9 +69,9 @@ namespace Scripts {
             {
                 PartName = "Interior Turret", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
                 DeviateShotAngle = 0.5f, // Projectile inaccuracy in degrees.
-                AimingTolerance = 2f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
+                AimingTolerance = 5f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Advanced, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
-                DelayCeaseFire = 12, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
+                DelayCeaseFire = 30, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
                 AddToleranceToTracking = false, // Allows turret to track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = false, // Whether the weapon can be fired underwater when using WaterMod.
 
@@ -126,7 +135,7 @@ namespace Scripts {
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
                     ReloadTime = 240, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    MagsToLoad = 2, // Number of physical magazines to consume on reload.
+                    MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 0, // Heat generated per shot.
                     MaxHeat = 100, // Max heat before weapon enters cooldown (70% of max heat).
