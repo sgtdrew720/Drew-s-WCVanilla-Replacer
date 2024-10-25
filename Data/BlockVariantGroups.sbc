@@ -48,6 +48,7 @@
                 <Block Type="MyObjectBuilder_Searchlight" Subtype="SmallSearchlight" />
                 <Block Type="MyObjectBuilder_Searchlight" Subtype="LargeSearchlight" />
                 <Block Type="MyObjectBuilder_InteriorTurret" Subtype="LargeInteriorTurret" />
+                <Block Type="MyObjectBuilder_InteriorTurret" Subtype="SmallInteriorTurret" />
                 <Block Type="MyObjectBuilder_LargeMissileTurret" Subtype="AutoCannonTurret" />
             </Blocks>
         </BlockVariantGroup>

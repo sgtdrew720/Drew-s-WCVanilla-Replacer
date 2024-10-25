@@ -1396,7 +1396,7 @@
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="0.46" StartY="0.46" EndX="0.54" EndY="0.54" />
+                <MountPoint Side="Bottom" StartX="0.25" StartY="0.25" EndX="0.75" EndY="0.75" />
             </MountPoints>
             <BuildProgressModels>
                 <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\InteriorTurretConstruction_1.mwm" />
@@ -1465,11 +1465,11 @@
             <DisplayName>DisplayName_Block_InteriorTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\interior_turret.dds</Icon>
             <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded  [24 Damage per Shot, 900 RPM, 800m/s, 2000m Range, Compatible with all rifle magazines]</Description>
-            <CubeSize>Large</CubeSize>
+            <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="5" y="5" z="5" />
+            <Size x="3" y="5" z="3" />
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\Cubes\Large\InteriorTurret.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
@@ -1484,7 +1484,7 @@
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="0.46" StartY="0.46" EndX="0.54" EndY="0.54" />
+                <MountPoint Side="Bottom" StartX="0.25" StartY="0.25" EndX="2.75" EndY="2.75" />
             </MountPoints>
             <BuildProgressModels>
                 <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\InteriorTurretConstruction_1.mwm" />
