@@ -1079,11 +1079,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 18, // Number of projectiles to spawn.
+                Fragments = 16, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
-                DropVelocity = true, // fragments will not inherit velocity from parent.
-                Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                DropVelocity = false, // fragments will not inherit velocity from parent.
+                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1150,9 +1150,9 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 60f,
+                    Damage = 20f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 80f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 40f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1338,11 +1338,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 18, // Number of projectiles to spawn.
+                Fragments = 16, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
-                DropVelocity = true, // fragments will not inherit velocity from parent.
-                Offset = -1f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                DropVelocity = false, // fragments will not inherit velocity from parent.
+                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1409,9 +1409,9 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 60f,
+                    Damage = 20f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 80f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 40f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -1571,7 +1571,7 @@ namespace Scripts
         {
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
-            BaseDamage = 25,
+            BaseDamage = 10,
             Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
 	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -1589,9 +1589,9 @@ namespace Scripts
             Trajectory = new TrajectoryDef
                 {
                 MaxLifeTime = 12,
-	            MaxTrajectory = 9.0f,
-	            DesiredSpeed = 180,
-		    SpeedVariance = Random(start: -180, end: 180), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
+	            MaxTrajectory = 12f,
+	            DesiredSpeed = 240,
+		    SpeedVariance = Random(start: -120, end: 120), // subtracts value from DesiredSpeed. Be warned, you can make your projectile go backwards.
                 },
             DamageScales = new DamageScaleDef
                 {
@@ -1600,7 +1600,7 @@ namespace Scripts
                 Grids = new GridSizeDef
                     {
                     Large = -1f, // Multiplier for damage against large grids.
-                    Small = 10f, // Multiplier for damage against small grids.
+                    Small = 4f, // Multiplier for damage against small grids.
                     },
                 Armor = new ArmorDef
                     {
