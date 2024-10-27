@@ -72,7 +72,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 0.5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -274,7 +274,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 0.5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -476,7 +476,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 0.5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -678,7 +678,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 0.5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -880,7 +880,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 0.5, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = -1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -1079,11 +1079,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 16, // Number of projectiles to spawn.
+                Fragments = 3, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                Offset = -3f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1094,7 +1094,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -1338,11 +1338,11 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 16, // Number of projectiles to spawn.
+                Fragments = 3, // Number of projectiles to spawn.
                 Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
-                Offset = -2f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                Offset = -3f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
                 IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
@@ -1353,7 +1353,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
@@ -1571,7 +1571,7 @@ namespace Scripts
         {
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
-            BaseDamage = 5,
+            BaseDamage = 20,
             Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
 	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -1608,6 +1608,12 @@ namespace Scripts
                     Light = 0.50f, // Multiplier for damage against light armor.
                     Heavy = 0.25f, // Multiplier for damage against heavy armor.
                     NonArmor = -1f, // Multiplier for damage against every else.
+                },
+                Shields = new ShieldDef
+                {
+                    Modifier = 0f, // Multiplier for damage against shields.
+                    Type = Default, // Damage vs healing against shields; Default, Heal
+                    BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
                 },
             /*

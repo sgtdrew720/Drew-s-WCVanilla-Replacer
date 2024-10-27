@@ -74,7 +74,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 4, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
@@ -311,7 +311,7 @@ namespace Scripts
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 4, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
-                VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
