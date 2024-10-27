@@ -1571,7 +1571,7 @@ namespace Scripts
         {
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
-            BaseDamage = 10,
+            BaseDamage = 5,
             Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
 	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -1600,15 +1600,15 @@ namespace Scripts
                 Grids = new GridSizeDef
                     {
                     Large = -1f, // Multiplier for damage against large grids.
-                    Small = 4f, // Multiplier for damage against small grids.
+                    Small = -1f, // Multiplier for damage against small grids.
                     },
                 Armor = new ArmorDef
-                    {
-                    Armor = 0.25f,
-                    Light = -1f,
-                    Heavy = -1f,
-                    NonArmor = -1f,
-                    },
+                {
+                    Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
+                    Light = 0.50f, // Multiplier for damage against light armor.
+                    Heavy = 0.25f, // Multiplier for damage against heavy armor.
+                    NonArmor = -1f, // Multiplier for damage against every else.
+                },
                 },
             /*
             AmmoGraphics = new GraphicDef

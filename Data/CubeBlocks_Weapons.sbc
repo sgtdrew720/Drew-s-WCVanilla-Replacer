@@ -1686,7 +1686,7 @@
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
-            <Size x="7" y="5" z="7" />
+            <Size x="5" y="5" z="5" />
             <ModelOffset x="0" y="0" z="0" />
             <Model>Models\Cubes\Small\MediumCalibreTurret_Base.mwm</Model>
             <UseModelIntersection>true</UseModelIntersection>
@@ -1702,7 +1702,7 @@
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <MountPoints>
-                <MountPoint Side="Bottom" StartX="2" StartY="2" EndX="5" EndY="5" Default="true" />
+                <MountPoint Side="Bottom" StartX="1" StartY="1" EndX="4" EndY="4" Default="true" />
             </MountPoints>
             <BuildProgressModels>
                 <Model BuildPercentUpperBound="0.43" File="Models\Cubes\Small\MediumCalibreTurretConstruction_1.mwm" />
