@@ -329,10 +329,10 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 9.0f, // Meters
-                    Damage = 2400f,
+                    Damage = 24000f,
                     Depth = 2.0f,
                     MaxAbsorb = 48000f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -778,10 +778,10 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 9.0f, // Meters
-                    Damage = 2400f,
+                    Damage = 24000f,
                     Depth = 2.0f,
                     MaxAbsorb = 48000f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -1238,10 +1238,10 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 9.0f, // Meters
-                    Damage = 3200f,
+                    Damage = 32000f,
                     Depth = 2.0f,
                     MaxAbsorb = 64000f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
