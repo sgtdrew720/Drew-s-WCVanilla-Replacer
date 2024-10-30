@@ -1320,7 +1320,7 @@ namespace Scripts
                                     // To limit max # of blocks hit, set MaxObjectsHit to desired # and ensure CountBlocks = true in ObjectsHit, otherwise it will continue until BaseDamage depletes
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
-            BackKickForce = 14,4f, // Recoil. This is applied to the Parent Grid.
+            BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
