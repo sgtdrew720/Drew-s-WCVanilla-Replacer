@@ -59,7 +59,7 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "Autocannon", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.12f, // Projectile inaccuracy in degrees.
+                DeviateShotAngle = 0.205f, // Projectile inaccuracy in degrees.
                 AimingTolerance = 2f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Advanced, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
@@ -182,7 +182,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE30mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE30mmShell,
+                APDS30mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,
@@ -233,7 +234,7 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "Autocannon Turret", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.24f, // Projectile inaccuracy in degrees.
+                DeviateShotAngle = 0.250f, // Projectile inaccuracy in degrees.
                 AimingTolerance = 2f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Advanced, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
@@ -356,7 +357,8 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                APHE30mmShell, // Must list all primary, shrapnel, and pattern ammos.
+                APHE30mmShell,
+                APDS30mmShell, // Must list all primary, shrapnel, and pattern ammos.
             },
             //Animations = Weapon75_Animation,
             //Upgrades = UpgradeModules,

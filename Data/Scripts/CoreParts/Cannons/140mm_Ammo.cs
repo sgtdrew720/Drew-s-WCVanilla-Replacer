@@ -276,7 +276,7 @@ namespace Scripts
         };
 	  
     
-    private AmmoDef HEArtilleryShell => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef HEArtilleryShell => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "LargeCalibreAmmo", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "HE 140mm Artillery Shell", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
