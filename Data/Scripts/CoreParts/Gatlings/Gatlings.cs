@@ -369,7 +369,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravel,
+                GatlingAmmo,
                 APDSGatlingAmmo,
                 Shrapnel20mm,// Must list all primary, shrapnel, and pattern ammos.
             },
