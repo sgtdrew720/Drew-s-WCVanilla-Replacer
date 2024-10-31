@@ -85,7 +85,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 10f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
@@ -124,7 +124,7 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 30f,
+                    Damage = 45f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 60f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
@@ -537,7 +537,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 10f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
@@ -572,27 +572,11 @@ namespace Scripts
             },
             AreaOfDamage = new AreaOfDamageDef
             {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 5f, // Meters
-                    Damage = 5f,
-                    Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
-                },
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 30f,
+                    Damage = 45f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 60f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
@@ -783,7 +767,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 10f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
