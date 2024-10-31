@@ -45,7 +45,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 5f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -69,8 +69,8 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 4, // Number of projectiles to spawn.
-                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
+                Fragments = 6, // Number of projectiles to spawn.
+                Degrees = 180, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
                 Offset = -3f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
@@ -85,7 +85,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
@@ -120,29 +120,13 @@ namespace Scripts
             },
             AreaOfDamage = new AreaOfDamageDef
             {
-                ByBlockHit = new ByBlockHitDef
-                {
-                    Enable = false,
-                    Radius = 5f, // Meters
-                    Damage = 5f,
-                    Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
-                    //.Linear drops evenly by distance from center out to max radius
-                    //.Curve drops off damage sharply as it approaches the max radius
-                    //.InvCurve drops off sharply from the middle and tapers to max radius
-                    //.Squeeze does little damage to the middle, but rapidly increases damage toward max radius
-                    //.Pooled damage behaves in a pooled manner that once exhausted damage ceases.
-                    //.Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
-                },
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 20f,
+                    Damage = 30f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 40f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 60f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -223,9 +207,9 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 5f, //
+                        Length = 6f, //
                         Width = 0.1f, //
-                        Color = Color(red: 30f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Color = Color(red: 40f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -303,7 +287,7 @@ namespace Scripts
             AmmoRound = "APDS 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 160f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 90f, // Direct damage; one steel plate is worth 100.
             BaseDamageCutoff = 40,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
                                     // Optional penetration mechanic to apply damage to blocks beyond the first hit, without requiring the block to be destroyed.  
                                     // Overwrites normal damage behavior of requiring a block to be destroyed before damage can continue.  0 disables. 
@@ -337,7 +321,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
@@ -432,9 +416,9 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 5f, //
-                        Width = 0.1f, //
-                        Color = Color(red: 10f, green: 10f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Length = 4f, //
+                        Width = 0.05f, //
+                        Color = Color(red: 5f, green: 5f, blue: 5f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, WeaponLaser, WarpBubble, etc..
@@ -513,7 +497,7 @@ namespace Scripts
             AmmoRound = "SAPHEF 20mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 1f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 5f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 14.4f, // Recoil. This is applied to the Parent Grid.
@@ -537,8 +521,8 @@ namespace Scripts
             Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
             {
                 AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
-                Fragments = 4, // Number of projectiles to spawn.
-                Degrees = 360, // Cone in which to randomize direction of spawned projectiles.
+                Fragments = 6, // Number of projectiles to spawn.
+                Degrees = 180, // Cone in which to randomize direction of spawned projectiles.
                 Reverse = false, // Spawn projectiles backward instead of forward.
                 DropVelocity = false, // fragments will not inherit velocity from parent.
                 Offset = -3f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
@@ -553,7 +537,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = 0.5f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
@@ -608,9 +592,9 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 1.6f, // Radius of AOE effect, in meters.
-                    Damage = 20f,
+                    Damage = 30f,
                     Depth = 0.8f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 40f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 60f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -691,9 +675,9 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = 5f, //
+                        Length = 6f, //
                         Width = 0.1f, //
-                        Color = Color(red: 30f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
+                        Color = Color(red: 40f, green: 20f, blue: 10f, alpha: 1), // RBG 255 is Neon Glowing, 100 is Quite Bright.
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 240, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -770,7 +754,7 @@ namespace Scripts
         {
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
-            BaseDamage = 10,
+            BaseDamage = 5,
             Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
 	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -794,8 +778,13 @@ namespace Scripts
             },
             DamageScales = new DamageScaleDef
             {
+                MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
                 DamageVoxels = false, // Whether to damage voxels.
-                HealthHitModifier = 0.1f, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                SelfDamage = false, // Whether to damage the weapon's own grid.
+                HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                VoxelHitModifier = 0.0001f, // Voxel damage multiplier; defaults to 1 if zero or less.
+                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
+                // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 Grids = new GridSizeDef
                 {
                     Large = -1f, // Multiplier for damage against large grids.
@@ -806,13 +795,25 @@ namespace Scripts
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = 0.50f, // Multiplier for damage against light armor.
                     Heavy = 0.25f, // Multiplier for damage against heavy armor.
-                    NonArmor = -1f, // Multiplier for damage against every else.
+                    NonArmor = 1.1f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.4f, // Multiplier for damage against shields.
+                    Modifier = 0.2f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
+                },
+                DamageType = new DamageTypes // Damage type of each element of the projectile's damage; Kinetic, Energy
+                {
+                    Base = Kinetic, // Base Damage uses this
+                    AreaEffect = Kinetic,
+                    Detonation = Kinetic,
+                    Shield = Kinetic, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
+                },
+                Deform = new DeformDef
+                {
+                    DeformType = HitBlock,
+                    DeformDelay = 30,
                 },
             },
             /*
