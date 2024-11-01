@@ -39,16 +39,16 @@ namespace Scripts
 { // Don't edit above this line
     partial class Parts
     {
-        private AmmoDef APHE90mmShell => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef APHE105mmShell => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "MediumCalibreAmmo", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
-            AmmoRound = "APHE 90mm Shell", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
+            AmmoRound = "APHE 105mm Shell", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 3000f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 2000f, // Direct damage; one steel plate is worth 100.
             Mass = 20f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
-            BackKickForce = 5000f, // Recoil. This is applied to the Parent Grid.
+            BackKickForce = 2000f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
@@ -92,7 +92,7 @@ namespace Scripts
                     Armor = 0.75f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = -1f, // Multiplier for damage against light armor.
                     Heavy = -1f, // Multiplier for damage against heavy armor.
-                    NonArmor = 1.2f, // Multiplier for damage against every else.
+                    NonArmor = 1.25f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
@@ -110,7 +110,7 @@ namespace Scripts
                 Deform = new DeformDef
                 {
                     DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformDelay = 60,
                 },
             },
             AreaOfDamage = new AreaOfDamageDef
@@ -121,7 +121,7 @@ namespace Scripts
                     Radius = 4f, // Radius of AOE effect, in meters.
                     Damage = 1000f,
                     Depth = 2f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 2000f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 1600f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -275,20 +275,20 @@ namespace Scripts
         };
 	  
     
-        private AmmoDef APFSDS90mmShell => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef APFSDS105mmShell => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "MediumCalibreAmmo", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
-            AmmoRound = "APFSDS 90mm Shell", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
+            AmmoRound = "APFSDS 105mm Shell", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 3600f, // Direct damage; one steel plate is worth 100.
-            BaseDamageCutoff = 1200,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
+            BaseDamage = 2400f, // Direct damage; one steel plate is worth 100.
+            BaseDamageCutoff = 800,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
                                     // Optional penetration mechanic to apply damage to blocks beyond the first hit, without requiring the block to be destroyed.  
                                     // Overwrites normal damage behavior of requiring a block to be destroyed before damage can continue.  0 disables. 
                                     // To limit max # of blocks hit, set MaxObjectsHit to desired # and ensure CountBlocks = true in ObjectsHit, otherwise it will continue until BaseDamage depletes
             Mass = 10f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
-            BackKickForce = 3600f, // Recoil. This is applied to the Parent Grid.
+            BackKickForce = 2400f, // Recoil. This is applied to the Parent Grid.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
                    //float.MaxValue will drop the weapon to the first build state and destroy all components used for construction
 			       //If greater than cube integrity it will remove the cube upon firing, without causing deformation (makes it look like the whole "block" flew away)
@@ -350,7 +350,7 @@ namespace Scripts
                 Deform = new DeformDef
                 {
                     DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformDelay = 60,
                 },
             },
             AreaOfDamage = new AreaOfDamageDef
@@ -358,10 +358,10 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 1f, // Radius of AOE effect, in meters.
-                    Damage = 900f,
+                    Radius = 2f, // Radius of AOE effect, in meters.
+                    Damage = 400f,
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 1200f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 600f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius

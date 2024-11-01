@@ -39,13 +39,13 @@ namespace Scripts
 { // Don't edit above this line
     partial class Parts
     {
-        private AmmoDef APHE30mmShell => new AmmoDef // Your ID, for slotting into the Weapon CS
+        private AmmoDef HEIFrag30mmShell => new AmmoDef // Your ID, for slotting into the Weapon CS
         {
             AmmoMagazine = "AutocannonClip", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
-            AmmoRound = "APHE 30mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
+            AmmoRound = "HEI-Frag 30mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 160f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 20f, // Direct damage; one steel plate is worth 100.
             Mass = 1f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 230f, // Recoil. This is applied to the Parent Grid.
@@ -68,6 +68,18 @@ namespace Scripts
                 MaxObjectsHit = 0, // Limits the number of entities (grids, players, projectiles) the projectile can penetrate; 0 = unlimited.
                 CountBlocks = false, // Counts individual blocks, not just entities hit.
             },
+            Fragment = new FragmentDef // Formerly known as Shrapnel. Spawns specified ammo fragments on projectile death (via hit or detonation).
+            {
+                AmmoRound = "Shrapnel20mm", // AmmoRound field of the ammo to spawn.
+                Fragments = 6, // Number of projectiles to spawn.
+                Degrees = 180, // Cone in which to randomize direction of spawned projectiles.
+                Reverse = false, // Spawn projectiles backward instead of forward.
+                DropVelocity = false, // fragments will not inherit velocity from parent.
+                Offset = -3f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
+                Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
+                MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
+                IgnoreArming = true, // If true, ignore ArmOnHit or MinArmingTime in EndOfLife definitions
+            },
             DamageScales = new DamageScaleDef
             {
                 MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
@@ -85,9 +97,9 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
-                    Light = 0.50f, // Multiplier for damage against light armor.
+                    Light = 0.75f, // Multiplier for damage against light armor.
                     Heavy = 0.50f, // Multiplier for damage against heavy armor.
-                    NonArmor = -1f, // Multiplier for damage against every else.
+                    NonArmor = 1.50f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
@@ -104,8 +116,8 @@ namespace Scripts
                 },
                 Deform = new DeformDef
                 {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformType = NoDeform,
+                    DeformDelay = 120,
                 },
             },
             AreaOfDamage = new AreaOfDamageDef
@@ -113,10 +125,10 @@ namespace Scripts
                 EndOfLife = new EndOfLifeDef
                 {
                     Enable = true,
-                    Radius = 2.4f, // Radius of AOE effect, in meters.
-                    Damage = 160f,
+                    Radius = 2.5f, // Radius of AOE effect, in meters.
+                    Damage = 200f,
                     Depth = 1f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
-                    MaxAbsorb = 360f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
+                    MaxAbsorb = 300f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
                     Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
@@ -277,7 +289,7 @@ namespace Scripts
             AmmoRound = "APDS 30mm Shells", // Name of ammo in terminal, should be different for each ammo type used by the same weapon. Is used by Shrapnel.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 480f, // Direct damage; one steel plate is worth 100.
+            BaseDamage = 360f, // Direct damage; one steel plate is worth 100.
             BaseDamageCutoff = 120,  // Maximum amount of pen damage to apply per block hit.  Deducts from BaseDamage and uses DamageScales modifiers
                                     // Optional penetration mechanic to apply damage to blocks beyond the first hit, without requiring the block to be destroyed.  
                                     // Overwrites normal damage behavior of requiring a block to be destroyed before damage can continue.  0 disables. 
@@ -340,8 +352,8 @@ namespace Scripts
                 },
                 Deform = new DeformDef
                 {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformType = NoDeform,
+                    DeformDelay = 120,
                 },
             },
             Trajectory = new TrajectoryDef

@@ -114,8 +114,8 @@ namespace Scripts
                 },
                 Deform = new DeformDef
                 {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformType = NoDeform,
+                    DeformDelay = 120,
                 },
             },
             AreaOfDamage = new AreaOfDamageDef
@@ -348,6 +348,11 @@ namespace Scripts
                     Detonation = Kinetic,
                     Shield = Kinetic, // Damage against shields is currently all of one type per projectile. Shield Bypass Weapons, always Deal Energy regardless of this line
                 },
+                Deform = new DeformDef
+                {
+                    DeformType = NoDeform,
+                    DeformDelay = 120,
+                },
             },
             Trajectory = new TrajectoryDef
             {
@@ -566,8 +571,8 @@ namespace Scripts
                 },
                 Deform = new DeformDef
                 {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformType = NoDeform,
+                    DeformDelay = 120,
                 },
             },
             AreaOfDamage = new AreaOfDamageDef
@@ -738,7 +743,7 @@ namespace Scripts
         {
             AmmoMagazine = "Energy",
             AmmoRound = "Shrapnel20mm",
-            BaseDamage = 5,
+            BaseDamage = 10,
             Mass = 0.25f, // In kilograms; how much force the impact will apply to the target.
 	        HardPointUsable = false, // Whether this is a primary ammo type fired directly by the turret. Set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
             Shape = new ShapeDef // Defines the collision shape of the projectile, defaults to LineShape and uses the visual Line Length if set to 0.
@@ -750,8 +755,8 @@ namespace Scripts
             },
             Beams = new BeamDef
             {
-                Enable = false, // Enable beam behaviour. Please have 3600 RPM, when this Setting is enabled. Please do not fire Beams into Voxels.
-                FakeVoxelHitTicks = 3, // If this beam hits/misses a voxel it assumes it will continue to do so for this many ticks at the same hit length and not extend further within this window.  This can save up to n times worth of cpu.
+                Enable = true, // Enable beam behaviour. Please have 3600 RPM, when this Setting is enabled. Please do not fire Beams into Voxels.
+                FakeVoxelHitTicks = 30, // If this beam hits/misses a voxel it assumes it will continue to do so for this many ticks at the same hit length and not extend further within this window.  This can save up to n times worth of cpu.
             },
             Trajectory = new TrajectoryDef
             {
@@ -779,11 +784,11 @@ namespace Scripts
                     Armor = -1f, // Multiplier for damage against all armor. This is multiplied with the specific armor type multiplier (light, heavy).
                     Light = 0.50f, // Multiplier for damage against light armor.
                     Heavy = 0.25f, // Multiplier for damage against heavy armor.
-                    NonArmor = 1.1f, // Multiplier for damage against every else.
+                    NonArmor = 1.25f, // Multiplier for damage against every else.
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 0.2f, // Multiplier for damage against shields.
+                    Modifier = 0.4f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
@@ -796,8 +801,8 @@ namespace Scripts
                 },
                 Deform = new DeformDef
                 {
-                    DeformType = HitBlock,
-                    DeformDelay = 30,
+                    DeformType = NoDeform,
+                    DeformDelay = 120,
                 },
             },
             /*
