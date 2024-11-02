@@ -10225,22 +10225,22 @@
                         <Value2D />
                       </Key>
                       <Key>
-                        <Time>0.994416237</Time>
+                        <Time>0.703260839</Time>
                         <ValueVector4>
                           <X>0.24</X>
                           <Y>0.1</Y>
                           <Z>1</Z>
-                          <W>0.5</W>
+                          <W>0.1</W>
                         </ValueVector4>
                         <Value2D />
                       </Key>
                       <Key>
                         <Time>1</Time>
                         <ValueVector4>
-                          <X>0.2</X>
+                          <X>0</X>
                           <Y>0</Y>
-                          <Z>0.5</Z>
-                          <W>0.5</W>
+                          <Z>0</Z>
+                          <W>0</W>
                         </ValueVector4>
                         <Value2D />
                       </Key>
@@ -10266,8 +10266,13 @@
                         <Value2D />
                       </Key>
                       <Key>
-                        <Time>1</Time>
+                        <Time>0.8944561</Time>
                         <ValueFloat>2</ValueFloat>
+                        <Value2D />
+                      </Key>
+                      <Key>
+                        <Time>1</Time>
+                        <ValueFloat>0</ValueFloat>
                         <Value2D />
                       </Key>
                     </Keys>
@@ -10311,7 +10316,7 @@
               <Keys>
                 <Key>
                   <Time>0.01</Time>
-                  <ValueFloat>15</ValueFloat>
+                  <ValueFloat>40</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -10329,7 +10334,7 @@
               <Keys>
                 <Key>
                   <Time>0</Time>
-                  <ValueFloat>120</ValueFloat>
+                  <ValueFloat>20</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -10338,12 +10343,12 @@
               <Keys>
                 <Key>
                   <Time>0.1</Time>
-                  <ValueFloat>90</ValueFloat>
+                  <ValueFloat>40</ValueFloat>
                   <Value2D />
                 </Key>
                 <Key>
                   <Time>0.5</Time>
-                  <ValueFloat>90</ValueFloat>
+                  <ValueFloat>40</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -10401,7 +10406,7 @@
                         <Value2D />
                       </Key>
                       <Key>
-                        <Time>0.9895445</Time>
+                        <Time>0.9575174</Time>
                         <ValueFloat>8</ValueFloat>
                         <Value2D />
                       </Key>
@@ -10461,7 +10466,7 @@
               <ValueVector3>
                 <X>0</X>
                 <Y>0</Y>
-                <Z>-1</Z>
+                <Z>-2</Z>
               </ValueVector3>
             </Property>
             <Property AnimationType="Const" Name="Rotation velocity var" Type="Float">
@@ -10534,7 +10539,7 @@
               <Keys>
                 <Key>
                   <Time>0</Time>
-                  <ValueFloat>20</ValueFloat>
+                  <ValueFloat>30</ValueFloat>
                   <Value2D />
                 </Key>
               </Keys>
@@ -10868,7 +10873,7 @@
               <ValueFloat>0.1</ValueFloat>
             </Property>
             <Property AnimationType="Const" Name="Collide" Type="Bool">
-              <ValueBool>true</ValueBool>
+              <ValueBool>false</ValueBool>
             </Property>
             <Property AnimationType="Const" Name="SleepState" Type="Bool">
               <ValueBool>false</ValueBool>
