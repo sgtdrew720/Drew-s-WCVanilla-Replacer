@@ -182,7 +182,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto,
+                GatlingAmmo,
                 APDSGatlingAmmo,
                 Shrapnel20mm,// Must list all primary, shrapnel, and pattern ammos.
             },
@@ -545,7 +545,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto,
+                GatlingAmmo,
                 APDSGatlingAmmo,
                 Shrapnel20mm,// Must list all primary, shrapnel, and pattern ammos.
             },
@@ -721,7 +721,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto,
+                GatlingAmmo,
                 APDSGatlingAmmo,
                 Shrapnel20mm,// Must list all primary, shrapnel, and pattern ammos.
             },
@@ -897,7 +897,7 @@ namespace Scripts {
                 },
             },
             Ammos = new[] {
-                GatlingAmmoTravelto,
+                GatlingAmmo,
                 APDSGatlingAmmo,
                 Shrapnel20mm,// Must list all primary, shrapnel, and pattern ammos.
             },
