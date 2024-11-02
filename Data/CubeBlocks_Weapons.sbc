@@ -680,7 +680,7 @@
             </Id>
             <DisplayName>Large Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
-            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [20k Damage per Shot, 3km/s velocity, 4km Range, uses Large Railgun Sabots]</Description>
+            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [10k Damage per Shot, 3km/s velocity, 4km Range, uses Large Railgun Sabots]</Description>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -739,7 +739,7 @@
             </Id>
             <DisplayName>Small Railgun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RailGun.dds</Icon>
-            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [10k Damage per Shot, 2km/s velocity, 4km Range, uses Small Railgun Sabots]</Description>
+            <Description>A long range weapon, railguns have a low rate of fire but high penetration. Due to the projectiles speed, damage isn't fully absorbed by blocks as the shot passes through.    [5k Damage per Shot, 2km/s velocity, 4km Range, uses Small Railgun Sabots]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="2" z="8" />
@@ -796,7 +796,7 @@
             </Id>
             <DisplayName>Missile Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_launcher_small.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -850,7 +850,7 @@
             </Id>
             <DisplayName>Missile Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RocketlauncherReskin.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -904,7 +904,7 @@
             </Id>
             <DisplayName>DisplayName_Block_RocketLauncher</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_launcher.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -960,7 +960,7 @@
             <DisplayName>DisplayName_Block_SmallRocketLauncherReload</DisplayName>
             <BlockPairName>SmallRocketLauncherReload</BlockPairName>
             <Icon>Textures\GUI\Icons\Cubes\RocketLauncherReload.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1015,7 +1015,7 @@
             </Id>
             <DisplayName>Missile Turret Type I</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1105,7 +1105,7 @@
             </Id>
             <DisplayName>Missile Turret Type I</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\missile_turret.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1194,7 +1194,7 @@
             </Id>
             <DisplayName>Missile Turret Type II</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinLarge.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1285,7 +1285,7 @@
             </Id>
             <DisplayName>Missile Turret Type II</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\RocketTurretReskinSmall.dds</Icon>
-            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [800m/s Projectile velocity, 6km range, uses 200mm missiles]</Description>
+            <Description>A long range guided missile weapon, has 3 firing modes, Rocket, Basic and Advanced Guidance, default firemode is dumbfire, with no guidance but maximum acceleration.  [500m/s Projectile velocity, 5km range, uses 200mm missiles]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1376,7 +1376,7 @@
             </Id>
             <DisplayName>DisplayName_Block_InteriorTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\interior_turret.dds</Icon>
-            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded  [24 Damage per Shot, 900 RPM, 800m/s, 2000m Range, Compatible with all rifle magazines]</Description>
+            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded  [30 Damage per Shot, 900 RPM, 800m/s, 2000m Range, Compatible with all rifle magazines]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1464,7 +1464,7 @@
             </Id>
             <DisplayName>DisplayName_Block_InteriorTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\interior_turret.dds</Icon>
-            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded  [24 Damage per Shot, 900 RPM, 800m/s, 2000m Range, Compatible with all rifle magazines]</Description>
+            <Description>An interior turret for fending off boarders and lightly armored attackers, must be manually loaded  [30 Damage per Shot, 900 RPM, 800m/s, 2000m Range, Compatible with all rifle magazines]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1553,7 +1553,7 @@
             </Id>
             <DisplayName>DisplayName_Block_HeavyCalibreGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreGun.dds</Icon>
-            <Description>A high damage low rate of fire cannon, designed for engaging slower moving armored targets, able to select between APHE and HE shells.    [540-720m/s Projectile velocity, 4km range, uses Artillery Shells]</Description>
+            <Description>A high damage low rate of fire cannon, designed for engaging slower moving armored targets, able to select between APHE and HE shells.    [600-800m/s Projectile velocity, 4km range, uses Artillery Shells]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1618,7 +1618,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCaliberGun.dds</Icon>
-            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [800m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
+            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [1250-1500m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -1681,7 +1681,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurret_Small.dds</Icon>
-            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [800m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
+            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [1250-1500m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
             <CubeSize>Small</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -1834,7 +1834,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingGun</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatling_gun.dds</Icon>
-            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [1000m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="1" z="4" />
@@ -1888,7 +1888,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingGunWarfare2</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatlingGunReskin.dds</Icon>
-            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [1000m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
             <Size x="1" y="1" z="4" />
@@ -1943,7 +1943,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatling_turret.dds</Icon>
-            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [1000m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -2031,7 +2031,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\gatling_turret.dds</Icon>
-            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [1000m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -2119,7 +2119,7 @@
             </Id>
             <DisplayName>DisplayName_Block_MediumCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\MediumCalibreTurretLarge.dds</Icon>
-            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [800m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
+            <Description>A medium damage medium rate of fire cannon, designed for engaging armored targets.    [1250-1500m/s Projectile velocity, 4km range, uses Assault Cannon Shells]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -2211,7 +2211,7 @@
             </Id>
             <DisplayName>DisplayName_Block_LargeCalibreTurret</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\HeavyCalibreTurret.dds</Icon>
-            <Description>A high damage low rate of fire cannon, designed for engaging slower moving armored targets, able to select between APHE and HE shells.    [540-720m/s Projectile velocity, 4km range, uses Artillery Shells]</Description>
+            <Description>A high damage low rate of fire cannon, designed for engaging slower moving armored targets, able to select between APHE and HE shells.    [600-800m/s Projectile velocity, 4km range, uses Artillery Shells]</Description>
             <CubeSize>Large</CubeSize>
             <GuiVisible>false</GuiVisible>
             <PlaceDecals>false</PlaceDecals>
@@ -2309,7 +2309,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurretReskin</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinLarge.dds</Icon>
-            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [1000m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Large</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>
@@ -2398,7 +2398,7 @@
             </Id>
             <DisplayName>DisplayName_Block_GatlingTurretReskin</DisplayName>
             <Icon>Textures\GUI\Icons\Cubes\GatlingTurretReskinSmall.dds</Icon>
-            <Description>A Low damage High rate of fire cannon, designed for point defense.    [800m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
+            <Description>A Low damage High rate of fire cannon, designed for point defense.    [1000m/s Projectile velocity, 2km range, uses 20mm Cannon Boxes]</Description>
             <CubeSize>Small</CubeSize>
             <PlaceDecals>false</PlaceDecals>
             <BlockTopology>TriangleMesh</BlockTopology>

@@ -8,7 +8,7 @@
             </Id>
             <DisplayName>RO-1 Missile Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponRocketLauncher_Regular.dds</Icon>
-            <Description>A basic handheld missle launcher which can fire 200mm missiles at targets up to 6km away. Has 3 firing modes, Rocket, Basic and Advanced Guidance, swappable by holding down the reload key. Enemy grids can be locked via middle mouse button.</Description>
+            <Description>A basic handheld missle launcher which can fire 200mm missiles at targets up to 5km away. Has 3 firing modes, Rocket, Basic and Advanced Guidance, swappable by holding down the reload key. Enemy grids can be locked via middle mouse button.</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
@@ -34,7 +34,7 @@
             </Id>
             <DisplayName>PRO-1 Missile Launcher</DisplayName>
             <Icon>Textures\GUI\Icons\WeaponRocketLauncher_Precise.dds</Icon>
-            <Description>An Advanced handheld missle launcher which can fire 200mm missiles at targets up to 6km away. Has 3 firing modes, Advanced and Basic Guidance, as well as Rocket, swappable by holding down the reload key. Enemy grids can be locked via middle mouse button.</Description>
+            <Description>An Advanced handheld missle launcher which can fire 200mm missiles at targets up to 5km away. Has 3 firing modes, Advanced and Basic Guidance, as well as Rocket, swappable by holding down the reload key. Enemy grids can be locked via middle mouse button.</Description>
             <Size>
                 <X>0.8</X>
                 <Y>0.24</Y>
